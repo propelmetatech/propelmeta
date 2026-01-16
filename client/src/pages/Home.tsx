@@ -70,7 +70,7 @@ export default function Home() {
       description:
         'Deliver exceptional experiences at every touchpoint with our unified customer platform.',
       stats: {
-        label: 'Customer Satisfaction',
+        label: 'Customer Satisfaction.',
         value: '98.5% Rating',
         color: 'bg-purple-500',
       },
