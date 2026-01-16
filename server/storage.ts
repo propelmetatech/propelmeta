@@ -1,6 +1,4 @@
-import { db } from "./db";
-import { leads, posts, type Lead, type InsertLead, type Post, type InsertPost } from "@shared/schema";
-import { eq, desc } from "drizzle-orm";
+import { type Lead, type InsertLead, type Post, type InsertPost } from "@shared/schema";
 
 export interface IStorage {
   createLead(lead: InsertLead): Promise<Lead>;
@@ -9,25 +7,42 @@ export interface IStorage {
   createPost(post: InsertPost): Promise<Post>;
 }
 
-export class DatabaseStorage implements IStorage {
+export class InMemoryStorage implements IStorage {
+  private leads: Lead[] = [];
+  private posts: Post[] = [];
+  private nextLeadId = 1;
+  private nextPostId = 1;
+
   async createLead(insertLead: InsertLead): Promise<Lead> {
-    const [lead] = await db.insert(leads).values(insertLead).returning();
+    const lead: Lead = {
+      id: this.nextLeadId++,
+      ...insertLead,
+      createdAt: new Date(),
+    };
+    this.leads.push(lead);
     return lead;
   }
 
   async getPosts(): Promise<Post[]> {
-    return await db.select().from(posts).orderBy(desc(posts.createdAt));
+    return [...this.posts].sort((a, b) =>
+      new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime()
+    );
   }
 
   async getPostBySlug(slug: string): Promise<Post | undefined> {
-    const [post] = await db.select().from(posts).where(eq(posts.slug, slug));
-    return post;
+    return this.posts.find(post => post.slug === slug);
   }
 
   async createPost(insertPost: InsertPost): Promise<Post> {
-    const [post] = await db.insert(posts).values(insertPost).returning();
+    const post: Post = {
+      id: this.nextPostId++,
+      ...insertPost,
+      createdAt: new Date(),
+    };
+    this.posts.push(post);
     return post;
   }
 }
 
-export const storage = new DatabaseStorage();
+// Use in-memory storage instead of database
+export const storage = new InMemoryStorage();
