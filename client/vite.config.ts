@@ -6,12 +6,15 @@ import react from "@vitejs/plugin-react";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-      "@shared": path.resolve(__dirname, "../shared"),
-      "@assets": path.resolve(__dirname, "../attached_assets"),
+    plugins: [react()],
+    css: {
+        postcss: path.resolve(__dirname, "postcss.config.js"),
     },
-  },
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "src"),
+            "@shared": path.resolve(__dirname, "../shared"),
+            "@assets": path.resolve(__dirname, "../attached_assets"),
+        },
+    },
 });
