@@ -39,12 +39,14 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (!id.includes("node_modules")) return;
-          if (id.includes("react")) return "react";
-          if (id.includes("@tanstack")) return "tanstack";
-          if (id.includes("@radix-ui")) return "radix";
-          if (id.includes("framer-motion")) return "motion";
-          if (id.includes("recharts")) return "charts";
-          if (id.includes("lucide-react")) return "icons";
+          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
+            return "react";
+          }
+          if (id.includes("node_modules/@tanstack/")) return "tanstack";
+          if (id.includes("node_modules/@radix-ui/")) return "radix";
+          if (id.includes("node_modules/framer-motion/")) return "motion";
+          if (id.includes("node_modules/recharts/")) return "charts";
+          if (id.includes("node_modules/lucide-react/")) return "icons";
           return "vendor";
         },
       },
