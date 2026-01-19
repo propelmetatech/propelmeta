@@ -2,7 +2,7 @@ import { Layout } from "@/components/Layout";
 import { useCreateLead } from "@/hooks/use-leads";
 import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertLeadSchema, type InsertLead } from "@shared/schema";
+import { insertLeadSchema, type InsertLead } from "@/schemas/lead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";

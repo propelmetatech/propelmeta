@@ -1,22 +1,26 @@
+import { Suspense, lazy } from 'react';
 import { Switch, Route } from 'wouter';
 import { queryClient } from './lib/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import NotFound from '@/pages/not-found';
-import Home from '@/pages/Home';
-import Products from '@/pages/Products';
-import Pricing from '@/pages/Pricing';
-import About from '@/pages/About';
-import Blog from '@/pages/Blog';
-import BlogPost from '@/pages/BlogPost';
-import Contact from '@/pages/Contact';
-import Demo from '@/pages/Demo';
+
+const NotFound = lazy(() => import('@/pages/not-found'));
+const Home = lazy(() => import('@/pages/Home'));
+const Products = lazy(() => import('@/pages/Products'));
+const Pricing = lazy(() => import('@/pages/Pricing'));
+const About = lazy(() => import('@/pages/About'));
+const Blog = lazy(() => import('@/pages/Blog'));
+const BlogPost = lazy(() => import('@/pages/BlogPost'));
+const Contact = lazy(() => import('@/pages/Contact'));
+const Demo = lazy(() => import('@/pages/Demo'));
 // Service Pages
-import WebsiteBuilder from '@/pages/services/WebsiteBuilder';
-import MarketingAutomation from '@/pages/services/MarketingAutomation';
-import MobileApps from '@/pages/services/MobileApps';
-import OnlineSales from '@/pages/services/OnlineSales';
+const WebsiteBuilder = lazy(() => import('@/pages/services/WebsiteBuilder'));
+const MarketingAutomation = lazy(
+  () => import('@/pages/services/MarketingAutomation')
+);
+const MobileApps = lazy(() => import('@/pages/services/MobileApps'));
+const OnlineSales = lazy(() => import('@/pages/services/OnlineSales'));
 
 function Router() {
   return (
@@ -47,7 +51,15 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <Suspense
+          fallback={
+            <div className="flex min-h-[50vh] items-center justify-center text-slate-500">
+              Loading...
+            </div>
+          }
+        >
+          <Router />
+        </Suspense>
       </TooltipProvider>
     </QueryClientProvider>
   );
