@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { useCreateLead } from "@/hooks/use-leads";
-import { useForm } from "react-hook-form";
+import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertLeadSchema, type InsertLead } from "@shared/schema";
 import { Button } from "@/components/ui/button";
@@ -12,8 +12,12 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export default function Contact() {
   const mutation = useCreateLead();
 
+  const resolver = (zodResolver as unknown as (schema: unknown) => Resolver<InsertLead>)(
+    insertLeadSchema
+  );
+
   const form = useForm<InsertLead>({
-    resolver: zodResolver(insertLeadSchema),
+    resolver,
     defaultValues: {
       name: "",
       email: "",
