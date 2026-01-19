@@ -4,9 +4,9 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
-      "@shared/*": ["../shared/*"],
+      "@shared/*": ["../../shared/*"],
       "@assets/*": ["../attached_assets/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "../shared/**/*"]
 }
