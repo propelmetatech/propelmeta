@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type InsertLead } from "@shared/routes";
+import { api } from "@/lib/api";
+import type { InsertLead } from "@/schemas/lead";
 import { useToast } from "@/hooks/use-toast";
 
 export function useCreateLead() {

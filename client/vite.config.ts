@@ -10,6 +10,23 @@ export default defineConfig({
     css: {
         postcss: path.resolve(__dirname, "postcss.config.js"),
     },
+    build: {
+        chunkSizeWarningLimit: 900,
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (!id.includes("node_modules")) return;
+                    if (id.includes("react")) return "react";
+                    if (id.includes("@tanstack")) return "tanstack";
+                    if (id.includes("@radix-ui")) return "radix";
+                    if (id.includes("framer-motion")) return "motion";
+                    if (id.includes("recharts")) return "charts";
+                    if (id.includes("lucide-react")) return "icons";
+                    return "vendor";
+                },
+            },
+        },
+    },
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "src"),
