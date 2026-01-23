@@ -1,134 +1,134 @@
-import { Layout } from "@/components/Layout";
-import { Check, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { useEffect } from 'react';
+import { Layout } from '@/components/Layout';
+import { FaqAccordion } from '@/components/FaqAccordion';
 
 export default function Pricing() {
-  const tiers = [
+  const stripePublishableKey =
+    import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ??
+    'pk_test_51SofdnDZeN1YHWHryTmXX3SASdS4IJglBR1GNcBa7olvu59kvqiP3LpvwT7TIb3J5TgNJeuc5oWcbhhPWeDOvCgw00rq4wkTpp';
+
+  const faqs = [
     {
-      name: "Starter",
-      price: "$199",
-      description: "Perfect for small businesses just getting started online.",
-      features: [
-        "AI Website Builder",
-        "Online Ordering",
-        "Basic Analytics",
-        "Email Support",
-        "1 Admin User"
-      ],
-      cta: "Start Free Trial",
-      popular: false
+      question: 'Can I switch plans later?',
+      answer: 'Yes, you can upgrade or downgrade your plan at any time.',
     },
     {
-      name: "Growth",
-      price: "$399",
-      description: "Everything growing businesses need to scale revenue.",
-      features: [
-        "Everything in Starter",
-        "Marketing Automation",
-        "SMS Campaigns",
-        "Advanced Analytics",
-        "Priority Support",
-        "5 Admin Users"
-      ],
-      cta: "Get Growth",
-      popular: true
+      question: 'Is there a setup fee?',
+      answer: 'No, all plans include free onboarding and setup assistance.',
     },
     {
-      name: "Scale",
-      price: "$699",
-      description: "Advanced features for multi-location brands.",
-      features: [
-        "Everything in Growth",
-        "Branded Mobile App",
-        "Custom Integrations",
-        "Dedicated Success Manager",
-        "API Access",
-        "Unlimited Users"
-      ],
-      cta: "Contact Sales",
-      popular: false
-    }
+      question: 'Do I need technical skills?',
+      answer:
+        'Not at all. Our platform is designed for business owners, not developers.',
+    },
   ];
+
+  useEffect(() => {
+    const scriptSrc = 'https://js.stripe.com/v3/pricing-table.js';
+    if (document.querySelector(`script[src="${scriptSrc}"]`)) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = scriptSrc;
+    document.head.appendChild(script);
+  }, []);
 
   return (
     <Layout>
-      <div className="bg-slate-900 text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-slate-900"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-bold font-display mb-6">Simple, Transparent Pricing</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Choose the plan that's right for your business. No hidden fees, cancel anytime.
-          </p>
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+        <div className="absolute inset-0">
+          <div className="absolute -top-32 right-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+          <div className="absolute -bottom-36 left-10 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl"></div>
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at top, rgba(59, 130, 246, 0.25), transparent 55%)',
+            }}
+          ></div>
         </div>
-      </div>
+
+        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10 py-24 lg:py-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center rounded-full border border-blue-400/40 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur mb-6">
+              Transparent plans, built for scale
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 leading-tight">
+              Pricing that grows with your business
+            </h1>
+            <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
+              Choose the plan that fits today and scale when you are ready. No
+              hidden fees, no long-term contracts.
+            </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-slate-200">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-blue-300"></span>
+                No setup fees
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-purple-300"></span>
+                Cancel anytime
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-sky-300"></span>
+                Priority support
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="container mx-auto px-4 -mt-20 relative z-20 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {tiers.map((tier) => (
-            <div 
-              key={tier.name}
-              className={`rounded-3xl p-8 bg-white shadow-xl flex flex-col ${
-                tier.popular 
-                  ? "border-2 border-primary relative transform md:-translate-y-4" 
-                  : "border border-slate-100"
-              }`}
-            >
-              {tier.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
-                  Most Popular
-                </div>
-              )}
-              
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold font-display text-slate-900 mb-2">{tier.name}</h3>
-                <p className="text-slate-500 text-sm mb-6">{tier.description}</p>
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold text-slate-900">{tier.price}</span>
-                  <span className="text-slate-500 ml-2">/month</span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8 flex-1">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="text-slate-600 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link href={tier.name === "Scale" ? "/contact" : "/demo"}>
-                <Button 
-                  className={`w-full py-6 rounded-xl text-lg font-semibold ${
-                    tier.popular 
-                      ? "shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30" 
-                      : "bg-slate-100 text-slate-900 hover:bg-slate-200"
-                  }`}
-                >
-                  {tier.cta}
-                </Button>
-              </Link>
-            </div>
-          ))}
+        <div className="rounded-3xl bg-white p-6 shadow-xl md:p-10">
+          {stripePublishableKey ? (
+            <stripe-pricing-table
+              pricing-table-id="prctbl_1SsKCADZeN1YHWHr7yPTVNq5"
+              publishable-key={stripePublishableKey}
+            />
+          ) : (
+            <p className="text-center text-sm text-slate-500">
+              Set VITE_STRIPE_PUBLISHABLE_KEY to display pricing.
+            </p>
+          )}
         </div>
       </div>
+
+      <section className="bg-white pb-24">
+        <div className="container mx-auto px-4">
+          <div className="rounded-3xl bg-slate-50 p-6 shadow-lg md:p-10">
+            <h3 className="text-2xl md:text-3xl font-bold font-display text-slate-900 text-center mb-8">
+              Extra Addon Features
+            </h3>
+            {stripePublishableKey ? (
+              <stripe-pricing-table
+                pricing-table-id="prctbl_1SsPyiDZeN1YHWHryHnTzGIc"
+                publishable-key={stripePublishableKey}
+              />
+            ) : (
+              <p className="text-center text-sm text-slate-500">
+                Set VITE_STRIPE_PUBLISHABLE_KEY to display pricing.
+              </p>
+            )}
+            <div className="mt-8 flex justify-center">
+              <a href="/policies">
+                <button className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500">
+                  Refund & Cancellation Policies
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="bg-slate-50 py-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold font-display text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {[
-              { q: "Can I switch plans later?", a: "Yes, you can upgrade or downgrade your plan at any time." },
-              { q: "Is there a setup fee?", a: "No, all plans include free onboarding and setup assistance." },
-              { q: "Do I need technical skills?", a: "Not at all. Our platform is designed for business owners, not developers." }
-            ].map((faq, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{faq.q}</h3>
-                <p className="text-slate-600">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="text-3xl font-bold font-display text-slate-900 text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <FaqAccordion items={faqs} />
         </div>
       </div>
     </Layout>

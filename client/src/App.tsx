@@ -21,6 +21,18 @@ const MarketingAutomation = lazy(
 );
 const MobileApps = lazy(() => import('@/pages/services/MobileApps'));
 const OnlineSales = lazy(() => import('@/pages/services/OnlineSales'));
+const SocialMediaManagement = lazy(
+  () => import('@/pages/services/SocialMediaManagement')
+);
+const ContentCreation = lazy(() => import('@/pages/services/ContentCreation'));
+const WebAppDevelopment = lazy(
+  () => import('@/pages/services/WebAppDevelopment')
+);
+const SeoPaidAdvertising = lazy(
+  () => import('@/pages/services/SeoPaidAdvertising')
+);
+const AutomationAI = lazy(() => import('@/pages/services/AutomationAI'));
+const OnlineSupport = lazy(() => import('@/pages/services/OnlineSupport'));
 
 function Router() {
   return (
@@ -41,6 +53,21 @@ function Router() {
       />
       <Route path="/services/mobile-apps" component={MobileApps} />
       <Route path="/services/online-sales" component={OnlineSales} />
+      <Route
+        path="/services/social-media-management"
+        component={SocialMediaManagement}
+      />
+      <Route path="/services/content-creation" component={ContentCreation} />
+      <Route
+        path="/services/web-app-development"
+        component={WebAppDevelopment}
+      />
+      <Route
+        path="/services/seo-paid-advertising"
+        component={SeoPaidAdvertising}
+      />
+      <Route path="/services/automation-ai" component={AutomationAI} />
+      <Route path="/services/online-support" component={OnlineSupport} />
       <Route component={NotFound} />
     </Switch>
   );
