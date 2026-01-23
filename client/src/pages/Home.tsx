@@ -18,6 +18,13 @@ import {
   Clock,
   Target,
   ChevronDown,
+  ChevronRight,
+  ChevronLeft,
+  Megaphone,
+  PenTool,
+  Code2,
+  Search,
+  Bot,
   Plus,
   Minus,
   Award,
@@ -27,9 +34,10 @@ import {
 } from 'lucide-react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Layout } from '@/components/Layout';
 import { AutoScrollCarousel } from '@/components/AutoScrollCarousel';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -39,87 +47,249 @@ export default function Home() {
     {
       id: 1,
       image:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center',
-      title: 'AI-Powered Analytics Dashboard',
-      description:
-        'Real-time insights and predictive analytics to drive your business decisions with confidence.',
+        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=center',
+      title: 'Social Media Management',
+      description: 'Build trust, consistency, and engagement across platforms.',
       stats: {
-        label: 'Revenue Growth',
-        value: '+47% This Quarter',
-        color: 'bg-emerald-500',
+        label: 'Engagement Lift',
+        value: '+62% Avg',
+        color: 'bg-indigo-500',
       },
     },
     {
       id: 2,
       image:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
-      title: 'Marketing Automation Hub',
-      description:
-        'Streamline your campaigns across all channels with intelligent automation and personalization.',
+        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&h=600&fit=crop&crop=center',
+      title: 'Content Creation',
+      description: 'Scroll-stopping visuals and videos that tell your story.',
       stats: {
-        label: 'Conversion Rate',
-        value: '12.8% Average',
-        color: 'bg-blue-500',
+        label: 'Content Output',
+        value: '4x Monthly',
+        color: 'bg-sky-500',
       },
     },
     {
       id: 3,
       image:
-        'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop&crop=center',
-      title: 'Customer Experience Platform',
+        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=600&fit=crop&crop=center',
+      title: 'Website & App Development',
       description:
-        'Deliver exceptional experiences at every touchpoint with our unified customer platform.',
+        'High-performance websites and mobile apps built to convert.',
       stats: {
-        label: 'Customer Satisfaction',
-        value: '98.5% Rating',
-        color: 'bg-purple-500',
+        label: 'Performance Score',
+        value: '95+ Lighthouse',
+        color: 'bg-violet-500',
       },
     },
     {
       id: 4,
       image:
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
-      title: 'E-commerce Integration',
-      description:
-        'Seamlessly connect your online store with powerful sales and inventory management tools.',
+        'https://images.unsplash.com/photo-1556155092-8707de31f9c4?w=800&h=600&fit=crop&crop=center',
+      title: 'SEO & Paid Advertising',
+      description: 'Be found faster and scale with performance-driven ads.',
       stats: {
-        label: 'Sales Increase',
-        value: '+156% YoY',
-        color: 'bg-orange-500',
+        label: 'Qualified Leads',
+        value: '+3.1x',
+        color: 'bg-amber-500',
+      },
+    },
+    {
+      id: 5,
+      image:
+        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&crop=center',
+      title: 'Automation & AI',
+      description: 'Smarter systems that save time and boost ROI.',
+      stats: {
+        label: 'Hours Saved',
+        value: '120+ /mo',
+        color: 'bg-emerald-500',
       },
     },
   ];
 
   const features = [
     {
-      icon: <Globe className="h-6 w-6 text-white" />,
-      title: 'AI Website Builder',
-      description:
-        'Convert more visitors with high-performance, SEO-optimized websites built in minutes.',
+      icon: <Megaphone className="h-6 w-6 text-white" />,
+      title: 'Social Media Management',
+      description: 'Build trust, consistency, and engagement across platforms.',
       color: 'bg-blue-500',
+      href: '/services/social-media-management',
     },
     {
-      icon: <Zap className="h-6 w-6 text-white" />,
-      title: 'Marketing Automation',
-      description:
-        'Put your growth on autopilot with smart email & SMS campaigns that drive repeat sales.',
+      icon: <PenTool className="h-6 w-6 text-white" />,
+      title: 'Content Creation',
+      description: 'Scroll-stopping visuals and videos that tell your story.',
       color: 'bg-purple-500',
+      href: '/services/content-creation',
     },
     {
-      icon: <Smartphone className="h-6 w-6 text-white" />,
-      title: 'Branded Apps',
+      icon: <Code2 className="h-6 w-6 text-white" />,
+      title: 'Website & App Development',
       description:
-        'Launch your own iOS and Android mobile app to build customer loyalty directly.',
-      color: 'bg-pink-500',
+        'High-performance websites and mobile apps built to convert.',
+      color: 'bg-indigo-500',
+      href: '/services/web-app-development',
     },
     {
-      icon: <ShoppingCart className="h-6 w-6 text-white" />,
-      title: 'Online Sales',
-      description:
-        'Seamless ordering and delivery systems that keep 100% of your profits.',
-      color: 'bg-orange-500',
+      icon: <Search className="h-6 w-6 text-white" />,
+      title: 'SEO & Paid Advertising',
+      description: 'Be found faster and scale with performance-driven ads.',
+      color: 'bg-amber-500',
+      href: '/services/seo-paid-advertising',
+    },
+    {
+      icon: <Bot className="h-6 w-6 text-white" />,
+      title: 'Automation & AI',
+      description: 'Smarter systems that save time and boost ROI.',
+      color: 'bg-emerald-500',
+      href: '/services/automation-ai',
+    },
+    {
+      icon: <Headphones className="h-6 w-6 text-white" />,
+      title: 'Online & Client Support',
+      description: 'Reliable support that keeps your operations running.',
+      color: 'bg-slate-600',
+      href: '/services/online-support',
     },
   ];
+
+  const testimonials = [
+    {
+      name: 'Sarah Chen',
+      role: 'CEO, TechStart',
+      avatar: 'SC',
+      rating: 5,
+      text: 'PropelMeta transformed our marketing completely. We saw a 300% increase in qualified leads within the first month.',
+      company: 'TechStart Inc.',
+      color: 'from-blue-500 to-blue-600',
+      accentColor: 'blue',
+    },
+    {
+      name: 'Marcus Rodriguez',
+      role: 'Marketing Director',
+      avatar: 'MR',
+      rating: 5,
+      text: 'The automation features saved us 20+ hours per week. Our team can now focus on strategy instead of manual tasks.',
+      company: 'GrowthCorp',
+      color: 'from-purple-500 to-purple-600',
+      accentColor: 'purple',
+    },
+    {
+      name: 'Emily Watson',
+      role: 'Founder',
+      avatar: 'EW',
+      rating: 5,
+      text: 'Best investment we made this year. The ROI was immediate and continues to compound month over month.',
+      company: 'InnovateLab',
+      color: 'from-pink-500 to-pink-600',
+      accentColor: 'pink',
+    },
+    {
+      name: 'Priya Nair',
+      role: 'Owner',
+      avatar: 'PN',
+      rating: 5,
+      text: 'Engagement doubled and reservations from Instagram are up 28% in just six weeks.',
+      company: 'SpiceRoute Bistro',
+      color: 'from-blue-500 to-blue-600',
+      accentColor: 'blue',
+    },
+    {
+      name: 'David Kim',
+      role: 'COO',
+      avatar: 'DK',
+      rating: 5,
+      text: 'Our new site loads in under two seconds and trial sign-ups jumped 41%.',
+      company: 'Align Fitness',
+      color: 'from-purple-500 to-purple-600',
+      accentColor: 'purple',
+    },
+    {
+      name: 'Aisha Patel',
+      role: 'Marketing Lead',
+      avatar: 'AP',
+      rating: 5,
+      text: 'Paid campaigns now deliver a steady 4.2x ROAS with clear, actionable reporting.',
+      company: 'Bloom Cosmetics',
+      color: 'from-pink-500 to-pink-600',
+      accentColor: 'pink',
+    },
+    {
+      name: 'James Ortega',
+      role: 'Founder',
+      avatar: 'JO',
+      rating: 5,
+      text: 'Automation flows cut manual follow-ups by 70% and increased repeat orders.',
+      company: 'UrbanMart',
+      color: 'from-blue-500 to-blue-600',
+      accentColor: 'blue',
+    },
+    {
+      name: 'Lina Fischer',
+      role: 'Operations Manager',
+      avatar: 'LF',
+      rating: 5,
+      text: 'Their support team updates menus and replies fast, keeping our listings spotless.',
+      company: 'Harbor Cafe',
+      color: 'from-purple-500 to-purple-600',
+      accentColor: 'purple',
+    },
+    {
+      name: 'Carlos Mendes',
+      role: 'Growth Manager',
+      avatar: 'CM',
+      rating: 5,
+      text: 'SEO improvements pushed us to page one for our core keywords in eight weeks.',
+      company: 'NovaCloud',
+      color: 'from-pink-500 to-pink-600',
+      accentColor: 'pink',
+    },
+  ];
+
+  const loopTestimonials = [...testimonials, ...testimonials];
+
+  const featureTrackRef = useRef<HTMLDivElement | null>(null);
+  const testimonialTrackRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollFeatures = (direction: 'left' | 'right') => {
+    const track = featureTrackRef.current;
+    if (!track) {
+      return;
+    }
+
+    const scrollAmount = Math.round(track.clientWidth * 0.85);
+    track.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    const track = testimonialTrackRef.current;
+    if (!track) {
+      return;
+    }
+
+    let animationFrameId: number;
+    let lastTime = performance.now();
+    const scrollSpeed = 0.06;
+
+    const step = (time: number) => {
+      const delta = time - lastTime;
+      lastTime = time;
+      track.scrollLeft += delta * scrollSpeed;
+
+      if (track.scrollLeft >= track.scrollWidth / 2) {
+        track.scrollLeft = 0;
+      }
+
+      animationFrameId = requestAnimationFrame(step);
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
 
   return (
     <Layout>
@@ -157,7 +327,7 @@ export default function Home() {
                 your marketing channels.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link href="/demo">
+                <Link href="/pricing">
                   <Button
                     size="lg"
                     className="text-lg px-10 py-7 rounded-2xl shadow-2xl shadow-blue-500/30 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl hover:shadow-blue-500/40"
@@ -166,16 +336,14 @@ export default function Home() {
                     Start Free Trial
                   </Button>
                 </Link>
-                <Link href="/products">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="text-lg px-10 py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                  >
-                    <BarChart3 className="h-5 w-5 mr-2" />
-                    View Demo
-                  </Button>
-                </Link>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-10 py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <BarChart3 className="h-5 w-5 mr-2" />
+                  View Demo
+                </Button>
               </div>
 
               {/* Enhanced Social Proof */}
@@ -297,86 +465,116 @@ export default function Home() {
           </div>
 
           {/* Ultra-Modern Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 xl:gap-12">
-            {features.map((feature, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                whileHover={{
-                  y: -16,
-                  scale: 1.05,
-                  transition: {
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 20,
-                  },
-                }}
-                className="group relative cursor-pointer"
-              >
-                {/* Card Container with Advanced Styling */}
-                <div className="relative p-8 lg:p-10 rounded-3xl bg-white/80 backdrop-blur-xl border border-white/60 shadow-xl shadow-slate-200/30 group-hover:shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 overflow-hidden h-full group-hover:border-blue-300/50">
-                  {/* Animated Background Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl"></div>
+          <div className="relative mt-12">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-50 via-white/80 to-transparent"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-50 via-white/80 to-transparent"></div>
 
-                  {/* Enhanced Glowing Border Effect */}
-                  <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm"></div>
-                  <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-lg"></div>
+            <div
+              ref={featureTrackRef}
+              className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 px-1"
+            >
+              {features.map((feature, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  whileHover={{
+                    y: -16,
+                    scale: 1.03,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 300,
+                      damping: 20,
+                    },
+                  }}
+                  className="group relative cursor-pointer snap-start shrink-0 w-[280px] sm:w-[320px] lg:w-[360px]"
+                >
+                  {/* Card Container with Advanced Styling */}
+                  <div className="relative p-8 lg:p-10 rounded-3xl bg-white/85 backdrop-blur-xl border border-white/60 shadow-xl shadow-slate-200/30 group-hover:shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 overflow-hidden h-full group-hover:border-blue-300/50">
+                    {/* Animated Background Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl"></div>
 
-                  {/* Enhanced Shine Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 transform -translate-x-full group-hover:translate-x-full skew-x-12"></div>
+                    {/* Enhanced Glowing Border Effect */}
+                    <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm"></div>
+                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-lg"></div>
 
-                  <div className="relative z-10">
-                    {/* Enhanced Icon Container */}
-                    <div className="relative mb-8">
-                      <div
-                        className={`${feature.color} w-16 h-16 lg:w-18 lg:h-18 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-500 relative overflow-hidden group-hover:scale-110 group-hover:rotate-6`}
-                      >
-                        {/* Icon Background Effects */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"></div>
-                        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    {/* Enhanced Shine Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 transform -translate-x-full group-hover:translate-x-full skew-x-12"></div>
 
-                        {/* Pulsing Ring Effect */}
-                        <div className="absolute inset-0 rounded-2xl border-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+                    <div className="relative z-10">
+                      {/* Enhanced Icon Container */}
+                      <div className="relative mb-8">
+                        <div
+                          className={`${feature.color} w-16 h-16 lg:w-18 lg:h-18 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-500 relative overflow-hidden group-hover:scale-110 group-hover:rotate-6`}
+                        >
+                          {/* Icon Background Effects */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"></div>
+                          <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-                        <div className="relative z-10 transform group-hover:scale-110 transition-transform duration-500">
-                          {feature.icon}
+                          {/* Pulsing Ring Effect */}
+                          <div className="absolute inset-0 rounded-2xl border-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+
+                          <div className="relative z-10 transform group-hover:scale-110 transition-transform duration-500">
+                            {feature.icon}
+                          </div>
                         </div>
+
+                        {/* Enhanced Floating Particles */}
+                        <div className="absolute -top-3 -right-3 w-4 h-4 bg-gradient-to-br from-blue-400/40 to-cyan-400/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500"></div>
+                        <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gradient-to-br from-purple-400/40 to-pink-400/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200"></div>
+                        <div className="absolute top-1/2 -right-1 w-2 h-2 bg-gradient-to-br from-pink-400/40 to-rose-400/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500 delay-300"></div>
                       </div>
 
-                      {/* Enhanced Floating Particles */}
-                      <div className="absolute -top-3 -right-3 w-4 h-4 bg-gradient-to-br from-blue-400/40 to-cyan-400/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-all duration-500"></div>
-                      <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gradient-to-br from-purple-400/40 to-pink-400/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200"></div>
-                      <div className="absolute top-1/2 -right-1 w-2 h-2 bg-gradient-to-br from-pink-400/40 to-rose-400/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500 delay-300"></div>
+                      {/* Enhanced Typography */}
+                      <h3 className="text-2xl lg:text-3xl font-bold mb-4 transition-all duration-500">
+                        <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-blue-800 transition-all duration-500">
+                          {feature.title}
+                        </span>
+                      </h3>
+
+                      <p className="text-slate-600 text-lg leading-relaxed group-hover:text-slate-700 transition-all duration-500 mb-6">
+                        {feature.description}
+                      </p>
+
+                      {/* Enhanced Arrow Indicator with Better Animation */}
+                      <Link
+                        href={feature.href}
+                        className="flex items-center text-blue-600 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 group-hover:translate-x-1 transition-all duration-500 delay-100"
+                      >
+                        <span className="text-sm font-semibold mr-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                          Learn more
+                        </span>
+                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                      </Link>
                     </div>
 
-                    {/* Enhanced Typography */}
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-4 transition-all duration-500">
-                      <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-blue-800 transition-all duration-500">
-                        {feature.title}
-                      </span>
-                    </h3>
-
-                    <p className="text-slate-600 text-lg leading-relaxed group-hover:text-slate-700 transition-all duration-500 mb-6">
-                      {feature.description}
-                    </p>
-
-                    {/* Enhanced Arrow Indicator with Better Animation */}
-                    <div className="flex items-center text-blue-600 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 group-hover:translate-x-1 transition-all duration-500 delay-100">
-                      <span className="text-sm font-semibold mr-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        Learn more
-                      </span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
+                    {/* Subtle Corner Accents */}
+                    <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-blue-200/0 group-hover:border-blue-300/60 rounded-tr-2xl transition-all duration-500"></div>
+                    <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-purple-200/0 group-hover:border-purple-300/60 rounded-bl-2xl transition-all duration-500 delay-100"></div>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-                  {/* Subtle Corner Accents */}
-                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-blue-200/0 group-hover:border-blue-300/60 rounded-tr-2xl transition-all duration-500"></div>
-                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-purple-200/0 group-hover:border-purple-300/60 rounded-bl-2xl transition-all duration-500 delay-100"></div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => scrollFeatures('left')}
+              className="h-12 w-12 rounded-full bg-primary text-white shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all duration-300 flex items-center justify-center"
+              aria-label="Scroll features left"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollFeatures('right')}
+              className="h-12 w-12 rounded-full bg-primary text-white shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all duration-300 flex items-center justify-center"
+              aria-label="Scroll features right"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Bottom Accent */}
@@ -746,110 +944,84 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          {/* Modern Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Sarah Chen',
-                role: 'CEO, TechStart',
-                avatar: 'SC',
-                rating: 5,
-                text: 'PropelMeta transformed our marketing completely. We saw a 300% increase in qualified leads within the first month.',
-                company: 'TechStart Inc.',
-                color: 'from-blue-500 to-blue-600',
-                accentColor: 'blue',
-              },
-              {
-                name: 'Marcus Rodriguez',
-                role: 'Marketing Director',
-                avatar: 'MR',
-                rating: 5,
-                text: 'The automation features saved us 20+ hours per week. Our team can now focus on strategy instead of manual tasks.',
-                company: 'GrowthCorp',
-                color: 'from-purple-500 to-purple-600',
-                accentColor: 'purple',
-              },
-              {
-                name: 'Emily Watson',
-                role: 'Founder',
-                avatar: 'EW',
-                rating: 5,
-                text: 'Best investment we made this year. The ROI was immediate and continues to compound month over month.',
-                company: 'InnovateLab',
-                color: 'from-pink-500 to-pink-600',
-                accentColor: 'pink',
-              },
-            ].map((testimonial, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                whileHover={{ y: -12, scale: 1.03 }}
-                className="group relative"
-              >
-                <div className="relative p-8 lg:p-10 rounded-3xl bg-white/90 backdrop-blur-xl border border-slate-200/60 hover:border-blue-300/60 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-700 overflow-hidden">
-                  {/* Quote Icon */}
-                  <div
-                    className={`absolute top-6 right-6 text-${testimonial.accentColor}-400/30 group-hover:text-${testimonial.accentColor}-500/50 transition-colors duration-500`}
-                  >
-                    <Quote className="h-8 w-8" />
-                  </div>
+          {/* Auto-scroll Testimonials */}
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
 
-                  {/* Subtle Background Gradient */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br from-${testimonial.accentColor}-50/50 via-transparent to-${testimonial.accentColor}-50/30 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl`}
-                  ></div>
-
-                  {/* Floating Particles */}
-                  <div
-                    className={`absolute top-6 left-6 w-3 h-3 bg-${testimonial.accentColor}-400/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500`}
-                  ></div>
-                  <div
-                    className={`absolute bottom-8 left-12 w-2 h-2 bg-${testimonial.accentColor}-300/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200`}
-                  ></div>
-
-                  <div className="relative z-10">
-                    {/* Rating */}
-                    <div className="flex text-yellow-400 mb-6">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current" />
-                      ))}
-                    </div>
-
-                    {/* Testimonial Text */}
-                    <p className="text-slate-700 text-lg leading-relaxed mb-8 group-hover:text-slate-800 transition-colors duration-500">
-                      "{testimonial.text}"
-                    </p>
-
-                    {/* Author */}
-                    <div className="flex items-center">
-                      <div
-                        className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white font-bold text-sm mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
-                      >
-                        {testimonial.avatar}
-                      </div>
-                      <div>
-                        <p className="text-slate-900 font-semibold group-hover:text-slate-800 transition-colors duration-500">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-slate-600 text-sm group-hover:text-slate-700 transition-colors duration-500">
-                          {testimonial.role}
-                        </p>
-                        <p className="text-slate-500 text-xs group-hover:text-slate-600 transition-colors duration-500">
-                          {testimonial.company}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Subtle Accent Line */}
+            <div
+              ref={testimonialTrackRef}
+              className="flex gap-8 overflow-hidden pb-6"
+            >
+              {loopTestimonials.map((testimonial, idx) => (
+                <motion.div
+                  key={`${testimonial.name}-${idx}`}
+                  whileHover={{ y: -12, scale: 1.03 }}
+                  className="group relative shrink-0 w-[320px] sm:w-[360px] lg:w-[400px]"
+                >
+                  <div className="relative p-8 lg:p-10 rounded-3xl bg-white/90 backdrop-blur-xl border border-slate-200/60 hover:border-blue-300/60 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-700 overflow-hidden">
+                    {/* Quote Icon */}
                     <div
-                      className={`mt-6 w-16 h-0.5 bg-gradient-to-r from-transparent via-${testimonial.accentColor}-300 to-transparent group-hover:via-${testimonial.accentColor}-500 transition-colors duration-500`}
+                      className={`absolute top-6 right-6 text-${testimonial.accentColor}-400/30 group-hover:text-${testimonial.accentColor}-500/50 transition-colors duration-500`}
+                    >
+                      <Quote className="h-8 w-8" />
+                    </div>
+
+                    {/* Subtle Background Gradient */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br from-${testimonial.accentColor}-50/50 via-transparent to-${testimonial.accentColor}-50/30 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl`}
                     ></div>
+
+                    {/* Floating Particles */}
+                    <div
+                      className={`absolute top-6 left-6 w-3 h-3 bg-${testimonial.accentColor}-400/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500`}
+                    ></div>
+                    <div
+                      className={`absolute bottom-8 left-12 w-2 h-2 bg-${testimonial.accentColor}-300/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200`}
+                    ></div>
+
+                    <div className="relative z-10">
+                      {/* Rating */}
+                      <div className="flex text-yellow-400 mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-current" />
+                        ))}
+                      </div>
+
+                      {/* Testimonial Text */}
+                      <p className="text-slate-700 text-lg leading-relaxed mb-8 group-hover:text-slate-800 transition-colors duration-500">
+                        "{testimonial.text}"
+                      </p>
+
+                      {/* Author */}
+                      <div className="flex items-center">
+                        <div
+                          className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white font-bold text-sm mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
+                        >
+                          {testimonial.avatar}
+                        </div>
+                        <div>
+                          <p className="text-slate-900 font-semibold group-hover:text-slate-800 transition-colors duration-500">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-slate-600 text-sm group-hover:text-slate-700 transition-colors duration-500">
+                            {testimonial.role}
+                          </p>
+                          <p className="text-slate-500 text-xs group-hover:text-slate-600 transition-colors duration-500">
+                            {testimonial.company}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Subtle Accent Line */}
+                      <div
+                        className={`mt-6 w-16 h-0.5 bg-gradient-to-r from-transparent via-${testimonial.accentColor}-300 to-transparent group-hover:via-${testimonial.accentColor}-500 transition-colors duration-500`}
+                      ></div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Bottom Accent */}
@@ -1062,50 +1234,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Waitlist Section */}
       <section className="py-20 lg:py-24 xl:py-28 bg-gradient-to-b from-white via-slate-50/30 to-white">
         <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
-          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-blue-900/30">
-            {/* Enhanced Background decoration */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-white/20 to-purple-300/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-300/20 to-white/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-
-            {/* Animated particles */}
-            <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
-              <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-blue-200/40 rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute bottom-1/4 left-2/3 w-1.5 h-1.5 bg-purple-200/40 rounded-full animate-pulse delay-500"></div>
-            </div>
-
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                Ready to transform your business?
+          <div className="rounded-[2.5rem] border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-12 md:p-20 text-center shadow-2xl shadow-blue-700/40">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
+                Get Early Access to PropelMeta
               </h2>
-              <p className="text-xl text-blue-100/90 mb-10 leading-relaxed">
-                Join thousands of businesses using PropelMeta to grow faster and
-                smarter.
+              <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+                Join our waitlist today and be among the first to experience a
+                smarter, faster, and more efficient way to grow your business.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/demo">
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="text-lg px-8 py-6 h-auto rounded-xl bg-white text-blue-700 hover:bg-blue-50 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold"
-                  >
-                    Book a Free Demo
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6 h-auto rounded-xl border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-                  >
-                    Talk to Sales
-                  </Button>
-                </Link>
-              </div>
+              <form className="flex flex-col sm:flex-row items-center gap-4">
+                <Input
+                  type="email"
+                  placeholder="Enter your email*"
+                  className="h-12 text-base bg-white border-slate-200 text-slate-900 placeholder:text-slate-500 focus-visible:ring-blue-500"
+                />
+                <Button
+                  type="submit"
+                  className="h-12 px-8 text-base font-semibold bg-white text-slate-900 hover:bg-slate-100"
+                >
+                  Submit
+                </Button>
+              </form>
             </div>
           </div>
         </div>

@@ -12,10 +12,17 @@ import {
   ShoppingCart,
   Zap,
   ArrowRight,
+  Megaphone,
+  PenTool,
+  Code2,
+  Search,
+  Bot,
+  Headphones,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import logo from '@/assests/logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,46 +42,56 @@ export function Layout({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    // { name: 'About', href: '/about' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
+  ];
   const services = [
     {
-      name: 'AI Website Builder',
-      href: '/services/website-builder',
-      icon: <Globe className="h-4 w-4" />,
-      description: 'Create stunning websites in minutes',
+      name: 'Social Media Management',
+      href: '/services/social-media-management',
+      icon: <Megaphone className="h-4 w-4" />,
+      description: 'Build trust, consistency, and engagement',
     },
     {
-      name: 'Marketing Automation',
-      href: '/services/marketing-automation',
-      icon: <MessageSquare className="h-4 w-4" />,
-      description: 'Automated email & SMS campaigns',
+      name: 'Content Creation',
+      href: '/services/content-creation',
+      icon: <PenTool className="h-4 w-4" />,
+      description: 'Scroll-stopping visuals and videos',
     },
     {
-      name: 'Branded Mobile Apps',
-      href: '/services/mobile-apps',
-      icon: <Smartphone className="h-4 w-4" />,
-      description: 'iOS and Android apps for your brand',
+      name: 'Website & App Development',
+      href: '/services/web-app-development',
+      icon: <Code2 className="h-4 w-4" />,
+      description: 'High-performance sites and apps',
     },
     {
-      name: 'Online Sales System',
-      href: '/services/online-sales',
-      icon: <ShoppingCart className="h-4 w-4" />,
-      description: 'Complete e-commerce solution',
+      name: 'SEO & Paid Advertising',
+      href: '/services/seo-paid-advertising',
+      icon: <Search className="h-4 w-4" />,
+      description: 'Performance-driven growth',
     },
-  ];
-
-  const navLinks = [
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' },
+    {
+      name: 'Automation & AI',
+      href: '/services/automation-ai',
+      icon: <Bot className="h-4 w-4" />,
+      description: 'Smarter systems that boost ROI',
+    },
+    {
+      name: 'Online & Client Support',
+      href: '/services/online-support',
+      icon: <Headphones className="h-4 w-4" />,
+      description: 'Reliable support for daily operations',
+    },
   ];
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100'
-            : 'bg-transparent'
+          isScrolled ? 'bg-white' : 'bg-transparent'
         }`}
       >
         <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
@@ -84,16 +101,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
               href="/"
               className="flex items-center space-x-2 group cursor-pointer"
             >
-              <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-                <BarChart2 className="h-6 w-6 text-primary" />
-              </div>
-              <span className="text-xl font-bold font-display tracking-tight text-slate-900">
-                PropelMeta<span className="text-primary">.</span>
-              </span>
+              <img
+                src={logo}
+                alt="PropelMeta"
+                className="h-16 w-auto"
+                loading="lazy"
+              />
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.slice(0, 2).map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    location === link.href ? 'text-primary' : 'text-slate-600'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
               {/* Services Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors focus:outline-none data-[state=open]:text-primary">
@@ -155,7 +184,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </DropdownMenu>
 
               {/* Other Nav Links */}
-              {navLinks.map((link) => (
+              {navLinks.slice(2).map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -193,6 +222,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </SheetTrigger>
                 <SheetContent>
                   <div className="flex flex-col space-y-6 mt-8">
+                    {navLinks.slice(0, 2).map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        className="text-lg font-medium text-slate-900 hover:text-primary"
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+
+                    <div className="h-px bg-border" />
+
                     {/* Services Section */}
                     <div>
                       <h3 className="text-lg font-medium text-slate-900 mb-4">
@@ -219,7 +260,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <div className="h-px bg-border" />
 
                     {/* Other Nav Links */}
-                    {navLinks.map((link) => (
+                    {navLinks.slice(2).map((link) => (
                       <Link
                         key={link.name}
                         href={link.href}
