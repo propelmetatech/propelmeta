@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -81,7 +81,7 @@ export default function OnlineSupport() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-slate-300/30 to-indigo-300/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -93,10 +93,10 @@ export default function OnlineSupport() {
                 Online and Client Support
               </div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">
-                Reliable Support for Smooth Business Operations
+                Reliable Online & Client Support for Smooth Business Operations
               </p>
               <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
-                Online Support and Client Support Services
+                Online Support & Client Support Services
               </h1>
               <p className="text-xl text-slate-600 mb-6 leading-relaxed">
                 At PropelMeta Tech, we provide professional online support and
@@ -145,7 +145,7 @@ export default function OnlineSupport() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
                 <img
                   src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=900&fit=crop&crop=center"
                   alt="Online support team"
@@ -158,8 +158,11 @@ export default function OnlineSupport() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+      <section
+        id="online-support-services"
+        className="py-20 bg-white scroll-mt-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
               Online Support Services
@@ -170,8 +173,8 @@ export default function OnlineSupport() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-3xl border border-slate-100 bg-slate-50/70 p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 What Our Online Support Includes
               </h3>
@@ -184,7 +187,7 @@ export default function OnlineSupport() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 Benefits of Our Online Support
               </h3>
@@ -201,8 +204,11 @@ export default function OnlineSupport() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100/60">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+      <section
+        id="client-support-services"
+        className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 scroll-mt-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
               Client Support Services
@@ -213,8 +219,8 @@ export default function OnlineSupport() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <div className="flex items-center gap-3 mb-6">
                 <Headphones className="h-6 w-6 text-slate-700" />
                 <h3 className="text-2xl font-semibold text-slate-900">
@@ -230,7 +236,7 @@ export default function OnlineSupport() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <div className="flex items-center gap-3 mb-6">
                 <Shield className="h-6 w-6 text-slate-700" />
                 <h3 className="text-2xl font-semibold text-slate-900">
@@ -250,10 +256,13 @@ export default function OnlineSupport() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="rounded-3xl border border-slate-100 bg-slate-50/70 p-8 shadow-sm">
+      <section
+        id="how-our-support-works"
+        className="py-20 bg-white scroll-mt-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 How Our Support Services Work
               </h3>
@@ -267,8 +276,12 @@ export default function OnlineSupport() {
                   </li>
                 ))}
               </ol>
+              <p className="text-slate-600 mt-6">
+                All support services are handled by our trained team - no
+                outsourcing.
+              </p>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 Who This Service Is Ideal For
               </h3>
@@ -283,7 +296,7 @@ export default function OnlineSupport() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+          <div className="mt-12 rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
             <h3 className="text-2xl font-semibold text-slate-900 mb-6">
               Why Choose PropelMeta Tech for Support Services?
             </h3>
@@ -299,8 +312,8 @@ export default function OnlineSupport() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100/60">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+      <section id="faqs" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 scroll-mt-28">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold font-display text-slate-900">
               Frequently Asked Questions
@@ -311,9 +324,9 @@ export default function OnlineSupport() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-900">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] text-center">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
           <h2 className="text-4xl font-bold font-display text-white mb-6">
-            Get Reliable Online and Client Support Today
+            Get Reliable Online & Client Support Today
           </h2>
           <p className="text-xl text-slate-200/90 mb-10 max-w-2xl mx-auto">
             Let us handle your online platforms and client communication while
@@ -344,3 +357,6 @@ export default function OnlineSupport() {
     </Layout>
   );
 }
+
+
+

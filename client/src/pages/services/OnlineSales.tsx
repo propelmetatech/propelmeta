@@ -165,7 +165,7 @@ export default function OnlineSales() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-red-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -233,7 +233,7 @@ export default function OnlineSales() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
                 <img
                   src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?w=800&h=600&fit=crop&crop=center"
                   alt="E-commerce Dashboard"
@@ -248,7 +248,7 @@ export default function OnlineSales() {
 
       {/* Pricing Comparison Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -358,7 +358,7 @@ export default function OnlineSales() {
 
       {/* Sales Channels Section */}
       <section className="py-24 bg-gradient-to-br from-slate-50 to-orange-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -378,7 +378,7 @@ export default function OnlineSales() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group p-8 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-slate-100/50"
+                className="group p-8 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-slate-200/70/50"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {channel.icon}
@@ -408,7 +408,7 @@ export default function OnlineSales() {
 
       {/* Features Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -428,7 +428,7 @@ export default function OnlineSales() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group p-8 rounded-2xl bg-slate-50/50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100/50"
+                className="group p-8 rounded-2xl bg-slate-50/50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-200/70/50"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
@@ -447,7 +447,7 @@ export default function OnlineSales() {
 
       {/* Benefits Section */}
       <section className="py-24 bg-gradient-to-br from-orange-50 to-red-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -497,7 +497,7 @@ export default function OnlineSales() {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -546,7 +546,7 @@ export default function OnlineSales() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-700">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
               Ready to Keep 100% of Your Profits?
@@ -583,3 +583,6 @@ export default function OnlineSales() {
     </Layout>
   );
 }
+
+
+

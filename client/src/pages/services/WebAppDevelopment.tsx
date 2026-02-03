@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -85,7 +85,7 @@ export default function WebAppDevelopment() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -94,13 +94,13 @@ export default function WebAppDevelopment() {
             >
               <div className="inline-flex items-center rounded-full border border-indigo-200/50 bg-white/80 px-4 py-2 text-sm font-medium text-indigo-600 mb-6">
                 <Globe className="h-4 w-4 mr-2" />
-                Website Design and SEO
+                Website Design, Development & SEO Optimization
               </div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4">
                 High-Performance Websites Built to Rank and Convert
               </p>
               <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
-                Website Design, Development, and SEO Optimization Services
+                Website Design, Development & SEO Optimization Services
               </h1>
               <p className="text-xl text-slate-600 mb-6 leading-relaxed">
                 At PropelMeta Tech, we provide complete website design,
@@ -110,8 +110,8 @@ export default function WebAppDevelopment() {
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 We design modern, mobile-friendly websites and optimize them for
-                visibility, speed, and performance so your website works as a
-                powerful business tool.
+                visibility, speed, and performance - ensuring your website
+                works as a powerful business tool.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -149,7 +149,7 @@ export default function WebAppDevelopment() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
                 <img
                   src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&h=900&fit=crop&crop=center"
                   alt="Website development"
@@ -162,22 +162,26 @@ export default function WebAppDevelopment() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+      <section
+        id="website-design-development"
+        className="py-20 bg-white scroll-mt-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
-              Website Design and Development Services
+              Website Design & Development Services
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Modern, responsive, and business-ready websites that load fast and
-              work across all devices.
+              Your website is often the first impression of your brand. We
+              build professional websites that look clean, load fast, and
+              function smoothly across all devices.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-3xl border border-slate-100 bg-slate-50/70 p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-                What Is Included
+                What's Included in Our Website Service
               </h3>
               <ul className="space-y-3 text-slate-600">
                 {websiteIncludes.map((item) => (
@@ -188,7 +192,7 @@ export default function WebAppDevelopment() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 What You Get
               </h3>
@@ -205,11 +209,14 @@ export default function WebAppDevelopment() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+      <section
+        id="seo-website-optimization"
+        className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
-              SEO and Website Optimization Services
+              SEO & Website Optimization Services
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
               Improve visibility, rankings, and local reach so customers can
@@ -217,12 +224,12 @@ export default function WebAppDevelopment() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <div className="flex items-center gap-3 mb-6">
                 <Search className="h-6 w-6 text-indigo-600" />
                 <h3 className="text-2xl font-semibold text-slate-900">
-                  Our SEO and Optimization Services Include
+                  Our SEO & Optimization Services Include
                 </h3>
               </div>
               <ul className="space-y-3 text-slate-600">
@@ -234,7 +241,7 @@ export default function WebAppDevelopment() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 Benefits of SEO Optimization
               </h3>
@@ -251,12 +258,15 @@ export default function WebAppDevelopment() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="rounded-3xl border border-slate-100 bg-slate-50/70 p-8 shadow-sm">
+      <section
+        id="how-our-website-seo-works"
+        className="py-20 bg-white scroll-mt-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-                How Our Website and SEO Service Works
+                How Our Website & SEO Service Works
               </h3>
               <ol className="space-y-4 text-slate-600">
                 {processSteps.map((step, index) => (
@@ -269,10 +279,10 @@ export default function WebAppDevelopment() {
                 ))}
               </ol>
               <p className="text-slate-600 mt-6">
-                Everything is handled by our team from design to optimization.
+                Everything is handled by our team - from design to optimization.
               </p>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 Who This Service Is Ideal For
               </h3>
@@ -287,7 +297,7 @@ export default function WebAppDevelopment() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+          <div className="mt-12 rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
             <h3 className="text-2xl font-semibold text-slate-900 mb-6">
               Why Choose PropelMeta Tech?
             </h3>
@@ -303,8 +313,8 @@ export default function WebAppDevelopment() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+      <section id="faqs" className="py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 scroll-mt-28">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold font-display text-slate-900">
               Frequently Asked Questions
@@ -315,9 +325,9 @@ export default function WebAppDevelopment() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-indigo-600 via-blue-700 to-indigo-700">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] text-center">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
           <h2 className="text-4xl font-bold font-display text-white mb-6">
-            Get Your Website Built and Optimized Today
+            Get Your Website Built & Optimized Today
           </h2>
           <p className="text-xl text-blue-100/90 mb-10 max-w-2xl mx-auto">
             Let us build a professional website that attracts traffic and
@@ -339,7 +349,7 @@ export default function WebAppDevelopment() {
                 variant="outline"
                 className="text-lg px-8 py-6 rounded-xl border-white/80 text-white"
               >
-                Contact PropelMeta Tech Today
+                Contact PropelMeta Tech to Get Started
               </Button>
             </Link>
           </div>
@@ -348,3 +358,6 @@ export default function WebAppDevelopment() {
     </Layout>
   );
 }
+
+
+
