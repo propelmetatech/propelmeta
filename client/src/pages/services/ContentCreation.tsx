@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -66,7 +66,7 @@ export default function ContentCreation() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -123,7 +123,7 @@ export default function ContentCreation() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
                 <img
                   src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200&h=900&fit=crop&crop=center"
                   alt="Content creation"
@@ -137,7 +137,7 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
               Our Content Creation Services Include
@@ -148,8 +148,8 @@ export default function ContentCreation() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-3xl border border-slate-100 bg-slate-50/70 p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
               <ul className="space-y-3 text-slate-600">
                 {contentIncludes.map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -159,7 +159,7 @@ export default function ContentCreation() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <div className="flex items-center gap-3 mb-6">
                 <Palette className="h-6 w-6 text-purple-600" />
                 <h3 className="text-2xl font-semibold text-slate-900">
@@ -180,9 +180,9 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 Who This Service Is For
               </h3>
@@ -195,7 +195,7 @@ export default function ContentCreation() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">
                 How Our Service Works
               </h3>
@@ -212,7 +212,7 @@ export default function ContentCreation() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+          <div className="mt-12 rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
             <h3 className="text-2xl font-semibold text-slate-900 mb-6">
               Why Choose PropelMeta Tech?
             </h3>
@@ -229,7 +229,7 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold font-display text-slate-900">
               Frequently Asked Questions
@@ -240,7 +240,7 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] text-center">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
           <h2 className="text-4xl font-bold font-display text-white mb-6">
             Elevate Your Content Today
           </h2>
@@ -272,3 +272,6 @@ export default function ContentCreation() {
     </Layout>
   );
 }
+
+
+

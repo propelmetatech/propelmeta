@@ -142,7 +142,7 @@ export default function MobileApps() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -210,7 +210,7 @@ export default function MobileApps() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
                 <img
                   src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&crop=center"
                   alt="Mobile App Interface"
@@ -225,7 +225,7 @@ export default function MobileApps() {
 
       {/* App Types Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -275,7 +275,7 @@ export default function MobileApps() {
 
       {/* Features Section */}
       <section className="py-24 bg-gradient-to-br from-slate-50 to-pink-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -295,7 +295,7 @@ export default function MobileApps() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group p-8 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-slate-100/50"
+                className="group p-8 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-slate-200/70/50"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
@@ -314,7 +314,7 @@ export default function MobileApps() {
 
       {/* Benefits Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -364,7 +364,7 @@ export default function MobileApps() {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-gradient-to-br from-pink-50 to-purple-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -413,7 +413,7 @@ export default function MobileApps() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-pink-600 via-pink-700 to-purple-700">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
               Ready to Launch Your Mobile App?
@@ -450,3 +450,6 @@ export default function MobileApps() {
     </Layout>
   );
 }
+
+
+

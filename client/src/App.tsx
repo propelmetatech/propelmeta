@@ -14,6 +14,7 @@ const Blog = lazy(() => import('@/pages/Blog'));
 const BlogPost = lazy(() => import('@/pages/BlogPost'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Demo = lazy(() => import('@/pages/Demo'));
+const BookCalendar = lazy(() => import('@/pages/BookCalendar'));
 // Service Pages
 const WebsiteBuilder = lazy(() => import('@/pages/services/WebsiteBuilder'));
 const MarketingAutomation = lazy(
@@ -44,6 +45,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contact" component={Contact} />
+      <Route path="/book-calendar" component={BookCalendar} />
       <Route path="/demo" component={Demo} />
       {/* Service Routes */}
       <Route path="/services/website-builder" component={WebsiteBuilder} />
