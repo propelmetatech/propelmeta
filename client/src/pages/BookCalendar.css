@@ -1,0 +1,90 @@
+.calendar-page {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  padding: 24px 0 72px;
+  background: #f8fafc;
+}
+
+.calendar-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.calendly-widget-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  position: relative;
+  height: 900px;
+  min-width: 320px;
+}
+
+.calendly-iframe {
+  width: 100% !important;
+  height: 900px !important;
+  min-width: 320px !important;
+  border: none;
+}
+
+.loading-indicator {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  background: rgba(248, 250, 252, 0.95);
+  gap: 12px;
+}
+
+.loading-indicator p {
+  margin-bottom: 8px;
+  color: #475569;
+  font-size: 16px;
+}
+
+.spinner {
+  margin: 12px auto;
+  width: 44px;
+  height: 44px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .calendar-page {
+    padding: 16px 0 56px;
+  }
+
+  .calendar-section {
+    padding: 0 14px;
+  }
+
+  .calendly-widget-container {
+    height: 720px;
+    border-radius: 12px;
+  }
+
+  .calendly-iframe {
+    height: 720px !important;
+  }
+
+  .loading-indicator {
+    padding: 20px;
+  }
+}
