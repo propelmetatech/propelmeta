@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -103,8 +103,8 @@ export default function SocialMediaManagement() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -117,7 +117,7 @@ export default function SocialMediaManagement() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 mb-4">
                 Professional Social Media Posting, Design & Brand Execution
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
                 Social Media Management, Content Creation, and Brand Management
                 Services
               </h1>
@@ -135,7 +135,7 @@ export default function SocialMediaManagement() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/pricing">
-                  <Button size="lg" className="text-lg px-8 py-6 rounded-xl">
+                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl">
                     Start Free Trial
                   </Button>
                 </Link>
@@ -143,7 +143,7 @@ export default function SocialMediaManagement() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
                   >
                     Contact PropelMeta Tech
                   </Button>
@@ -185,10 +185,10 @@ export default function SocialMediaManagement() {
         id="social-media-management-services"
         className="py-20 bg-white scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
                 Social Media Management Services
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl">
@@ -251,10 +251,10 @@ export default function SocialMediaManagement() {
         id="content-creation-services"
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="lg:order-2 space-y-6">
-              <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
                 Content Creation Services
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl">
@@ -317,10 +317,10 @@ export default function SocialMediaManagement() {
         id="brand-management-services"
         className="py-20 bg-white scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
                 Brand Management Services
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl">
@@ -374,8 +374,8 @@ export default function SocialMediaManagement() {
         id="how-our-service-works"
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="lg:order-2">
               <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <h3 className="text-2xl font-semibold text-slate-900 mb-6">
@@ -440,9 +440,9 @@ export default function SocialMediaManagement() {
       </section>
 
       <section id="faqs" className="py-20 bg-white scroll-mt-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold font-display text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>
@@ -451,8 +451,8 @@ export default function SocialMediaManagement() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
-          <h2 className="text-4xl font-bold font-display text-white mb-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">
             Get Started with Social Media and Brand Management
           </h2>
           <p className="text-xl text-blue-100/90 mb-10 max-w-2xl mx-auto">
@@ -464,7 +464,7 @@ export default function SocialMediaManagement() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="text-lg px-8 py-6 rounded-xl bg-white text-blue-700"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl bg-white text-blue-700"
               >
                 Start Free Trial
               </Button>
@@ -473,7 +473,7 @@ export default function SocialMediaManagement() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-6 rounded-xl border-white/80 text-white"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/80 text-white"
               >
                 Contact PropelMeta Tech Today
               </Button>
@@ -484,6 +484,7 @@ export default function SocialMediaManagement() {
     </Layout>
   );
 }
+
 
 
 

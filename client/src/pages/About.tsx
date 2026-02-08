@@ -55,7 +55,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ export default function About() {
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tl from-blue-500/30 to-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -268,7 +268,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -379,7 +379,7 @@ export default function About() {
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tl from-blue-500/20 to-cyan-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -540,3 +540,4 @@ export default function About() {
     </Layout>
   );
 }
+

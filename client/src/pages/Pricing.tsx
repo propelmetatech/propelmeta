@@ -50,7 +50,7 @@ export default function Pricing() {
           ></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10 py-24 lg:py-32">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10 py-24 lg:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center rounded-full border border-blue-400/40 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur mb-6">
               Transparent plans, built for scale
@@ -134,3 +134,4 @@ export default function Pricing() {
     </Layout>
   );
 }
+

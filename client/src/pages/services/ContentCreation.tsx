@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -68,8 +68,8 @@ export default function ContentCreation() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -82,7 +82,7 @@ export default function ContentCreation() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple-600 mb-4">
                 Custom Posters, Graphics, and Reels for Social Media
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
                 Content Creation That Tells Your Story
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
@@ -92,7 +92,7 @@ export default function ContentCreation() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/pricing">
-                  <Button size="lg" className="text-lg px-8 py-6 rounded-xl">
+                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl">
                     Start Free Trial
                   </Button>
                 </Link>
@@ -100,7 +100,7 @@ export default function ContentCreation() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
                   >
                     Contact PropelMeta Tech
                   </Button>
@@ -139,10 +139,10 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
                 Our Content Creation Services Include
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl">
@@ -195,7 +195,7 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="lg:order-2">
               <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
@@ -256,9 +256,9 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold font-display text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>
@@ -267,8 +267,8 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
-          <h2 className="text-4xl font-bold font-display text-white mb-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">
             Elevate Your Content Today
           </h2>
           <p className="text-xl text-purple-100/90 mb-10 max-w-2xl mx-auto">
@@ -279,7 +279,7 @@ export default function ContentCreation() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="text-lg px-8 py-6 rounded-xl bg-white text-purple-700"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl bg-white text-purple-700"
               >
                 Start Free Trial
               </Button>
@@ -288,7 +288,7 @@ export default function ContentCreation() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-6 rounded-xl border-white/80 text-white"
+                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/80 text-white"
               >
                 Contact PropelMeta Tech Today
               </Button>
@@ -299,6 +299,7 @@ export default function ContentCreation() {
     </Layout>
   );
 }
+
 
 
 

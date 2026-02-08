@@ -204,13 +204,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col overflow-x-hidden font-sans">
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? 'bg-white' : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link
@@ -422,7 +422,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="flex-grow pt-20">{children}</main>
+      <main className="flex-grow overflow-x-hidden pt-20">{children}</main>
 
       <footer className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 text-slate-900 py-16 lg:py-20">
         <div className="pointer-events-none absolute inset-0">
@@ -430,7 +430,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="absolute bottom-0 left-[-10%] h-64 w-64 rounded-full bg-cyan-300/15 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="relative mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           <div className="rounded-3xl bg-white p-8 sm:p-10 lg:p-12 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/80">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
               <div className="lg:col-span-2">
@@ -597,3 +597,4 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
