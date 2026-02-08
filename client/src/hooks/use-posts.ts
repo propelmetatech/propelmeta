@@ -2,9 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { api, buildUrl } from "@/lib/api";
 import { BLOG_POSTS } from "@/data/blogPosts";
 
+const postsVersion = BLOG_POSTS.map((post) => post.slug).join("|");
+
 export function usePosts() {
   return useQuery({
-    queryKey: [api.posts.list.path],
+    queryKey: [api.posts.list.path, postsVersion],
     queryFn: async () => {
       try {
         const res = await fetch(api.posts.list.path);
@@ -20,7 +22,7 @@ export function usePosts() {
 
 export function usePost(slug: string) {
   return useQuery({
-    queryKey: [api.posts.get.path, slug],
+    queryKey: [api.posts.get.path, slug, postsVersion],
     queryFn: async () => {
       const fallback = BLOG_POSTS.find((post) => post.slug === slug) ?? null;
 

@@ -5,6 +5,57 @@ import { format } from "date-fns";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
+function renderBlogContent(content: string) {
+  const lines = content.split("\n");
+  const blocks: JSX.Element[] = [];
+  let listItems: string[] = [];
+  let key = 0;
+
+  const flushList = () => {
+    if (!listItems.length) return;
+    blocks.push(
+      <ul key={`ul-${key++}`} className="list-disc pl-6">
+        {listItems.map((item, idx) => (
+          <li key={`li-${key}-${idx}`}>{item}</li>
+        ))}
+      </ul>,
+    );
+    listItems = [];
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushList();
+      continue;
+    }
+
+    if (line.startsWith("## ")) {
+      flushList();
+      blocks.push(<h2 key={`h2-${key++}`}>{line.slice(3)}</h2>);
+      continue;
+    }
+
+    if (line.startsWith("### ")) {
+      flushList();
+      blocks.push(<h3 key={`h3-${key++}`}>{line.slice(4)}</h3>);
+      continue;
+    }
+
+    if (line.startsWith("- ")) {
+      listItems.push(line.slice(2));
+      continue;
+    }
+
+    flushList();
+    blocks.push(<p key={`p-${key++}`}>{line}</p>);
+  }
+
+  flushList();
+  return blocks;
+}
+
 export default function BlogPost() {
   const [, params] = useRoute("/blog/:slug");
   const slug = params?.slug || "";
@@ -82,9 +133,7 @@ export default function BlogPost() {
 
         <section className="container mx-auto px-6 max-w-3xl mt-12">
           <div className="prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-primary">
-            {post.content.split("\n").map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
-            ))}
+            {renderBlogContent(post.content)}
           </div>
         </section>
       </article>

@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { CheckCircle, PenTool, Palette } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import contentServiceImage from '@/assests/Content Creation.png';
+import contentProcessImage from '@/assests/Content Creation_1.png';
 
 export default function ContentCreation() {
   const contentIncludes = [
@@ -138,42 +140,55 @@ export default function ContentCreation() {
 
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
-              Our Content Creation Services Include
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              High-quality content that visually represents your brand and
-              attracts attention.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
+                Our Content Creation Services Include
+              </h2>
+              <p className="text-lg text-slate-600 max-w-3xl">
+                High-quality content that visually represents your brand and
+                attracts attention.
+              </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
-              <ul className="space-y-3 text-slate-600">
-                {contentIncludes.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-              <div className="flex items-center gap-3 mb-6">
-                <Palette className="h-6 w-6 text-purple-600" />
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  Benefits of Our Content Creation
-                </h3>
+              <div className="mt-8 grid grid-cols-1 gap-6">
+                <div className="rounded-3xl border border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
+                  <ul className="space-y-3 text-slate-600">
+                    {contentIncludes.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Palette className="h-6 w-6 text-purple-600" />
+                    <h3 className="text-2xl font-semibold text-slate-900">
+                      Benefits of Our Content Creation
+                    </h3>
+                  </div>
+                  <ul className="space-y-3 text-slate-600">
+                    {contentBenefits.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <ul className="space-y-3 text-slate-600">
-                {contentBenefits.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            </div>
+
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
+                <img
+                  src={contentServiceImage}
+                  alt="Content creation services"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -181,48 +196,60 @@ export default function ContentCreation() {
 
       <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-                Who This Service Is For
-              </h3>
-              <ul className="space-y-3 text-slate-600">
-                {audiences.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-                How Our Service Works
-              </h3>
-              <ol className="space-y-4 text-slate-600">
-                {processSteps.map((step, index) => (
-                  <li key={step} className="flex gap-4">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white text-sm font-semibold">
-                      {index + 1}
-                    </span>
-                    <span className="leading-relaxed">{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-
-          <div className="mt-12 rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-              Why Choose PropelMeta Tech?
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
-              {reasons.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                  <span>{item}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="lg:order-2">
+              <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  Who This Service Is For
+                </h3>
+                <ul className="space-y-3 text-slate-600">
+                  {audiences.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  How Our Service Works
+                </h3>
+                <ol className="space-y-4 text-slate-600">
+                  {processSteps.map((step, index) => (
+                    <li key={step} className="flex gap-4">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white text-sm font-semibold">
+                        {index + 1}
+                      </span>
+                      <span className="leading-relaxed">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  Why Choose PropelMeta Tech?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
+                  {reasons.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="relative lg:order-1">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
+                <img
+                  src={contentProcessImage}
+                  alt="Content creation process"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10"></div>
+              </div>
             </div>
           </div>
         </div>

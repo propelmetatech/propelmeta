@@ -38,6 +38,10 @@ import { Input } from '@/components/ui/input';
 import { Layout } from '@/components/Layout';
 import { AutoScrollCarousel } from '@/components/AutoScrollCarousel';
 import { useEffect, useRef, useState } from 'react';
+import socialMediaImage from '@/assests/Social Media Management.png';
+import websiteDesignImage from '@/assests/Website Design & Development Services.png';
+import paidAdsImage from '@/assests/Paid Advertising, Marketing Automation & AI Automation.png';
+import supportImage from '@/assests/Online Support & Client Support Services.png';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -46,35 +50,9 @@ export default function Home() {
   const carouselItems = [
     {
       id: 1,
-      image:
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=center',
-      title: 'Social Media Management',
-      description: 'Build trust, consistency, and engagement across platforms.',
-      stats: {
-        label: 'Engagement Lift',
-        value: '+62% Avg',
-        color: 'bg-indigo-500',
-      },
-    },
-    {
-      id: 2,
-      image:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&h=600&fit=crop&crop=center',
-      title: 'Content Creation',
-      description: 'Scroll-stopping visuals and videos that tell your story.',
-      stats: {
-        label: 'Content Output',
-        value: '4x Monthly',
-        color: 'bg-sky-500',
-      },
-    },
-    {
-      id: 3,
-      image:
-        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=600&fit=crop&crop=center',
-      title: 'Website & App Development',
-      description:
-        'High-performance websites and mobile apps built to convert.',
+      image: websiteDesignImage,
+      title: 'Website Design, Development & SEO',
+      description: 'High-converting websites with SEO-ready structure.',
       stats: {
         label: 'Performance Score',
         value: '95+ Lighthouse',
@@ -82,11 +60,23 @@ export default function Home() {
       },
     },
     {
-      id: 4,
-      image:
-        'https://images.unsplash.com/photo-1556155092-8707de31f9c4?w=800&h=600&fit=crop&crop=center',
-      title: 'SEO & Paid Advertising',
-      description: 'Be found faster and scale with performance-driven ads.',
+      id: 2,
+      image: socialMediaImage,
+      title: 'Social Media Management',
+      description:
+        'Grow your presence with consistent posts, reels, and visuals.',
+      stats: {
+        label: 'Engagement Lift',
+        value: '+62% Avg',
+        color: 'bg-indigo-500',
+      },
+    },
+    {
+      id: 3,
+      image: paidAdsImage,
+      title: 'Paid Ads, Marketing & AI Automation',
+      description:
+        'Performance-driven campaigns with automation that scales ROI.',
       stats: {
         label: 'Qualified Leads',
         value: '+3.1x',
@@ -94,14 +84,13 @@ export default function Home() {
       },
     },
     {
-      id: 5,
-      image:
-        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&crop=center',
-      title: 'Automation & AI',
-      description: 'Smarter systems that save time and boost ROI.',
+      id: 4,
+      image: supportImage,
+      title: 'Online & Client Support',
+      description: 'Fast, reliable support that keeps operations moving.',
       stats: {
-        label: 'Hours Saved',
-        value: '120+ /mo',
+        label: 'Response Time',
+        value: '< 15 min',
         color: 'bg-emerald-500',
       },
     },
@@ -315,16 +304,23 @@ export default function Home() {
                   New: Next-Gen AI Marketing Suite
                 </span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold font-display text-slate-900 leading-[1.1] mb-8">
-                Transform Your Business with <br />
+              <h1 className="text-5xl md:text-7xl font-bold font-display text-slate-900 leading-[1.1] mb-6">
+                Grow Your Brand Faster with <br />
                 <span className="text-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Intelligent Marketing
+                  Smart Digital Marketing
                 </span>
               </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Harness the power of AI-driven insights, automation, and
-                personalization to accelerate growth and maximize ROI across all
-                your marketing channels.
+              {/* <p className="text-lg md:text-xl font-semibold text-slate-700 mb-4 max-w-xl">
+                Transform Your Business with Intelligent Digital Marketing
+              </p> */}
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed max-w-xl">
+                PropelMeta Tech helps restaurants and modern businesses attract
+                more customers, increase online visibility, and scale faster
+                using data-driven marketing, creative content, and automation.
+              </p>
+              <p className="text-base text-slate-500 mb-10 max-w-xl">
+                All-in-one marketing solutions. Measurable growth. Zero
+                guesswork.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link href="/pricing">
@@ -333,17 +329,19 @@ export default function Home() {
                     className="text-lg px-10 py-7 rounded-2xl shadow-2xl shadow-blue-500/30 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl hover:shadow-blue-500/40"
                   >
                     <Rocket className="h-5 w-5 mr-2" />
-                    Start Free Trial
+                    Get Started
                   </Button>
                 </Link>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg px-10 py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  <BarChart3 className="h-5 w-5 mr-2" />
-                  View Demo
-                </Button>
+                <Link href="/book-calendar">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-lg px-10 py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <ArrowRight className="h-5 w-5 mr-2" />
+                    Book a Demo
+                  </Button>
+                </Link>
               </div>
 
               {/* Enhanced Social Proof */}
