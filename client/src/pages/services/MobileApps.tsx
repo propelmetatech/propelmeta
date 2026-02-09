@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import {
@@ -142,8 +143,8 @@ export default function MobileApps() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -154,7 +155,7 @@ export default function MobileApps() {
                 Branded Mobile Apps
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
                 Stay in Your Customers'{' '}
                 <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Pockets
@@ -171,7 +172,7 @@ export default function MobileApps() {
                 <Link href="/demo">
                   <Button
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl shadow-xl shadow-pink-500/25 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-pink-500/25 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700"
                   >
                     <Download className="h-5 w-5 mr-2" />
                     Launch Your App
@@ -181,14 +182,14 @@ export default function MobileApps() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
                   >
                     View App Examples
                   </Button>
                 </Link>
               </div>
 
-              <div className="flex items-center gap-6 text-sm text-slate-600">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-slate-600">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>iOS & Android</span>
@@ -225,9 +226,9 @@ export default function MobileApps() {
 
       {/* App Types Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Apps for Every Business
               </span>
@@ -275,9 +276,9 @@ export default function MobileApps() {
 
       {/* Features Section */}
       <section className="py-24 bg-gradient-to-br from-slate-50 to-pink-50/30">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Powerful App Features
               </span>
@@ -314,14 +315,14 @@ export default function MobileApps() {
 
       {/* Benefits Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold font-display mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
                 <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Why Mobile Apps Win
                 </span>
@@ -364,9 +365,9 @@ export default function MobileApps() {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-gradient-to-br from-pink-50 to-purple-50/30">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 App Success Stories
               </span>
@@ -411,45 +412,11 @@ export default function MobileApps() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-600 via-pink-700 to-purple-700">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
-              Ready to Launch Your Mobile App?
-            </h2>
-            <p className="text-xl text-pink-100/90 mb-10 max-w-2xl mx-auto">
-              Join hundreds of businesses using mobile apps to increase customer
-              loyalty and drive more sales.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/demo">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="text-lg px-8 py-6 rounded-xl bg-white text-pink-700 hover:bg-pink-50"
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Start Building
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg px-8 py-6 rounded-xl border-white/80 text-white hover:bg-white/10"
-                >
-                  See App Demo
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-mobile-apps" />
     </Layout>
   );
 }
+
 
 
 

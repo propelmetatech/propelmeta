@@ -45,35 +45,35 @@ export default function Products() {
 
   return (
     <Layout>
-      <div className="bg-slate-50 py-20">
+      <div className="bg-slate-50 py-14 sm:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold font-display text-slate-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900 mb-6">
             Our <span className="text-primary">Products</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
             A comprehensive suite of tools built to help your business grow online, offline, and everywhere in between.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-20">
-        <div className="space-y-32">
+      <div className="container mx-auto px-4 py-14 sm:py-20">
+        <div className="space-y-20 sm:space-y-24 lg:space-y-32">
           {products.map((product, index) => (
             <div 
               key={product.id} 
-              className={`flex flex-col lg:flex-row gap-16 items-center ${
+              className={`flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <div className="flex-1 space-y-8">
+              <div className="flex-1 space-y-6 sm:space-y-8">
                 <div className="inline-flex p-3 rounded-2xl bg-slate-100 mb-4">
                   {product.icon}
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold font-display text-slate-900 mb-2">{product.title}</h2>
-                  <p className="text-xl text-primary font-medium">{product.subtitle}</p>
+                  <p className="text-lg sm:text-xl text-primary font-medium">{product.subtitle}</p>
                 </div>
-                <p className="text-lg text-slate-600 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   {product.description}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -88,7 +88,7 @@ export default function Products() {
                 </ul>
                 <div className="pt-4">
                   <Link href="/demo">
-                    <Button size="lg" className="rounded-xl px-8">
+                    <Button size="lg" className="w-full sm:w-auto rounded-xl px-6 sm:px-8">
                       Get Started with {product.title}
                     </Button>
                   </Link>
@@ -111,13 +111,13 @@ export default function Products() {
         </div>
       </div>
       
-      <div className="bg-slate-900 py-20">
+      <div className="bg-slate-900 py-14 sm:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold font-display text-white mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold font-display text-white mb-8">
             Not sure what you need?
           </h2>
           <Link href="/contact">
-            <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-slate-900">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white hover:text-slate-900">
               Talk to an Expert
             </Button>
           </Link>

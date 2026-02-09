@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { CheckCircle, PenTool, Palette } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import contentServiceImage from '@/assests/Content Creation.png';
+import contentProcessImage from '@/assests/Content Creation_1.png';
 
 export default function ContentCreation() {
   const contentIncludes = [
@@ -66,8 +69,8 @@ export default function ContentCreation() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -80,7 +83,7 @@ export default function ContentCreation() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple-600 mb-4">
                 Custom Posters, Graphics, and Reels for Social Media
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
                 Content Creation That Tells Your Story
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
@@ -90,7 +93,7 @@ export default function ContentCreation() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/pricing">
-                  <Button size="lg" className="text-lg px-8 py-6 rounded-xl">
+                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl">
                     Start Free Trial
                   </Button>
                 </Link>
@@ -98,7 +101,7 @@ export default function ContentCreation() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
                   >
                     Contact PropelMeta Tech
                   </Button>
@@ -137,101 +140,126 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold font-display text-slate-900 mb-4">
-              Our Content Creation Services Include
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              High-quality content that visually represents your brand and
-              attracts attention.
-            </p>
-          </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+                Our Content Creation Services Include
+              </h2>
+              <p className="text-lg text-slate-600 max-w-3xl">
+                High-quality content that visually represents your brand and
+                attracts attention.
+              </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
-              <ul className="space-y-3 text-slate-600">
-                {contentIncludes.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-              <div className="flex items-center gap-3 mb-6">
-                <Palette className="h-6 w-6 text-purple-600" />
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  Benefits of Our Content Creation
-                </h3>
+              <div className="mt-8 grid grid-cols-1 gap-6">
+                <div className="rounded-3xl border border-slate-200/70 bg-slate-50/70 p-8 shadow-lg shadow-slate-200/40">
+                  <ul className="space-y-3 text-slate-600">
+                    {contentIncludes.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Palette className="h-6 w-6 text-purple-600" />
+                    <h3 className="text-2xl font-semibold text-slate-900">
+                      Benefits of Our Content Creation
+                    </h3>
+                  </div>
+                  <ul className="space-y-3 text-slate-600">
+                    {contentBenefits.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <ul className="space-y-3 text-slate-600">
-                {contentBenefits.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            </div>
+
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
+                <img
+                  src={contentServiceImage}
+                  alt="Content creation services"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-                Who This Service Is For
-              </h3>
-              <ul className="space-y-3 text-slate-600">
-                {audiences.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-                How Our Service Works
-              </h3>
-              <ol className="space-y-4 text-slate-600">
-                {processSteps.map((step, index) => (
-                  <li key={step} className="flex gap-4">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white text-sm font-semibold">
-                      {index + 1}
-                    </span>
-                    <span className="leading-relaxed">{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-
-          <div className="mt-12 rounded-3xl border h-full border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-6">
-              Why Choose PropelMeta Tech?
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
-              {reasons.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                  <span>{item}</span>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="lg:order-2">
+              <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  Who This Service Is For
+                </h3>
+                <ul className="space-y-3 text-slate-600">
+                  {audiences.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  How Our Service Works
+                </h3>
+                <ol className="space-y-4 text-slate-600">
+                  {processSteps.map((step, index) => (
+                    <li key={step} className="flex gap-4">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white text-sm font-semibold">
+                        {index + 1}
+                      </span>
+                      <span className="leading-relaxed">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  Why Choose PropelMeta Tech?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
+                  {reasons.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="relative lg:order-1">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
+                <img
+                  src={contentProcessImage}
+                  alt="Content creation process"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold font-display text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>
@@ -239,39 +267,11 @@ export default function ContentCreation() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 text-center">
-          <h2 className="text-4xl font-bold font-display text-white mb-6">
-            Elevate Your Content Today
-          </h2>
-          <p className="text-xl text-purple-100/90 mb-10 max-w-2xl mx-auto">
-            Let us create content that keeps your brand visible and engaging.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/pricing">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="text-lg px-8 py-6 rounded-xl bg-white text-purple-700"
-              >
-                Start Free Trial
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 rounded-xl border-white/80 text-white"
-              >
-                Contact PropelMeta Tech Today
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-content-creation" />
     </Layout>
   );
 }
+
 
 
 

@@ -36,12 +36,12 @@ export default function Demo() {
     <Layout>
       <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
         {/* Left Side - Content */}
-        <div className="lg:w-1/2 bg-slate-900 text-white p-12 lg:p-24 flex flex-col justify-center">
+        <div className="lg:w-1/2 bg-slate-900 text-white p-6 sm:p-10 lg:p-20 flex flex-col justify-center">
           <div className="max-w-xl mx-auto lg:mx-0">
-            <h1 className="text-4xl lg:text-5xl font-bold font-display mb-8">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
               See PropelMeta in action
             </h1>
-            <p className="text-xl text-slate-300 mb-12">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-10 sm:mb-12">
               Get a personalized tour of the platform and discover how we can help you scale your business.
             </p>
             
@@ -53,12 +53,12 @@ export default function Demo() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  <span className="text-lg">{item}</span>
+                  <span className="text-base sm:text-lg">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16 pt-8 border-t border-slate-800">
+            <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-800">
               <p className="text-slate-400 text-sm">
                 "PropelMeta transformed our online presence. The demo showed us exactly what we were missing."
               </p>
@@ -74,9 +74,9 @@ export default function Demo() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-white">
+        <div className="lg:w-1/2 p-6 sm:p-10 lg:p-20 flex flex-col justify-center bg-white">
           <div className="max-w-lg mx-auto w-full">
-            <h2 className="text-3xl font-bold font-display text-slate-900 mb-8">Book your demo</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 mb-8">Book your demo</h2>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -138,7 +138,7 @@ export default function Demo() {
                 <Button 
                   type="submit" 
                   disabled={mutation.isPending}
-                  className="w-full h-14 text-lg font-semibold rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
+                  className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
                 >
                   {mutation.isPending ? "Scheduling..." : "Schedule Demo"}
                 </Button>
