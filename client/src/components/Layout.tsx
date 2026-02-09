@@ -3,7 +3,6 @@ import {
   Menu,
   ChevronRight,
   ChevronDown,
-  BarChart2,
   ArrowRight,
   Megaphone,
   Code2,
@@ -18,7 +17,7 @@ import {
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import logo from '@/assests/logo.png';
+import logo from '@/assests/logo.jpeg';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -46,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const handleSubServiceClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     const [path, hash] = href.split('#');
     if (!hash) return;
@@ -90,18 +89,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    // { name: 'About', href: '/about' },
+    { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Book a Calendar', href: '/book-calendar' },
+    { name: 'Contact Us', href: '/contact' },
   ];
   const services = [
     {
       name: 'Website Design, Development & SEO',
       href: '/services/web-app-development',
       icon: <Code2 className="h-4 w-4" />,
-      description:
-        'High-performance websites built to rank and convert.',
+      description: 'High-performance websites built to rank and convert.',
       subServices: [
         {
           title: 'Website Design & Development',
@@ -125,8 +123,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       name: 'Social Media Management',
       href: '/services/social-media-management',
       icon: <Megaphone className="h-4 w-4" />,
-      description:
-        'Build trust, consistency, and engagement across platforms.',
+      description: 'Build trust, consistency, and engagement across platforms.',
       subServices: [
         {
           title: 'Social Media Management Services',
@@ -204,14 +201,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
     },
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col overflow-x-hidden font-sans">
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? 'bg-white' : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link
@@ -241,10 +240,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               ))}
 
               {/* Services Dropdown */}
-              <DropdownMenu
-                open={servicesOpen}
-                onOpenChange={setServicesOpen}
-              >
+              <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
                 <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors focus:outline-none data-[state=open]:text-primary">
                   <span>Services</span>
                   <ChevronDown className="h-4 w-4 transition-transform data-[state=open]:rotate-180" />
@@ -304,7 +300,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                   onClick={(event) =>
                                     handleSubServiceClick(
                                       event,
-                                      subService.href
+                                      subService.href,
                                     )
                                   }
                                   className="flex items-center justify-between gap-3 rounded-lg border border-slate-100 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
@@ -349,13 +345,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link
-                href="/contact"
-                className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
-              >
-                Contact Sales
-              </Link>
-              <Link href="/demo">
+              <Link href="/book-calendar">
                 <Button className="font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
                   Book a Demo
                 </Button>
@@ -420,12 +410,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       </Link>
                     ))}
                     <div className="h-px bg-border my-4" />
-                    <Link
-                      href="/contact"
-                      className="text-lg font-medium text-slate-600"
-                    >
-                      Contact Sales
-                    </Link>
+
                     <Link href="/demo">
                       <Button className="w-full">Book a Demo</Button>
                     </Link>
@@ -437,151 +422,174 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="flex-grow pt-20">{children}</main>
+      <main className="flex-grow overflow-x-hidden pt-20">{children}</main>
 
-      <footer className="bg-slate-900 text-white py-16 lg:py-18 xl:py-20">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-20 xl:gap-24">
-            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="bg-primary p-2 rounded-lg">
-                  <BarChart2 className="h-6 w-6 text-white" />
+      <footer className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 text-slate-900 py-16 lg:py-20">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-16 right-[-8%] h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute bottom-0 left-[-10%] h-64 w-64 rounded-full bg-cyan-300/15 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
+          <div className="rounded-3xl bg-white p-8 sm:p-10 lg:p-12 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/80">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
+              <div className="lg:col-span-2">
+                <div className="inline-flex items-center gap-4 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
+                  <img
+                    src={logo}
+                    alt="PropelMeta Tech"
+                    className="h-12 w-auto sm:h-14"
+                    loading="lazy"
+                  />
                 </div>
-                <span className="text-2xl font-bold font-display">
-                  PropelMeta<span className="text-primary">.</span>
-                </span>
-              </div>
-              <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-                Empowering businesses with AI-driven websites, marketing
-                automation, and branded apps. Grow faster with the all-in-one
-                platform built for success.
-              </p>
-            </div>
 
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Services</h4>
-              <ul className="space-y-4">
-                {services.map((service) => (
-                  <li key={service.name}>
+                <p className="mt-6 max-w-md text-sm leading-relaxed text-slate-600">
+                  Empowering businesses with AI-driven websites, marketing
+                  automation, and branded apps. Grow faster with focused
+                  strategy, creative execution, and measurable outcomes.
+                </p>
+
+                <div className="mt-6">
+                  <Link href="/demo">
+                    <Button className="font-semibold shadow-lg shadow-primary/30">
+                      Book a Demo
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="p-1 lg:pl-4">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">
+                  Services
+                </h4>
+                <ul className="space-y-3">
+                  {services.map((service) => (
+                    <li key={service.name}>
+                      <Link
+                        href={service.href}
+                        className="text-sm text-slate-600 transition-colors hover:text-slate-900"
+                      >
+                        {service.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="p-1 lg:pl-4">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">
+                  Company
+                </h4>
+                <ul className="space-y-3">
+                  <li>
                     <Link
-                      href={service.href}
-                      className="text-slate-400 hover:text-white transition-colors"
+                      href="/about"
+                      className="text-sm text-slate-600 transition-colors hover:text-slate-900"
                     >
-                      {service.name}
+                      About Us
                     </Link>
                   </li>
-                ))}
-              </ul>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-sm text-slate-600 transition-colors hover:text-slate-900"
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blog"
+                      className="text-sm text-slate-600 transition-colors hover:text-slate-900"
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-sm text-slate-600 transition-colors hover:text-slate-900"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-1 lg:pl-4">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">
+                  Connect
+                </h4>
+                <ul className="flex flex-wrap gap-3">
+                  <li>
+                    <a
+                      href="https://www.facebook.com/share/1HJAAhoL3y/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                    >
+                      <Facebook className="h-4 w-4" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/propelmeta_tech?igsh=eGd0ZXFkb2syenBx"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.threads.com/@propelmeta_tech"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Threads"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tiktok.com/@propelmetatech?is_from_webapp=1&sender_device=pc"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="TikTok"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                    >
+                      <Music2 className="h-4 w-4" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/propelmeta-tech/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="LinkedIn"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Company</h4>
-              <ul className="space-y-4">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-slate-400 hover:text-white transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-slate-400 hover:text-white transition-colors"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-slate-400 hover:text-white transition-colors"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-slate-400 hover:text-white transition-colors"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-6 text-lg">Connect</h4>
-              <ul className="flex flex-wrap gap-3">
-                <li>
-                  <a
-                    href="https://www.facebook.com/share/1HJAAhoL3y/"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Facebook"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/80 text-slate-200 transition-colors hover:bg-primary hover:text-white"
-                  >
-                    <Facebook className="h-4 w-4" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/propelmeta_tech?igsh=eGd0ZXFkb2syenBx"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/80 text-slate-200 transition-colors hover:bg-primary hover:text-white"
-                  >
-                    <Instagram className="h-4 w-4" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.threads.com/@propelmeta_tech"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Threads"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/80 text-slate-200 transition-colors hover:bg-primary hover:text-white"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.tiktok.com/@propelmetatech?is_from_webapp=1&sender_device=pc"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="TikTok"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/80 text-slate-200 transition-colors hover:bg-primary hover:text-white"
-                  >
-                    <Music2 className="h-4 w-4" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/propelmeta-tech/"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="LinkedIn"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/80 text-slate-200 transition-colors hover:bg-primary hover:text-white"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-slate-800 mt-16 lg:mt-18 xl:mt-20 pt-8 lg:pt-10 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
-            <p>&copy; 2024 PropelMeta Tech. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </a>
+            <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-600 sm:flex-row sm:items-center">
+              <p>&copy; {currentYear} PropelMeta Tech. All rights reserved.</p>
+              <div className="flex items-center gap-6">
+                <Link
+                  href="/terms-and-conditions"
+                  className="transition-colors hover:text-slate-900"
+                >
+                  Terms of Service
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -589,4 +597,3 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-

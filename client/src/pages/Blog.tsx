@@ -13,16 +13,16 @@ export default function Blog() {
           <div className="absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
           <div className="absolute bottom-0 left-[-5%] h-64 w-64 rounded-full bg-indigo-300/40 blur-3xl" />
         </div>
-        <div className="relative container mx-auto max-w-6xl px-6 py-20 lg:py-24">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="relative container mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2">
             <div>
               <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                 The PropelMeta Blog
               </span>
-              <h1 className="mt-6 text-4xl font-bold font-display text-slate-900 sm:text-5xl leading-tight">
+              <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight">
                 Insights on marketing, automation, and growth strategy.
               </h1>
-              <p className="mt-4 text-lg text-slate-600 max-w-xl">
+              <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl">
                 Practical guides, playbooks, and experiments from the team
                 building conversion-focused websites and automation.
               </p>
@@ -32,7 +32,7 @@ export default function Blog() {
                 <img
                   src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
                   alt="Team collaboration"
-                  className="h-72 w-full object-cover sm:h-80"
+                  className="h-64 w-full object-cover sm:h-80"
                 />
               </div>
             </div>
@@ -40,7 +40,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <div className="container mx-auto max-w-6xl px-6 py-20">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
         {isLoading && (
           <div className="text-center py-20">
             <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
@@ -68,7 +68,7 @@ export default function Blog() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex flex-1 flex-col p-8">
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <div className="text-sm font-semibold text-primary">
                     {format(new Date(post.createdAt || new Date()), "MMM d, yyyy")}
                   </div>

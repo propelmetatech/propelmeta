@@ -38,6 +38,10 @@ import { Input } from '@/components/ui/input';
 import { Layout } from '@/components/Layout';
 import { AutoScrollCarousel } from '@/components/AutoScrollCarousel';
 import { useEffect, useRef, useState } from 'react';
+import socialMediaImage from '@/assests/Social Media Management.png';
+import websiteDesignImage from '@/assests/Website Design & Development Services.png';
+import paidAdsImage from '@/assests/Paid Advertising, Marketing Automation & AI Automation.png';
+import supportImage from '@/assests/Online Support & Client Support Services.png';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -46,35 +50,9 @@ export default function Home() {
   const carouselItems = [
     {
       id: 1,
-      image:
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&crop=center',
-      title: 'Social Media Management',
-      description: 'Build trust, consistency, and engagement across platforms.',
-      stats: {
-        label: 'Engagement Lift',
-        value: '+62% Avg',
-        color: 'bg-indigo-500',
-      },
-    },
-    {
-      id: 2,
-      image:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&h=600&fit=crop&crop=center',
-      title: 'Content Creation',
-      description: 'Scroll-stopping visuals and videos that tell your story.',
-      stats: {
-        label: 'Content Output',
-        value: '4x Monthly',
-        color: 'bg-sky-500',
-      },
-    },
-    {
-      id: 3,
-      image:
-        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=600&fit=crop&crop=center',
-      title: 'Website & App Development',
-      description:
-        'High-performance websites and mobile apps built to convert.',
+      image: websiteDesignImage,
+      title: 'Website Design, Development & SEO',
+      description: 'High-converting websites with SEO-ready structure.',
       stats: {
         label: 'Performance Score',
         value: '95+ Lighthouse',
@@ -82,11 +60,23 @@ export default function Home() {
       },
     },
     {
-      id: 4,
-      image:
-        'https://images.unsplash.com/photo-1556155092-8707de31f9c4?w=800&h=600&fit=crop&crop=center',
-      title: 'SEO & Paid Advertising',
-      description: 'Be found faster and scale with performance-driven ads.',
+      id: 2,
+      image: socialMediaImage,
+      title: 'Social Media Management',
+      description:
+        'Grow your presence with consistent posts, reels, and visuals.',
+      stats: {
+        label: 'Engagement Lift',
+        value: '+62% Avg',
+        color: 'bg-indigo-500',
+      },
+    },
+    {
+      id: 3,
+      image: paidAdsImage,
+      title: 'Paid Ads, Marketing & AI Automation',
+      description:
+        'Performance-driven campaigns with automation that scales ROI.',
       stats: {
         label: 'Qualified Leads',
         value: '+3.1x',
@@ -94,14 +84,13 @@ export default function Home() {
       },
     },
     {
-      id: 5,
-      image:
-        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&crop=center',
-      title: 'Automation & AI',
-      description: 'Smarter systems that save time and boost ROI.',
+      id: 4,
+      image: supportImage,
+      title: 'Online & Client Support',
+      description: 'Fast, reliable support that keeps operations moving.',
       stats: {
-        label: 'Hours Saved',
-        value: '120+ /mo',
+        label: 'Response Time',
+        value: '< 15 min',
         color: 'bg-emerald-500',
       },
     },
@@ -301,8 +290,8 @@ export default function Home() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/10 to-purple-300/10 rounded-full blur-3xl"></div>
         </div>
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 xl:gap-24 2xl:gap-28 items-center">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
+          <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-20 xl:gap-24 2xl:gap-28">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -315,35 +304,44 @@ export default function Home() {
                   New: Next-Gen AI Marketing Suite
                 </span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold font-display text-slate-900 leading-[1.1] mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-slate-900 leading-[1.1] mb-6">
                 Transform Your Business with <br />
                 <span className="text-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Intelligent Marketing
+                  Intelligent Digital Marketing
                 </span>
               </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Harness the power of AI-driven insights, automation, and
-                personalization to accelerate growth and maximize ROI across all
-                your marketing channels.
+              {/* <p className="text-lg md:text-xl font-semibold text-slate-700 mb-4 max-w-xl">
+                Transform Your Business with Intelligent Digital Marketing
+              </p> */}
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed max-w-xl">
+                PropelMeta Tech helps restaurants and modern businesses attract
+                more customers, increase online visibility, and scale faster
+                using data-driven marketing, creative content, and automation.
+              </p>
+              <p className="text-base text-slate-500 mb-10 max-w-xl">
+                All-in-one marketing solutions. Measurable growth. Zero
+                guesswork.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link href="/pricing">
                   <Button
                     size="lg"
-                    className="text-lg px-10 py-7 rounded-2xl shadow-2xl shadow-blue-500/30 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl hover:shadow-blue-500/40"
+                    className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 rounded-2xl shadow-2xl shadow-blue-500/30 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl hover:shadow-blue-500/40"
                   >
                     <Rocket className="h-5 w-5 mr-2" />
-                    Start Free Trial
+                    Get Started
                   </Button>
                 </Link>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg px-10 py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  <BarChart3 className="h-5 w-5 mr-2" />
-                  View Demo
-                </Button>
+                <Link href="/book-calendar">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <ArrowRight className="h-5 w-5 mr-2" />
+                    Book a Demo
+                  </Button>
+                </Link>
               </div>
 
               {/* Enhanced Social Proof */}
@@ -384,7 +382,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-7 xl:col-span-7 relative min-h-[280px] lg:min-h-[320px] pb-20 lg:pb-24 flex items-center justify-center"
+              className="lg:col-span-7 xl:col-span-7 relative min-h-[240px] lg:min-h-[320px] pb-12 sm:pb-16 lg:pb-24 flex items-center justify-center"
             >
               <div className="w-full max-w-4xl">
                 <AutoScrollCarousel
@@ -425,7 +423,7 @@ export default function Home() {
           ></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Enhanced Header Section */}
           <div className="text-center max-w-4xl mx-auto mb-24">
             <motion.div
@@ -442,7 +440,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl lg:text-6xl xl:text-7xl font-bold font-display mb-6 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold font-display mb-6 leading-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Everything you need
@@ -601,7 +599,7 @@ export default function Home() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-20">
             <motion.div
@@ -618,7 +616,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 How it works
@@ -724,7 +722,7 @@ export default function Home() {
           ></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
           <div className="text-center mb-20 lg:mb-24">
             <motion.div
@@ -741,7 +739,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-4 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-4 leading-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Numbers that speak
@@ -778,7 +776,7 @@ export default function Home() {
 
                 <div className="relative z-10 pt-12">
                   {/* Enhanced Number */}
-                  <p className="text-6xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:via-blue-600 group-hover:to-blue-700 transition-all duration-700 leading-none">
+                  <p className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:via-blue-600 group-hover:to-blue-700 transition-all duration-700 leading-none">
                     30%
                   </p>
 
@@ -819,7 +817,7 @@ export default function Home() {
 
                 <div className="relative z-10 pt-12">
                   {/* Enhanced Number */}
-                  <p className="text-6xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:via-purple-600 group-hover:to-purple-700 transition-all duration-700 leading-none">
+                  <p className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:via-purple-600 group-hover:to-purple-700 transition-all duration-700 leading-none">
                     2.5x
                   </p>
 
@@ -860,7 +858,7 @@ export default function Home() {
 
                 <div className="relative z-10 pt-12">
                   {/* Enhanced Number */}
-                  <p className="text-6xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 bg-clip-text text-transparent group-hover:from-pink-500 group-hover:via-pink-600 group-hover:to-pink-700 transition-all duration-700 leading-none">
+                  <p className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 bg-clip-text text-transparent group-hover:from-pink-500 group-hover:via-pink-600 group-hover:to-pink-700 transition-all duration-700 leading-none">
                     1M+
                   </p>
 
@@ -915,7 +913,7 @@ export default function Home() {
           ></div>
         </div>
 
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px] relative z-10">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-20">
             <motion.div
@@ -932,7 +930,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 What our customers
@@ -1039,7 +1037,7 @@ export default function Home() {
 
       {/* Trust & Security Section */}
       <section className="py-24 lg:py-32 bg-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-20">
             <motion.div
@@ -1056,7 +1054,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-bold font-display mb-6 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6 leading-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-green-800 to-blue-800 bg-clip-text text-transparent">
                 Enterprise-grade security
@@ -1128,7 +1126,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-20">
             <motion.div
@@ -1145,7 +1143,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Frequently asked
@@ -1201,9 +1199,9 @@ export default function Home() {
                 <div className="bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-500">
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-50/50 transition-colors duration-300"
+                    className="w-full px-4 py-5 sm:px-8 sm:py-6 text-left flex items-center justify-between hover:bg-slate-50/50 transition-colors duration-300"
                   >
-                    <span className="text-lg font-semibold text-slate-900 pr-8">
+                    <span className="text-base sm:text-lg font-semibold text-slate-900 pr-4 sm:pr-8">
                       {faq.question}
                     </span>
                     <div className="flex-shrink-0">
@@ -1220,7 +1218,7 @@ export default function Home() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="px-8 pb-6"
+                      className="px-4 pb-5 sm:px-8 sm:pb-6"
                     >
                       <p className="text-slate-600 leading-relaxed">
                         {faq.answer}
@@ -1236,25 +1234,25 @@ export default function Home() {
 
       {/* Waitlist Section */}
       <section className="py-20 lg:py-24 xl:py-28 bg-gradient-to-b from-white via-slate-50/30 to-white">
-        <div className="mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-[1800px]">
-          <div className="rounded-[2.5rem] border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-12 md:p-20 text-center shadow-2xl shadow-blue-700/40">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
+          <div className="rounded-3xl border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-6 sm:p-10 md:p-20 text-center shadow-2xl shadow-blue-700/40">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-4">
                 Get Early Access to PropelMeta
               </h2>
               <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
                 Join our waitlist today and be among the first to experience a
                 smarter, faster, and more efficient way to grow your business.
               </p>
-              <form className="flex flex-col sm:flex-row items-center gap-4">
+              <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Input
                   type="email"
                   placeholder="Enter your email*"
-                  className="h-12 text-base bg-white border-slate-200 text-slate-900 placeholder:text-slate-500 focus-visible:ring-blue-500"
+                  className="h-12 w-full text-base bg-white border-slate-200 text-slate-900 placeholder:text-slate-500 focus-visible:ring-blue-500"
                 />
                 <Button
                   type="submit"
-                  className="h-12 px-8 text-base font-semibold bg-white text-slate-900 hover:bg-slate-100"
+                  className="h-12 w-full sm:w-auto px-8 text-base font-semibold bg-white text-slate-900 hover:bg-slate-100"
                 >
                   Submit
                 </Button>

@@ -115,15 +115,15 @@ export default function Contact() {
             <div className="absolute -top-20 right-[-10%] h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
             <div className="absolute bottom-0 left-[-5%] h-48 w-48 rounded-full bg-cyan-400/20 blur-3xl" />
           </div>
-          <div className="contact-hero-inner relative mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 py-24">
+          <div className="contact-hero-inner relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 py-16 sm:py-20 lg:py-24">
             <div className="max-w-3xl">
               <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                 Contact Sales
               </span>
-              <h1 className="mt-5 text-4xl font-bold font-display leading-tight sm:text-5xl">
+              <h1 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight">
                 Tell us about your growth goals.
               </h1>
-              <p className="mt-4 text-lg text-white/70">
+              <p className="mt-4 text-base sm:text-lg text-white/70">
                 We help teams launch high-performing sites and automation that
                 convert. Share a few details and we’ll propose the right plan.
               </p>
@@ -152,11 +152,11 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="contact-body relative -mt-12 pb-24">
-          <div className="contact-body-inner mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
+        <section className="contact-body relative -mt-8 sm:-mt-12 pb-16 sm:pb-24">
+          <div className="contact-body-inner mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
             <div className="contact-grid grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="space-y-8 lg:col-span-2">
-                <div className="contact-panel rounded-3xl bg-white p-8 shadow-xl border border-slate-100">
+                <div className="contact-panel rounded-3xl bg-white p-6 sm:p-8 shadow-xl border border-slate-100">
                   <h3 className="text-xl font-bold text-slate-900">
                     What happens next
                   </h3>
@@ -191,7 +191,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="contact-panel rounded-3xl bg-primary p-8 text-white shadow-xl">
+                <div className="contact-panel rounded-3xl bg-primary p-6 sm:p-8 text-white shadow-xl">
                   <h3 className="text-xl font-bold font-display">
                     Get in touch
                   </h3>
@@ -225,7 +225,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="contact-form lg:col-span-3 bg-white rounded-3xl p-10 shadow-xl border border-slate-100">
+              <div className="contact-form lg:col-span-3 bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-slate-100">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-slate-900">
                     Start the conversation
@@ -343,7 +343,7 @@ export default function Contact() {
                           !formEndpoint ||
                           !form.formState.isValid
                         }
-                        className="w-full h-12 text-lg font-semibold rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full h-12 text-base sm:text-lg font-semibold rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                       </Button>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import {
@@ -165,8 +166,8 @@ export default function OnlineSales() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-red-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -177,7 +178,7 @@ export default function OnlineSales() {
                 Online Sales System
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
                 Take Back Your{' '}
                 <span className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 bg-clip-text text-transparent">
                   Margins
@@ -194,7 +195,7 @@ export default function OnlineSales() {
                 <Link href="/demo">
                   <Button
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl shadow-xl shadow-orange-500/25 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-orange-500/25 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
                   >
                     <DollarSign className="h-5 w-5 mr-2" />
                     Start Selling
@@ -204,14 +205,14 @@ export default function OnlineSales() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg px-8 py-6 rounded-xl"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
                   >
                     Calculate Savings
                   </Button>
                 </Link>
               </div>
 
-              <div className="flex items-center gap-6 text-sm text-slate-600">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-slate-600">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>0% commission</span>
@@ -248,9 +249,9 @@ export default function OnlineSales() {
 
       {/* Pricing Comparison Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Stop Paying High Commissions
               </span>
@@ -358,9 +359,9 @@ export default function OnlineSales() {
 
       {/* Sales Channels Section */}
       <section className="py-24 bg-gradient-to-br from-slate-50 to-orange-50/30">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Sell Everywhere
               </span>
@@ -408,9 +409,9 @@ export default function OnlineSales() {
 
       {/* Features Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Complete Sales Solution
               </span>
@@ -447,14 +448,14 @@ export default function OnlineSales() {
 
       {/* Benefits Section */}
       <section className="py-24 bg-gradient-to-br from-orange-50 to-red-50/30">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold font-display mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
                 <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Why Own Your Sales System?
                 </span>
@@ -497,9 +498,9 @@ export default function OnlineSales() {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Real Results
               </span>
@@ -544,45 +545,11 @@ export default function OnlineSales() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-700">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
-              Ready to Keep 100% of Your Profits?
-            </h2>
-            <p className="text-xl text-orange-100/90 mb-10 max-w-2xl mx-auto">
-              Stop paying high commission fees. Start your own sales system and
-              take control of your business.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/demo">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="text-lg px-8 py-6 rounded-xl bg-white text-orange-700 hover:bg-orange-50"
-                >
-                  <DollarSign className="h-5 w-5 mr-2" />
-                  Calculate Your Savings
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-lg px-8 py-6 rounded-xl border-white/80 text-white hover:bg-white/10"
-                >
-                  Get Started Today
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-online-sales" />
     </Layout>
   );
 }
+
 
 
 
