@@ -89,7 +89,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about-us' },
+    { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
@@ -345,7 +345,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link href="/demo">
+              <Link href="/book-calendar">
                 <Button className="font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
                   Book a Demo
                 </Button>
@@ -597,4 +597,3 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-

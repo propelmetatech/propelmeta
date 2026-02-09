@@ -305,9 +305,9 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-slate-900 leading-[1.1] mb-6">
-                Grow Your Brand Faster with <br />
+                Transform Your Business with <br />
                 <span className="text-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Smart Digital Marketing
+                  Intelligent Digital Marketing
                 </span>
               </h1>
               {/* <p className="text-lg md:text-xl font-semibold text-slate-700 mb-4 max-w-xl">
@@ -1264,4 +1264,3 @@ export default function Home() {
     </Layout>
   );
 }
-

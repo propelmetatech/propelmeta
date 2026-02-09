@@ -50,15 +50,15 @@ export default function Pricing() {
           ></div>
         </div>
 
-        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10 py-24 lg:py-32">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10 py-20 sm:py-24 lg:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center rounded-full border border-blue-400/40 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur mb-6">
               Transparent plans, built for scale
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 leading-tight">
               Pricing that grows with your business
             </h1>
-            <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
               Choose the plan that fits today and scale when you are ready. No
               hidden fees, no long-term contracts.
             </p>
@@ -81,7 +81,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 -mt-20 relative z-20 pb-24">
+      <div className="container mx-auto px-4 -mt-12 sm:-mt-20 relative z-20 pb-16 sm:pb-24">
         <div className="rounded-3xl bg-white p-6 shadow-xl md:p-10">
           {stripePublishableKey ? (
             <stripe-pricing-table
@@ -123,7 +123,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      <div className="bg-slate-50 py-24">
+      <div className="bg-slate-50 py-16 sm:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold font-display text-slate-900 text-center mb-12">
             Frequently Asked Questions

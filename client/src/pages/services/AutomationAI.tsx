@@ -1,5 +1,6 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import {
@@ -456,37 +457,7 @@ export default function AutomationAI() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-amber-600 via-orange-600 to-amber-700">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">
-            Start Generating Leads with Ads and Automation
-          </h2>
-          <p className="text-xl text-amber-100/90 mb-10 max-w-2xl mx-auto">
-            Let us manage your paid ads, marketing automation, and AI automation
-            all in one place.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/pricing">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl bg-white text-amber-700"
-              >
-                Start Free Trial
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/80 text-white"
-              >
-                Contact PropelMeta Tech Today
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-paid-ads-marketing-ai" />
     </Layout>
   );
 }

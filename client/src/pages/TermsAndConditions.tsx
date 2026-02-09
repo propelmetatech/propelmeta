@@ -4,7 +4,7 @@ export default function TermsAndConditions() {
   return (
     <Layout>
       <section className="bg-slate-50 py-20">
-        <div className="container mx-auto max-w-4xl px-6">
+        <div className="container mx-auto max-w-4xl px-4 sm:px-6">
           <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-10">
             <h1 className="text-3xl font-display font-bold text-slate-900 sm:text-4xl">
               Terms and Conditions

@@ -17,15 +17,18 @@
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
   overflow: hidden;
   position: relative;
+  width: 100%;
+  max-width: 100%;
   height: 900px;
-  min-width: 320px;
+  min-width: 0;
 }
 
 .calendly-iframe {
   width: 100% !important;
   height: 900px !important;
-  min-width: 320px !important;
+  min-width: 0 !important;
   border: none;
+  display: block;
 }
 
 .loading-indicator {
@@ -66,25 +69,35 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
   .calendar-page {
     padding: 16px 0 56px;
   }
 
   .calendar-section {
-    padding: 0 14px;
+    padding: 0 12px;
   }
 
   .calendly-widget-container {
-    height: 720px;
+    height: 760px;
     border-radius: 12px;
   }
 
   .calendly-iframe {
-    height: 720px !important;
+    height: 760px !important;
   }
 
   .loading-indicator {
     padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .calendly-widget-container {
+    height: 700px;
+  }
+
+  .calendly-iframe {
+    height: 700px !important;
   }
 }

@@ -1,5 +1,6 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import {
@@ -411,42 +412,7 @@ export default function MobileApps() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-600 via-pink-700 to-purple-700">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-6">
-              Ready to Launch Your Mobile App?
-            </h2>
-            <p className="text-xl text-pink-100/90 mb-10 max-w-2xl mx-auto">
-              Join hundreds of businesses using mobile apps to increase customer
-              loyalty and drive more sales.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/demo">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl bg-white text-pink-700 hover:bg-pink-50"
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Start Building
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/80 text-white hover:bg-white/10"
-                >
-                  See App Demo
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-mobile-apps" />
     </Layout>
   );
 }

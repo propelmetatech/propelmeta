@@ -1,5 +1,6 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import {
@@ -544,42 +545,7 @@ export default function OnlineSales() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 via-orange-700 to-red-700">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-6">
-              Ready to Keep 100% of Your Profits?
-            </h2>
-            <p className="text-xl text-orange-100/90 mb-10 max-w-2xl mx-auto">
-              Stop paying high commission fees. Start your own sales system and
-              take control of your business.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/demo">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl bg-white text-orange-700 hover:bg-orange-50"
-                >
-                  <DollarSign className="h-5 w-5 mr-2" />
-                  Calculate Your Savings
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/80 text-white hover:bg-white/10"
-                >
-                  Get Started Today
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-online-sales" />
     </Layout>
   );
 }

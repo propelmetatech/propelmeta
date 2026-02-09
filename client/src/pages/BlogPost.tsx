@@ -86,14 +86,14 @@ export default function BlogPost() {
 
   return (
     <Layout>
-      <article className="pb-24">
-        <section className="relative overflow-hidden bg-slate-50 pt-24 pb-16">
+      <article className="pb-16 sm:pb-24">
+        <section className="relative overflow-hidden bg-slate-50 pt-16 sm:pt-24 pb-12 sm:pb-16">
           <div className="absolute inset-0">
             <div className="absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
             <div className="absolute bottom-0 left-[-5%] h-64 w-64 rounded-full bg-indigo-300/40 blur-3xl" />
           </div>
-          <div className="relative container mx-auto px-6 max-w-6xl">
-            <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="relative container mx-auto px-4 sm:px-6 max-w-6xl">
+            <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2">
               <div>
                 <Link
                   href="/blog"
@@ -102,13 +102,13 @@ export default function BlogPost() {
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Blog
                 </Link>
-                <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight">
                   {post.title}
                 </h1>
-                <p className="mt-4 text-lg text-slate-600 max-w-xl">
+                <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl">
                   {post.excerpt}
                 </p>
-                <div className="mt-6 flex items-center gap-4 text-slate-500 text-sm">
+                <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4 text-slate-500 text-sm">
                   <span className="font-medium text-slate-900">
                     {post.author}
                   </span>
@@ -123,7 +123,7 @@ export default function BlogPost() {
                   <img
                     src={post.coverImage}
                     alt={post.title}
-                    className="h-80 w-full object-cover"
+                    className="h-64 sm:h-80 w-full object-cover"
                   />
                 </div>
               </div>
@@ -131,8 +131,8 @@ export default function BlogPost() {
           </div>
         </section>
 
-        <section className="container mx-auto px-6 max-w-3xl mt-12">
-          <div className="prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-primary">
+        <section className="container mx-auto px-4 sm:px-6 max-w-3xl mt-10 sm:mt-12">
+          <div className="prose prose-base sm:prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-primary">
             {renderBlogContent(post.content)}
           </div>
         </section>

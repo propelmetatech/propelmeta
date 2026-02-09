@@ -1,5 +1,6 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import {
@@ -373,42 +374,7 @@ export default function MarketingAutomation() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-700">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-6">
-              Ready to Automate Your Marketing?
-            </h2>
-            <p className="text-xl text-purple-100/90 mb-10 max-w-2xl mx-auto">
-              Start driving repeat sales with intelligent automation that works
-              24/7.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/demo">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl bg-white text-purple-700 hover:bg-purple-50"
-                >
-                  <Zap className="h-5 w-5 mr-2" />
-                  Start Free Trial
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/80 text-white hover:bg-white/10"
-                >
-                  Schedule Demo
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EarlyAccessSection source="service-marketing-automation" />
     </Layout>
   );
 }
