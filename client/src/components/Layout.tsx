@@ -1,30 +1,27 @@
 import { Link, useLocation } from 'wouter';
 import {
   Menu,
-  ChevronRight,
   ChevronDown,
   ArrowRight,
+  Sparkles,
   Megaphone,
   Code2,
   Search,
   Headphones,
-  Facebook,
-  Instagram,
-  Linkedin,
-  MessageCircle,
-  Music2,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import logo from '@/assests/logo.jpeg';
+import socialMediaImage from '@/assests/Social Media Management.png';
+import websiteDesignImage from '@/assests/Website Design & Development Services.png';
+import paidAdsImage from '@/assests/Paid Advertising, Marketing Automation & AI Automation.png';
+import supportImage from '@/assests/Online Support & Client Support Services.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
@@ -32,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
 
   const scrollToHash = (hash: string) => {
     const id = hash.replace('#', '');
@@ -89,7 +87,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
@@ -99,7 +97,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       name: 'Website Design, Development & SEO',
       href: '/services/web-app-development',
       icon: <Code2 className="h-4 w-4" />,
+      iconBg: 'from-blue-500 to-indigo-600',
       description: 'High-performance websites built to rank and convert.',
+      image: websiteDesignImage,
+      imageAlt: 'Website design and development service preview',
       subServices: [
         {
           title: 'Website Design & Development',
@@ -123,7 +124,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       name: 'Social Media Management',
       href: '/services/social-media-management',
       icon: <Megaphone className="h-4 w-4" />,
+      iconBg: 'from-purple-500 to-indigo-600',
       description: 'Build trust, consistency, and engagement across platforms.',
+      image: socialMediaImage,
+      imageAlt: 'Social media management service preview',
       subServices: [
         {
           title: 'Social Media Management Services',
@@ -151,7 +155,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       name: 'Paid Ads, Marketing & AI Automation',
       href: '/services/seo-paid-advertising',
       icon: <Search className="h-4 w-4" />,
+      iconBg: 'from-amber-500 to-orange-600',
       description: 'Performance-driven ads and automation that scale.',
+      image: paidAdsImage,
+      imageAlt: 'Paid advertising and automation service preview',
       subServices: [
         {
           title: 'Paid Advertising Services',
@@ -179,7 +186,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       name: 'Online Support & Client Support',
       href: '/services/online-support',
       icon: <Headphones className="h-4 w-4" />,
+      iconBg: 'from-emerald-500 to-teal-600',
       description: 'Reliable online and client support for operations.',
+      image: supportImage,
+      imageAlt: 'Online and client support service preview',
       subServices: [
         {
           title: 'Online Support Services',
@@ -220,7 +230,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <img
                 src={logo}
                 alt="PropelMeta"
-                className="h-16 w-auto"
+                className="w-[200px] h-auto object-contain"
                 loading="lazy"
               />
             </Link>
@@ -240,91 +250,135 @@ export function Layout({ children }: { children: React.ReactNode }) {
               ))}
 
               {/* Services Dropdown */}
-              <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
+              <DropdownMenu
+                open={servicesOpen}
+                onOpenChange={(open) => {
+                  setServicesOpen(open);
+                  if (open) setActiveServiceIndex(0);
+                }}
+              >
                 <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium text-slate-600 hover:text-primary transition-colors focus:outline-none data-[state=open]:text-primary">
                   <span>Services</span>
                   <ChevronDown className="h-4 w-4 transition-transform data-[state=open]:rotate-180" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="center"
-                  className="w-[calc(100vw-6rem)] max-w-[1100px] p-4 md:p-5 mt-3 bg-white border border-slate-200 shadow-2xl shadow-slate-900/10 rounded-2xl"
-                  sideOffset={12}
+                  className="relative mt-4 w-[min(97vw,1560px)] overflow-hidden rounded-[24px] border border-slate-200/90 bg-white/95 p-4 md:p-5 shadow-[0_24px_70px_-34px_rgba(15,23,42,0.45)] backdrop-blur-xl"
+                  sideOffset={14}
                 >
-                  <div className="px-1 pb-3">
-                    <h3 className="text-sm font-semibold text-slate-900">
-                      Services
-                    </h3>
-                    <p className="text-xs text-slate-500">
-                      Hover a service to explore sub-services
-                    </p>
-                  </div>
-                  <div className="grid gap-1.5 px-1 pb-2 md:grid-cols-2">
-                    {services.map((service) => (
-                      <DropdownMenuSub key={service.name}>
-                        <DropdownMenuSubTrigger className="cursor-pointer rounded-xl px-3 py-3 hover:bg-slate-50 data-[state=open]:bg-slate-50">
-                          <div className="flex items-start gap-3">
-                            <div className="flex-shrink-0 mt-0.5 p-2.5 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg text-white">
-                              {service.icon}
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-sm font-semibold text-slate-900">
-                                {service.name}
-                              </div>
-                              <div className="text-xs text-slate-500 mt-1 leading-relaxed">
-                                {service.description}
-                              </div>
-                            </div>
-                          </div>
-                        </DropdownMenuSubTrigger>
-                        <DropdownMenuSubContent
-                          sideOffset={16}
-                          className="w-[360px] p-4 bg-white border border-slate-200 shadow-2xl shadow-slate-900/10 rounded-2xl"
-                        >
-                          <div className="mb-3">
-                            <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                              {service.name}
-                            </div>
-                            <p className="text-xs text-slate-500 mt-1">
-                              {service.description}
-                            </p>
-                          </div>
-                          <div className="space-y-2">
-                            {service.subServices.map((subService) => (
-                              <DropdownMenuItem
-                                key={subService.title}
-                                asChild
-                                className="p-0"
+                  <div className="pointer-events-none absolute -top-24 right-[-8%] h-52 w-52 rounded-full bg-indigo-200/35 blur-3xl" />
+                  <div className="pointer-events-none absolute -bottom-24 left-[-6%] h-52 w-52 rounded-full bg-cyan-200/35 blur-3xl" />
+
+                  <div className="relative grid gap-4 lg:grid-cols-[minmax(0,1.6fr)_minmax(380px,1fr)] lg:items-start">
+                    <div>
+                      <div className="px-1 pb-3.5">
+                        <p className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-600">
+                          <Sparkles className="h-3 w-3" />
+                          Explore Services
+                        </p>
+                        <h3 className="text-base font-semibold text-slate-900">
+                          Choose a service
+                        </h3>
+                        <p className="mt-1.5 text-xs text-slate-600">
+                          Hover a card to preview the service and jump directly
+                          to related sub-services.
+                        </p>
+                      </div>
+                      <div className="grid gap-3 px-1 sm:grid-cols-2">
+                        {services.map((service, index) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            onClick={() => setServicesOpen(false)}
+                            onMouseEnter={() => setActiveServiceIndex(index)}
+                            onFocus={() => setActiveServiceIndex(index)}
+                            className={`group relative overflow-hidden rounded-xl border bg-white p-3.5 transition-all duration-150 ease-out ${
+                              activeServiceIndex === index
+                                ? 'border-primary/45 bg-primary/[0.04] ring-1 ring-primary/20 shadow-[0_12px_30px_-18px_rgba(59,130,246,0.8)] -translate-y-0.5'
+                                : 'border-slate-200 hover:border-primary/35 hover:bg-slate-50 hover:shadow-[0_12px_30px_-22px_rgba(59,130,246,0.75)] hover:-translate-y-0.5'
+                            }`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <div
+                                className={`mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-white shadow-sm bg-gradient-to-br ${service.iconBg}`}
                               >
-                                <Link
-                                  href={subService.href}
-                                  onClick={(event) =>
-                                    handleSubServiceClick(
-                                      event,
-                                      subService.href,
-                                    )
-                                  }
-                                  className="flex items-center justify-between gap-3 rounded-lg border border-slate-100 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
-                                >
-                                  <span className="font-medium">
-                                    {subService.title}
+                                {service.icon}
+                              </div>
+                              <div className="min-w-0">
+                                <div className="text-sm font-semibold leading-tight text-slate-900">
+                                  {service.name}
+                                </div>
+                                <div className="mt-1 text-xs leading-relaxed text-slate-600">
+                                  {service.description}
+                                </div>
+                              </div>
+                            </div>
+                            <div className="mt-2.5 flex items-center justify-end">
+                              <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                                Explore
+                                <ArrowRight className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+                              </span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="rounded-[18px] bg-gradient-to-br from-indigo-50 via-white to-cyan-50 p-3 ring-1 ring-slate-200 shadow-[0_18px_45px_-25px_rgba(15,23,42,0.35)]">
+                      <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100">
+                        <img
+                          src={services[activeServiceIndex].image}
+                          alt={services[activeServiceIndex].imageAlt}
+                          className="h-44 w-full object-cover transition-transform duration-300 ease-out md:h-48"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="mt-3 flex items-start justify-between gap-2">
+                        <div>
+                          <div className="text-base font-semibold leading-tight text-slate-900">
+                            {services[activeServiceIndex].name}
+                          </div>
+                          <p className="mt-1 text-xs text-slate-600">
+                            {services[activeServiceIndex].description}
+                          </p>
+                        </div>
+                        <Link
+                          href={services[activeServiceIndex].href}
+                          onClick={() => setServicesOpen(false)}
+                          className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition-all duration-150 ease-out hover:bg-primary/15"
+                        >
+                          View
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </Link>
+                      </div>
+                      <div className="mt-3">
+                        <p className="px-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                          Sub-services (click to open)
+                        </p>
+                        <div className="mt-2 grid gap-2">
+                          {services[activeServiceIndex].subServices.map(
+                            (subService) => (
+                              <Link
+                                key={subService.title}
+                                href={subService.href}
+                                onClick={(event) =>
+                                  handleSubServiceClick(event, subService.href)
+                                }
+                                className="group flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-700 shadow-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/[0.04] hover:shadow-[0_10px_26px_-18px_rgba(59,130,246,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                              >
+                                <span className="inline-flex items-center gap-2.5">
+                                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                                    <span className="h-2 w-2 rounded-full bg-primary" />
                                   </span>
-                                  <ChevronRight className="h-4 w-4 text-slate-400" />
-                                </Link>
-                              </DropdownMenuItem>
-                            ))}
-                          </div>
-                          <div className="mt-3 pt-3 border-t border-slate-100">
-                            <Link
-                              href={service.href}
-                              className="inline-flex items-center gap-2 text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
-                            >
-                              View {service.name}
-                              <ArrowRight className="h-3.5 w-3.5" />
-                            </Link>
-                          </div>
-                        </DropdownMenuSubContent>
-                      </DropdownMenuSub>
-                    ))}
+                                  <span>{subService.title}</span>
+                                </span>
+                                <ArrowRight className="h-4 w-4 text-primary/70 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+                              </Link>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -434,11 +488,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="rounded-3xl bg-white p-8 sm:p-10 lg:p-12 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/80">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
               <div className="lg:col-span-2">
-                <div className="inline-flex items-center gap-4 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
+                <div className="inline-flex items-center gap-4 rounded-2xl px-4 py-3">
                   <img
                     src={logo}
                     alt="PropelMeta Tech"
-                    className="h-12 w-auto sm:h-14"
+                    className="w-[200px] h-auto object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -491,14 +545,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </li>
                   <li>
                     <Link
-                      href="/contact"
-                      className="text-sm text-slate-600 transition-colors hover:text-slate-900"
-                    >
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/blog"
                       className="text-sm text-slate-600 transition-colors hover:text-slate-900"
                     >
@@ -523,13 +569,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <ul className="flex flex-wrap gap-3">
                   <li>
                     <a
+                      href="https://www.linkedin.com/company/propelmeta-tech/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="LinkedIn"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-md ring-1 ring-[#0A66C2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                    >
+                      <FaLinkedinIn className="h-5 w-5" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href="https://www.facebook.com/share/1HJAAhoL3y/"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Facebook"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md ring-1 ring-[#1877F2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <Facebook className="h-4 w-4" />
+                      <FaFacebookF className="h-5 w-5" />
                     </a>
                   </li>
                   <li>
@@ -538,9 +595,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Instagram"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] text-white shadow-md ring-1 ring-black/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <Instagram className="h-4 w-4" />
+                      <FaInstagram className="h-5 w-5" />
                     </a>
                   </li>
                   <li>
@@ -548,32 +605,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       href="https://www.threads.com/@propelmeta_tech"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="Threads"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
+                      aria-label="X"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-md ring-1 ring-white/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <MessageCircle className="h-4 w-4" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tiktok.com/@propelmetatech?is_from_webapp=1&sender_device=pc"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="TikTok"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
-                    >
-                      <Music2 className="h-4 w-4" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/company/propelmeta-tech/"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="LinkedIn"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm ring-1 ring-slate-300 transition-all hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white hover:ring-slate-900"
-                    >
-                      <Linkedin className="h-4 w-4" />
+                      <FaXTwitter className="h-5 w-5" />
                     </a>
                   </li>
                 </ul>
