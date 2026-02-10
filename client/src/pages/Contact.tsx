@@ -200,14 +200,14 @@ export default function Contact() {
                       <Mail className="w-5 h-5 mt-0.5 opacity-80" />
                       <div>
                         <p className="font-semibold">Email</p>
-                        <p className="text-blue-100">sales@propelmeta.com</p>
+                        <p className="text-blue-100">ads@propelmetatech.com</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <Phone className="w-5 h-5 mt-0.5 opacity-80" />
                       <div>
                         <p className="font-semibold">Phone</p>
-                        <p className="text-blue-100">+1 (555) 123-4567</p>
+                        <p className="text-blue-100"> +1 4698509526</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -215,9 +215,9 @@ export default function Contact() {
                       <div>
                         <p className="font-semibold">Office</p>
                         <p className="text-blue-100">
-                          123 Tech Blvd, Suite 400
+                          220 N Gould St Sheridan,
                           <br />
-                          San Francisco, CA 94107
+                          WY, 82801, USA
                         </p>
                       </div>
                     </div>

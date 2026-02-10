@@ -283,7 +283,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="  relative overflow-hidden pt-6 pb-8 md:pt-8 md:pb-12 lg:pt-28 lg:pb-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
+      <section className="  relative overflow-hidden pt-1 pb-8 md:pt-8 md:pb-12 lg:pt-12 lg:pb-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
         {/* Modern Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
@@ -291,21 +291,21 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/10 to-purple-300/10 rounded-full blur-3xl"></div>
         </div>
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
-          <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-20 xl:gap-24 2xl:gap-28">
+          <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-14 xl:gap-16 2xl:gap-20">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-5 xl:col-span-5 max-w-2xl lg:pr-6"
+              className="lg:col-span-5 xl:col-span-5 max-w-2xl lg:pr-5 flex h-full flex-col"
             >
-              <div className="inline-flex items-center rounded-full border border-blue-200/50 bg-gradient-to-r from-blue-50 to-purple-50 backdrop-blur-sm px-4 py-2 text-sm font-medium text-blue-600 mb-8 shadow-lg shadow-blue-500/10">
+              <div className="inline-flex items-center rounded-full border border-blue-200/50 bg-gradient-to-r from-blue-50 to-purple-50 backdrop-blur-sm px-4 py-2 text-sm font-medium text-blue-600 mb-6 shadow-lg shadow-blue-500/10">
                 <Rocket className="h-4 w-4 mr-2 text-blue-500" />
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-semibold">
                   New: Next-Gen AI Marketing Suite
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-slate-900 leading-[1.1] mb-6">
-                Transform Your Business with <br />
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.9rem] xl:text-[4.2rem] font-bold font-display text-slate-900 leading-[1.06] mb-5">
+                Transform Your Business with{' '}
                 <span className="text-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Intelligent Digital Marketing
                 </span>
@@ -313,16 +313,16 @@ export default function Home() {
               {/* <p className="text-lg md:text-xl font-semibold text-slate-700 mb-4 max-w-xl">
                 Transform Your Business with Intelligent Digital Marketing
               </p> */}
-              <p className="text-lg text-slate-600 mb-4 leading-relaxed max-w-xl">
+              <p className="text-lg text-slate-600 mb-3 leading-relaxed max-w-xl">
                 PropelMeta Tech helps restaurants and modern businesses attract
                 more customers, increase online visibility, and scale faster
                 using data-driven marketing, creative content, and automation.
               </p>
-              <p className="text-base text-slate-500 mb-10 max-w-xl">
+              <p className="text-base text-slate-500 mb-7 max-w-xl">
                 All-in-one marketing solutions. Measurable growth. Zero
                 guesswork.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-4 mb-7">
                 <Link href="/pricing">
                   <Button
                     size="lg"
@@ -345,7 +345,7 @@ export default function Home() {
               </div>
 
               {/* Enhanced Social Proof */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-6 text-sm">
+              <div className="mt-auto flex flex-col sm:flex-row sm:items-center gap-5 text-sm pt-2">
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
                     {[1, 2, 3, 4, 5].map((i) => (
@@ -382,9 +382,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-7 xl:col-span-7 relative min-h-[240px] lg:min-h-[320px] pb-12 sm:pb-16 lg:pb-24 flex items-center justify-center"
+              className="lg:col-span-7 xl:col-span-7 relative min-h-[300px] flex items-stretch justify-center h-full"
             >
-              <div className="w-full max-w-4xl">
+              <div className="h-full w-full max-w-4xl">
                 <AutoScrollCarousel
                   items={carouselItems}
                   autoScrollInterval={5000}
