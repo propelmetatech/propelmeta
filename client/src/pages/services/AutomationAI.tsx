@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
+import { ServiceHeroBanner } from '@/components/ServiceHeroBanner';
 import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -104,6 +105,7 @@ export default function AutomationAI() {
   return (
     <Layout>
       <section className="relative overflow-hidden pt-24 pb-20 bg-gradient-to-br from-slate-50 via-white to-amber-50/40">
+              <ServiceHeroBanner />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl"></div>
@@ -461,6 +463,8 @@ export default function AutomationAI() {
     </Layout>
   );
 }
+
+
 
 
 
