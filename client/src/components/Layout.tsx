@@ -8,10 +8,11 @@ import {
   Code2,
   Search,
   Headphones,
+  Facebook,
+  Instagram,
+  Linkedin,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import logo from '@/assests/logo.jpeg';
@@ -575,7 +576,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       aria-label="LinkedIn"
                       className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-md ring-1 ring-[#0A66C2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <FaLinkedinIn className="h-5 w-5" />
+                      <Linkedin className="h-5 w-5" />
                     </a>
                   </li>
                   <li>
@@ -586,7 +587,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       aria-label="Facebook"
                       className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md ring-1 ring-[#1877F2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <FaFacebookF className="h-5 w-5" />
+                      <Facebook className="h-5 w-5" />
                     </a>
                   </li>
                   <li>
@@ -597,7 +598,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       aria-label="Instagram"
                       className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] text-white shadow-md ring-1 ring-black/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <FaInstagram className="h-5 w-5" />
+                      <Instagram className="h-5 w-5" />
                     </a>
                   </li>
                   <li>
@@ -608,7 +609,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       aria-label="X"
                       className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-md ring-1 ring-white/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <FaXTwitter className="h-5 w-5" />
+                      <span className="text-base font-semibold leading-none">X</span>
                     </a>
                   </li>
                 </ul>
