@@ -35,7 +35,7 @@ export function AutoScrollCarousel({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="relative h-[240px] w-full sm:h-[300px] lg:h-[460px] xl:h-[500px]">
+    <div className="relative h-[320px] w-full sm:h-[380px] lg:h-[460px] xl:h-[500px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -51,7 +51,7 @@ export function AutoScrollCarousel({
               <img
                 src={currentItem.image}
                 alt={currentItem.title}
-                className="h-full w-full object-contain p-2 sm:p-3 lg:p-4 xl:p-5"
+                className="h-auto max-h-full w-full object-contain p-1.5 sm:p-3 lg:p-4 xl:p-5"
               />
 
               {/* Gradient overlay for better text readability */}
@@ -62,7 +62,7 @@ export function AutoScrollCarousel({
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="absolute left-3 top-3 z-20 max-w-[84%] rounded-xl border border-white/80 bg-white/92 p-3 shadow-lg backdrop-blur-md lg:left-4 lg:top-4 lg:max-w-[70%] lg:rounded-2xl lg:p-3.5 xl:p-4"
+                className="absolute left-3 top-3 z-20 max-w-[80%] rounded-xl border border-white/80 bg-white/92 p-2.5 shadow-lg backdrop-blur-md lg:left-4 lg:top-4 lg:max-w-[70%] lg:rounded-2xl lg:p-3.5 xl:p-4"
               >
                 <h3 className="carousel-overlay-title mb-1.5 font-bold text-slate-900">
                   {currentItem.title}
@@ -78,7 +78,7 @@ export function AutoScrollCarousel({
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
-                  className="absolute bottom-3 right-3 z-20 flex min-w-[140px] items-center gap-2.5 rounded-xl border border-white/80 bg-white/92 p-2.5 shadow-lg backdrop-blur-md lg:bottom-4 lg:right-4 lg:min-w-[160px] lg:gap-3 lg:rounded-2xl lg:p-3 xl:min-w-[180px] xl:p-3.5"
+                  className="absolute bottom-3 right-3 z-20 flex min-w-[124px] items-center gap-2 rounded-xl border border-white/80 bg-white/92 p-2 shadow-lg backdrop-blur-md lg:bottom-4 lg:right-4 lg:min-w-[160px] lg:gap-3 lg:rounded-2xl lg:p-3 xl:min-w-[180px] xl:p-3.5"
                 >
                   <div
                     className={`${currentItem.stats.color} rounded-lg p-1.5 lg:rounded-xl lg:p-2`}

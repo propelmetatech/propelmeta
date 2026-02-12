@@ -14,6 +14,11 @@ import {
   Target,
 } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import {
+  ServiceImagePanel,
+  ServiceInfoCard,
+  ServiceStepsCard,
+} from '@/components/ServiceSectionBlocks';
 import paidAdsServiceImage from '@/assests/Paid Advertising.png';
 import marketingAutomationServiceImage from '@/assests/Paid Advertising, Marketing Automation & AI Automation.png';
 import aiAutomationServiceImage from '@/assests/AI Automation.png';
@@ -193,58 +198,42 @@ export default function AutomationAI() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Paid Advertising Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Managed ads on Facebook, Instagram, and Google to reach the right
-                audience quickly.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Paid Advertising Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Managed ads on Facebook, Instagram, and Google to reach the right
+              audience quickly.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    What's Included in Paid Advertising
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {adIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <BarChart3 className="h-6 w-6 text-amber-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Benefits of Our Paid Advertising Service
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {adBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="What's Included in Paid Advertising"
+                items={adIncludes}
+              />
+              <ServiceImagePanel
+                src={paidAdsServiceImage}
+                alt="Paid advertising service"
+                overlayClassName="from-amber-500/10 to-orange-500/10"
+              />
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={paidAdsServiceImage}
-                  alt="Paid advertising service"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={marketingAutomationServiceImage}
+                alt="Paid ads growth results"
+                overlayClassName="from-orange-500/10 to-amber-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Benefits of Our Paid Advertising Service"
+                items={adBenefits}
+                icon={<BarChart3 className="h-6 w-6 text-amber-600" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -255,61 +244,43 @@ export default function AutomationAI() {
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-amber-50/30 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="lg:order-2 space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Marketing Automation Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Automated Email & SMS Communication that keeps customers
-                engaged without manual follow-ups.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Marketing Automation Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Automated Email & SMS Communication that keeps customers engaged
+              without manual follow-ups.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Mail className="h-6 w-6 text-amber-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Our Marketing Automation Services Include
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {marketingIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <MessageSquare className="h-6 w-6 text-amber-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Why Marketing Automation Matters
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {marketingBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="Our Marketing Automation Services Include"
+                items={marketingIncludes}
+                icon={<Mail className="h-6 w-6 text-amber-600" />}
+              />
+              <ServiceImagePanel
+                src={marketingAutomationServiceImage}
+                alt="Marketing automation service"
+                overlayClassName="from-amber-500/10 to-orange-500/10"
+              />
             </div>
 
-            <div className="relative lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={marketingAutomationServiceImage}
-                  alt="Marketing automation service"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={paidAdsServiceImage}
+                alt="Automated campaign impact"
+                overlayClassName="from-orange-500/10 to-amber-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Why Marketing Automation Matters"
+                items={marketingBenefits}
+                icon={<MessageSquare className="h-6 w-6 text-amber-600" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -320,61 +291,43 @@ export default function AutomationAI() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                AI Automation Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Smarter Systems Powered by Artificial Intelligence to improve
-                efficiency and reporting.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              AI Automation Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Smarter Systems Powered by Artificial Intelligence to improve
+              efficiency and reporting.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Bot className="h-6 w-6 text-amber-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Our AI Automation Services Include
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {aiIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Sparkles className="h-6 w-6 text-amber-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Benefits of AI Automation
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {aiBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="Our AI Automation Services Include"
+                items={aiIncludes}
+                icon={<Bot className="h-6 w-6 text-amber-600" />}
+              />
+              <ServiceImagePanel
+                src={aiAutomationServiceImage}
+                alt="AI automation service"
+                overlayClassName="from-amber-500/10 to-orange-500/10"
+              />
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={aiAutomationServiceImage}
-                  alt="AI automation service"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={adsAutomationProcessImage}
+                alt="AI automation benefits"
+                overlayClassName="from-orange-500/10 to-amber-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Benefits of AI Automation"
+                items={aiBenefits}
+                icon={<Sparkles className="h-6 w-6 text-amber-600" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -385,65 +338,40 @@ export default function AutomationAI() {
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-amber-50/30 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="lg:order-2">
-              <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  How Our Paid Ads & Automation Service Works
-                </h3>
-                <ol className="space-y-4 text-slate-600">
-                  {processSteps.map((step, index) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-600 text-white text-sm font-semibold">
-                        {index + 1}
-                      </span>
-                      <span className="leading-relaxed">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-                <p className="text-slate-600 mt-6">
-                  We manage everything from ads to automation so your business
-                  runs smarter and faster.
-                </p>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Who This Service Is Ideal For
-                </h3>
-                <ul className="space-y-3 text-slate-600">
-                  {audiences.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Why Choose PropelMeta Tech?
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
-                  {reasons.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              How Our Paid Ads & Automation Service Works
+            </h2>
+            <p className="mt-4 text-slate-600">
+              A structured execution model that combines ads, automation, and
+              AI insights to scale leads and improve conversion outcomes.
+            </p>
+          </div>
 
-            <div className="relative lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={adsAutomationProcessImage}
-                  alt="Ads and automation process"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-orange-500/10"></div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <ServiceStepsCard
+              title="How Our Paid Ads & Automation Service Works"
+              steps={processSteps}
+              footerText="We manage everything from ads to automation so your business runs smarter and faster."
+              stepBadgeClassName="bg-amber-600"
+            />
+            <ServiceImagePanel
+              src={adsAutomationProcessImage}
+              alt="Ads and automation process"
+              overlayClassName="from-amber-500/10 to-orange-500/10"
+            />
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+            <ServiceInfoCard
+              title="Who This Service Is Ideal For"
+              items={audiences}
+            />
+            <ServiceInfoCard
+              title="Why Choose PropelMeta Tech?"
+              items={reasons}
+              twoColumnItems
+            />
           </div>
         </div>
       </section>
