@@ -122,19 +122,19 @@ export default function AutomationAI() {
                 <Target className="h-4 w-4 mr-2" />
                 Paid Ads, Marketing Automation & AI
               </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-600 mb-4">
+              <p className="font-semibold uppercase tracking-[0.2em] text-amber-600 mb-4">
                 Performance-Driven Ads and Automated Marketing That Delivers Results
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Paid Advertising, Marketing Automation & AI Automation Services
               </h1>
-              <p className="text-xl text-slate-600 mb-6 leading-relaxed">
+              <p className="text-slate-600 mb-6">
                 At PropelMeta Tech, we provide complete paid advertising,
                 marketing automation, and AI automation services to help
                 businesses generate leads, increase sales, and scale
                 efficiently.
               </p>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 We manage your ads, automate customer communication, and use
                 AI-powered systems to improve performance - all handled by our
                 expert team.
@@ -195,17 +195,17 @@ export default function AutomationAI() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 Paid Advertising Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Managed ads on Facebook, Instagram, and Google to reach the right
                 audience quickly.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-6">
                 <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     What's Included in Paid Advertising
                   </h3>
                   <ul className="space-y-3 text-slate-600">
@@ -220,7 +220,7 @@ export default function AutomationAI() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <BarChart3 className="h-6 w-6 text-amber-600" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Benefits of Our Paid Advertising Service
                     </h3>
                   </div>
@@ -257,10 +257,10 @@ export default function AutomationAI() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="lg:order-2 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 Marketing Automation Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Automated Email & SMS Communication that keeps customers
                 engaged without manual follow-ups.
               </p>
@@ -269,7 +269,7 @@ export default function AutomationAI() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <Mail className="h-6 w-6 text-amber-600" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Our Marketing Automation Services Include
                     </h3>
                   </div>
@@ -285,7 +285,7 @@ export default function AutomationAI() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <MessageSquare className="h-6 w-6 text-amber-600" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Why Marketing Automation Matters
                     </h3>
                   </div>
@@ -322,10 +322,10 @@ export default function AutomationAI() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 AI Automation Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Smarter Systems Powered by Artificial Intelligence to improve
                 efficiency and reporting.
               </p>
@@ -334,7 +334,7 @@ export default function AutomationAI() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <Bot className="h-6 w-6 text-amber-600" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Our AI Automation Services Include
                     </h3>
                   </div>
@@ -350,7 +350,7 @@ export default function AutomationAI() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <Sparkles className="h-6 w-6 text-amber-600" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Benefits of AI Automation
                     </h3>
                   </div>
@@ -388,7 +388,7 @@ export default function AutomationAI() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="lg:order-2">
               <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   How Our Paid Ads & Automation Service Works
                 </h3>
                 <ol className="space-y-4 text-slate-600">
@@ -407,7 +407,7 @@ export default function AutomationAI() {
                 </p>
               </div>
               <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   Who This Service Is Ideal For
                 </h3>
                 <ul className="space-y-3 text-slate-600">
@@ -420,7 +420,7 @@ export default function AutomationAI() {
                 </ul>
               </div>
               <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   Why Choose PropelMeta Tech?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
@@ -451,7 +451,7 @@ export default function AutomationAI() {
       <section id="faqs" className="py-20 bg-white scroll-mt-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+            <h2 className="font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>

@@ -136,14 +136,14 @@ export default function MarketingAutomation() {
                 Marketing Automation
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Put Your Growth on{' '}
                 <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
                   Autopilot
                 </span>
               </h1>
 
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 Engage customers at the right time with the right message. Our
                 smart automation platform drives repeat sales while you focus on
                 growing your business.
@@ -209,12 +209,12 @@ export default function MarketingAutomation() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Smart Automation Types
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               Pre-built automation workflows that start working immediately to
               grow your business.
             </p>
@@ -232,10 +232,10 @@ export default function MarketingAutomation() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {type.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">
+                <h3 className="font-bold mb-4 text-slate-900">
                   {type.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed text-lg">
+                <p className="text-slate-600">
                   {type.description}
                 </p>
               </motion.div>
@@ -248,12 +248,12 @@ export default function MarketingAutomation() {
       <section className="py-24 bg-gradient-to-br from-slate-50 to-purple-50/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Powerful Features
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               Everything you need to create sophisticated marketing campaigns
               that convert.
             </p>
@@ -271,10 +271,10 @@ export default function MarketingAutomation() {
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">
+                <h3 className="font-bold mb-3 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600">
                   {feature.description}
                 </p>
               </motion.div>
@@ -292,7 +292,7 @@ export default function MarketingAutomation() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
+              <h2 className="font-bold font-display mb-8">
                 <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Results You Can Expect
                 </span>
@@ -337,7 +337,7 @@ export default function MarketingAutomation() {
       <section className="py-24 bg-gradient-to-br from-purple-50 to-pink-50/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Success Stories
               </span>
@@ -361,7 +361,7 @@ export default function MarketingAutomation() {
                     />
                   ))}
                 </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-6">
+                <p className="text-slate-700 mb-6">
                   "{testimonial.content}"
                 </p>
                 <div>

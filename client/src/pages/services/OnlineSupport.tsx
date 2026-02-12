@@ -98,18 +98,18 @@ export default function OnlineSupport() {
                 <Headphones className="h-4 w-4 mr-2" />
                 Online and Client Support
               </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">
+              <p className="font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">
                 Reliable Online & Client Support for Smooth Business Operations
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Online Support & Client Support Services
               </h1>
-              <p className="text-xl text-slate-600 mb-6 leading-relaxed">
+              <p className="text-slate-600 mb-6">
                 At PropelMeta Tech, we provide professional online support and
                 client support services to help businesses manage day-to-day
                 digital operations efficiently and without delays.
               </p>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 From account handling and online platform support to customer
                 communication and priority assistance, our team ensures your
                 business receives consistent, reliable support whenever it is
@@ -171,17 +171,17 @@ export default function OnlineSupport() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 Online Support Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Dedicated assistance for your digital platforms so operations run
                 smoothly.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-6">
                 <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     What Our Online Support Includes
                   </h3>
                   <ul className="space-y-3 text-slate-600">
@@ -194,7 +194,7 @@ export default function OnlineSupport() {
                   </ul>
                 </div>
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     Benefits of Our Online Support
                   </h3>
                   <ul className="space-y-3 text-slate-600">
@@ -230,10 +230,10 @@ export default function OnlineSupport() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="lg:order-2 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 Client Support Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Professional communication and priority assistance that builds
                 trust.
               </p>
@@ -242,7 +242,7 @@ export default function OnlineSupport() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <Headphones className="h-6 w-6 text-slate-700" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Our Client Support Includes
                     </h3>
                   </div>
@@ -258,7 +258,7 @@ export default function OnlineSupport() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <Shield className="h-6 w-6 text-slate-700" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Why Client Support Matters
                     </h3>
                   </div>
@@ -296,7 +296,7 @@ export default function OnlineSupport() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div>
               <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   How Our Support Services Work
                 </h3>
                 <ol className="space-y-4 text-slate-600">
@@ -315,7 +315,7 @@ export default function OnlineSupport() {
                 </p>
               </div>
               <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   Who This Service Is Ideal For
                 </h3>
                 <ul className="space-y-3 text-slate-600">
@@ -328,7 +328,7 @@ export default function OnlineSupport() {
                 </ul>
               </div>
               <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   Why Choose PropelMeta Tech for Support Services?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
@@ -359,7 +359,7 @@ export default function OnlineSupport() {
       <section id="faqs" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 scroll-mt-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+            <h2 className="font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>

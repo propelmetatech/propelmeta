@@ -283,50 +283,50 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="  relative overflow-hidden pt-1 pb-8 md:pt-8 md:pb-12 lg:pt-12 lg:pb-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 pt-0 pb-2 md:pt-1 md:pb-4 lg:h-[calc(100dvh-5rem)] lg:py-0">
         {/* Modern Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/10 to-purple-300/10 rounded-full blur-3xl"></div>
         </div>
-        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
-          <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-12 lg:items-stretch lg:gap-14 xl:gap-16 2xl:gap-20">
+        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-20 lg:py-20 xl:px-20 2xl:px-20 max-w-[1800px] relative z-10 lg:h-full">
+          <div className="grid grid-cols-1 items-start gap-7 sm:gap-8 lg:grid-cols-12 lg:h-full lg:items-center lg:gap-8 xl:gap-10">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-5 xl:col-span-5 max-w-2xl lg:pr-5 flex h-full flex-col"
+              className="lg:col-span-5 xl:col-span-5 max-w-2xl lg:pr-5 flex flex-col justify-center"
             >
-              <div className="inline-flex items-center rounded-full border border-blue-200/50 bg-gradient-to-r from-blue-50 to-purple-50 backdrop-blur-sm px-4 py-2 text-sm font-medium text-blue-600 mb-6 shadow-lg shadow-blue-500/10">
+              <div className="inline-flex items-center rounded-full border border-blue-200/50 bg-gradient-to-r from-blue-50 to-purple-50 backdrop-blur-sm px-4 py-2 text-sm font-medium text-blue-600 mb-2.5 shadow-lg shadow-blue-500/10">
                 <Rocket className="h-4 w-4 mr-2 text-blue-500" />
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-semibold">
                   New: Next-Gen AI Marketing Suite
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.9rem] xl:text-[4.2rem] font-bold font-display text-slate-900 leading-[1.06] mb-5">
+              <h1 className="home-hero-title font-bold font-display text-slate-900 mb-2.5">
                 Transform Your Business with{' '}
                 <span className="text-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Intelligent Digital Marketing
                 </span>
               </h1>
-              {/* <p className="text-lg md:text-xl font-semibold text-slate-700 mb-4 max-w-xl">
+              {/* <p className="font-semibold text-slate-700 mb-4 max-w-xl">
                 Transform Your Business with Intelligent Digital Marketing
               </p> */}
-              <p className="text-lg text-slate-600 mb-3 leading-relaxed max-w-xl">
+              <p className="text-slate-600 mb-1.5 max-w-xl">
                 PropelMeta Tech helps restaurants and modern businesses attract
                 more customers, increase online visibility, and scale faster
                 using data-driven marketing, creative content, and automation.
               </p>
-              <p className="text-base text-slate-500 mb-7 max-w-xl">
+              <p className="text-slate-500 mb-3 max-w-xl">
                 All-in-one marketing solutions. Measurable growth. Zero
                 guesswork.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-7">
+              <div className="flex flex-col sm:flex-row gap-4 mb-3">
                 <Link href="/pricing">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 rounded-2xl shadow-2xl shadow-blue-500/30 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl hover:shadow-blue-500/40"
+                    className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl shadow-2xl shadow-blue-500/30 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl hover:shadow-blue-500/40"
                   >
                     <Rocket className="h-5 w-5 mr-2" />
                     Get Started
@@ -336,7 +336,7 @@ export default function Home() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl border-2 border-slate-200 bg-white/80 backdrop-blur-sm hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     <ArrowRight className="h-5 w-5 mr-2" />
                     Book a Demo
@@ -345,13 +345,13 @@ export default function Home() {
               </div>
 
               {/* Enhanced Social Proof */}
-              <div className="mt-auto flex flex-col sm:flex-row sm:items-center gap-5 text-sm pt-2">
-                <div className="flex items-center gap-4">
+              <div className="home-hero-social flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
+                <div className="flex items-center gap-3">
                   <div className="flex -space-x-3">
                     {[1, 2, 3, 4, 5].map((i) => (
                       <div
                         key={i}
-                        className="h-10 w-10 rounded-full border-3 border-white bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-semibold text-xs"
+                        className="h-8 w-8 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-semibold text-[10px]"
                       >
                         {String.fromCharCode(64 + i)}
                       </div>
@@ -379,12 +379,12 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-7 xl:col-span-7 relative min-h-[300px] flex items-stretch justify-center h-full"
-            >
-              <div className="h-full w-full max-w-4xl">
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:col-span-7 xl:col-span-7 relative min-h-[220px] sm:min-h-[260px] lg:h-full flex items-center justify-center"
+              >
+              <div className="w-full max-w-4xl">
                 <AutoScrollCarousel
                   items={carouselItems}
                   autoScrollInterval={5000}
@@ -440,7 +440,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold font-display mb-6 leading-tight"
+              className="font-bold font-display mb-6"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Everything you need
@@ -455,7 +455,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto"
+              className="text-slate-600 max-w-3xl mx-auto"
             >
               A comprehensive suite of tools designed to work together
               seamlessly, empowering your business to reach new heights.
@@ -525,13 +525,13 @@ export default function Home() {
                       </div>
 
                       {/* Enhanced Typography */}
-                      <h3 className="text-2xl lg:text-3xl font-bold mb-4 transition-all duration-500">
+                      <h3 className="font-bold mb-4 transition-all duration-500">
                         <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-blue-800 transition-all duration-500">
                           {feature.title}
                         </span>
                       </h3>
 
-                      <p className="text-slate-600 text-lg leading-relaxed group-hover:text-slate-700 transition-all duration-500 mb-6">
+                      <p className="text-slate-600 group-hover:text-slate-700 transition-all duration-500 mb-6">
                         {feature.description}
                       </p>
 
@@ -616,7 +616,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
+              className="font-bold font-display mb-6"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 How it works
@@ -627,7 +627,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-slate-600 leading-relaxed"
+              className="text-slate-600"
             >
               Get started in minutes with our streamlined onboarding process
             </motion.p>
@@ -686,10 +686,10 @@ export default function Home() {
                     {step.icon}
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4 text-slate-900">
+                  <h3 className="font-bold mb-4 text-slate-900">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-600">
                     {step.description}
                   </p>
                 </div>
@@ -739,7 +739,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-4 leading-tight"
+              className="font-bold font-display mb-4"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Numbers that speak
@@ -776,15 +776,15 @@ export default function Home() {
 
                 <div className="relative z-10 pt-12">
                   {/* Enhanced Number */}
-                  <p className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:via-blue-600 group-hover:to-blue-700 transition-all duration-700 leading-none">
+                  <p className="font-bold mb-4 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:via-blue-600 group-hover:to-blue-700 transition-all duration-700">
                     30%
                   </p>
 
                   {/* Enhanced Description */}
-                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-900 transition-colors duration-500">
+                  <h3 className="font-bold text-slate-900 mb-3 group-hover:text-blue-900 transition-colors duration-500">
                     Revenue Growth
                   </h3>
-                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500 leading-relaxed">
+                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500">
                     Average increase in monthly revenue within the first 90 days
                   </p>
 
@@ -817,15 +817,15 @@ export default function Home() {
 
                 <div className="relative z-10 pt-12">
                   {/* Enhanced Number */}
-                  <p className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:via-purple-600 group-hover:to-purple-700 transition-all duration-700 leading-none">
+                  <p className="font-bold mb-4 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:via-purple-600 group-hover:to-purple-700 transition-all duration-700">
                     2.5x
                   </p>
 
                   {/* Enhanced Description */}
-                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-900 transition-colors duration-500">
+                  <h3 className="font-bold text-slate-900 mb-3 group-hover:text-purple-900 transition-colors duration-500">
                     Customer Retention
                   </h3>
-                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500 leading-relaxed">
+                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500">
                     Higher retention rates compared to industry standards
                   </p>
 
@@ -858,15 +858,15 @@ export default function Home() {
 
                 <div className="relative z-10 pt-12">
                   {/* Enhanced Number */}
-                  <p className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 bg-clip-text text-transparent group-hover:from-pink-500 group-hover:via-pink-600 group-hover:to-pink-700 transition-all duration-700 leading-none">
+                  <p className="font-bold mb-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 bg-clip-text text-transparent group-hover:from-pink-500 group-hover:via-pink-600 group-hover:to-pink-700 transition-all duration-700">
                     1M+
                   </p>
 
                   {/* Enhanced Description */}
-                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3 group-hover:text-pink-900 transition-colors duration-500">
+                  <h3 className="font-bold text-slate-900 mb-3 group-hover:text-pink-900 transition-colors duration-500">
                     Orders Processed
                   </h3>
-                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500 leading-relaxed">
+                  <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500">
                     Successfully processed orders across all platforms daily
                   </p>
 
@@ -930,7 +930,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
+              className="font-bold font-display mb-6"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 What our customers
@@ -987,7 +987,7 @@ export default function Home() {
                       </div>
 
                       {/* Testimonial Text */}
-                      <p className="text-slate-700 text-lg leading-relaxed mb-8 group-hover:text-slate-800 transition-colors duration-500">
+                      <p className="text-slate-700 mb-8 group-hover:text-slate-800 transition-colors duration-500">
                         "{testimonial.text}"
                       </p>
 
@@ -1002,10 +1002,10 @@ export default function Home() {
                           <p className="text-slate-900 font-semibold group-hover:text-slate-800 transition-colors duration-500">
                             {testimonial.name}
                           </p>
-                          <p className="text-slate-600 text-sm group-hover:text-slate-700 transition-colors duration-500">
+                          <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-500">
                             {testimonial.role}
                           </p>
-                          <p className="text-slate-500 text-xs group-hover:text-slate-600 transition-colors duration-500">
+                          <p className="text-slate-500 group-hover:text-slate-600 transition-colors duration-500">
                             {testimonial.company}
                           </p>
                         </div>
@@ -1054,7 +1054,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6 leading-tight"
+              className="font-bold font-display mb-6"
             >
               <span className="bg-gradient-to-r from-slate-900 via-green-800 to-blue-800 bg-clip-text text-transparent">
                 Enterprise-grade security
@@ -1065,7 +1065,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-slate-600 leading-relaxed"
+              className="text-slate-600"
             >
               Your data is protected with bank-level security and compliance
               standards
@@ -1112,10 +1112,10 @@ export default function Home() {
                 >
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">
+                <h3 className="font-bold mb-3 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600">
                   {feature.description}
                 </p>
               </motion.div>
@@ -1143,7 +1143,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-display mb-6 leading-tight"
+              className="font-bold font-display mb-6"
             >
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Frequently asked
@@ -1220,7 +1220,7 @@ export default function Home() {
                       transition={{ duration: 0.3 }}
                       className="px-4 pb-5 sm:px-8 sm:pb-6"
                     >
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -1237,10 +1237,10 @@ export default function Home() {
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           <div className="rounded-3xl border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-6 sm:p-10 md:p-20 text-center shadow-2xl shadow-blue-700/40">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-4">
+              <h2 className="font-bold font-display text-white mb-4">
                 Get Early Access to PropelMeta
               </h2>
-              <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+              <p className="text-slate-300 mb-10">
                 Join our waitlist today and be among the first to experience a
                 smarter, faster, and more efficient way to grow your business.
               </p>

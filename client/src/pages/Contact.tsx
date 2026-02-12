@@ -120,32 +120,32 @@ export default function Contact() {
               <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                 Contact Sales
               </span>
-              <h1 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight">
+              <h1 className="mt-5 font-bold font-display">
                 Tell us about your growth goals.
               </h1>
-              <p className="mt-4 text-base sm:text-lg text-white/70">
+              <p className="mt-4 text-white/70">
                 We help teams launch high-performing sites and automation that
                 convert. Share a few details and we’ll propose the right plan.
               </p>
               <div className="contact-pills mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div className="contact-pill rounded-2xl border border-white/10 bg-white/5 p-4">
                   <Clock className="h-5 w-5 text-white/80" />
-                  <p className="mt-3 text-sm font-semibold">Fast response</p>
-                  <p className="text-xs text-white/60">Within 1 business day</p>
+                  <p className="mt-3 font-semibold">Fast response</p>
+                  <p className="text-white/60">Within 1 business day</p>
                 </div>
                 <div className="contact-pill rounded-2xl border border-white/10 bg-white/5 p-4">
                   <ShieldCheck className="h-5 w-5 text-white/80" />
-                  <p className="mt-3 text-sm font-semibold">Secure by design</p>
-                  <p className="text-xs text-white/60">
+                  <p className="mt-3 font-semibold">Secure by design</p>
+                  <p className="text-white/60">
                     Your info stays private
                   </p>
                 </div>
                 <div className="contact-pill rounded-2xl border border-white/10 bg-white/5 p-4">
                   <Mail className="h-5 w-5 text-white/80" />
-                  <p className="mt-3 text-sm font-semibold">
+                  <p className="mt-3 font-semibold">
                     Direct to experts
                   </p>
-                  <p className="text-xs text-white/60">Sales + solution team</p>
+                  <p className="text-white/60">Sales + solution team</p>
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function Contact() {
             <div className="contact-grid grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="space-y-8 lg:col-span-2">
                 <div className="contact-panel rounded-3xl bg-white p-6 sm:p-8 shadow-xl border border-slate-100">
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="font-bold text-slate-900">
                     What happens next
                   </h3>
                   <div className="mt-6 space-y-4 text-sm text-slate-600">
@@ -192,7 +192,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-panel rounded-3xl bg-primary p-6 sm:p-8 text-white shadow-xl">
-                  <h3 className="text-xl font-bold font-display">
+                  <h3 className="font-bold font-display">
                     Get in touch
                   </h3>
                   <div className="mt-6 space-y-6 text-sm">
@@ -227,10 +227,10 @@ export default function Contact() {
 
               <div className="contact-form lg:col-span-3 bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-slate-100">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900">
+                  <h2 className="font-bold text-slate-900">
                     Start the conversation
                   </h2>
-                  <p className="text-sm text-slate-500 mt-2">
+                  <p className="text-slate-500 mt-2">
                     Tell us about your business and goals. The more context, the
                     better.
                   </p>

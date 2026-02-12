@@ -107,14 +107,14 @@ export default function WebsiteBuilder() {
                 AI Website Builder
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Build Your Dream Website in{' '}
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Minutes
                 </span>
               </h1>
 
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 Create stunning, high-converting websites with our AI-powered
                 builder. No coding required - just tell us about your business
                 and watch the magic happen.
@@ -180,12 +180,12 @@ export default function WebsiteBuilder() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Powerful Features
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               Everything you need to create a professional website that converts
               visitors into customers.
             </p>
@@ -203,10 +203,10 @@ export default function WebsiteBuilder() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">
+                <h3 className="font-bold mb-3 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600">
                   {feature.description}
                 </p>
               </motion.div>
@@ -224,7 +224,7 @@ export default function WebsiteBuilder() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
+              <h2 className="font-bold font-display mb-8">
                 <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Why Choose Our Website Builder?
                 </span>
@@ -269,7 +269,7 @@ export default function WebsiteBuilder() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 What Our Customers Say
               </span>
@@ -293,7 +293,7 @@ export default function WebsiteBuilder() {
                     />
                   ))}
                 </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-6">
+                <p className="text-slate-700 mb-6">
                   "{testimonial.content}"
                 </p>
                 <div>

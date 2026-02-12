@@ -19,10 +19,10 @@ export default function Blog() {
               <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                 The PropelMeta Blog
               </span>
-              <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight">
+              <h1 className="mt-6 font-bold font-display text-slate-900">
                 Insights on marketing, automation, and growth strategy.
               </h1>
-              <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl">
+              <p className="mt-4 text-slate-600 max-w-xl">
                 Practical guides, playbooks, and experiments from the team
                 building conversion-focused websites and automation.
               </p>
@@ -72,7 +72,7 @@ export default function Blog() {
                   <div className="text-sm font-semibold text-primary">
                     {format(new Date(post.createdAt || new Date()), "MMM d, yyyy")}
                   </div>
-                  <h2 className="mt-3 text-xl font-bold font-display text-slate-900">
+                  <h2 className="mt-3 font-bold font-display text-slate-900">
                     {post.title}
                   </h2>
                   <p className="mt-3 flex-1 text-slate-600 line-clamp-3">
