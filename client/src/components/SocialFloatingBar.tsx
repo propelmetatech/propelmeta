@@ -54,7 +54,7 @@ const socialLinks = [
 export function SocialFloatingBar() {
   return (
     <div className="fixed right-0 top-1/2 z-[74] -translate-y-1/2">
-      <div className="rounded-l-2xl border border-blue-300/30 bg-gradient-to-b from-[#1E5FD3] to-[#0E3E90] px-2 py-3 shadow-[0_14px_28px_-16px_rgba(2,6,23,0.75)] backdrop-blur-sm">
+      <div className="rounded-l-2xl border border-blue-300/30 bg-[#1954bb5e] px-2 py-3 shadow-[0_14px_28px_-16px_rgba(2,6,23,0.75)] backdrop-blur-sm">
         <ul className="flex flex-col items-center gap-2">
           {socialLinks.map((item) => (
             <li key={item.label}>
