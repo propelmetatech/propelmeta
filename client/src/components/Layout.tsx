@@ -8,10 +8,6 @@ import {
   Code2,
   Search,
   Headphones,
-  Facebook,
-  Instagram,
-  Linkedin,
-  AtSign,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
@@ -27,6 +23,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { WhatsAppFloatingButton } from '@/components/WhatsAppFloatingButton';
+import { SocialFloatingBar } from '@/components/SocialFloatingBar';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -570,65 +567,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Connect
                 </h4>
-                <ul className="grid w-fit grid-cols-2 gap-1">
-                  <li>
-                    <a
-                      href="https://www.facebook.com/share/1HJAAhoL3y/"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Facebook"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md ring-1 ring-[#1877F2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      <Facebook className="h-5 w-5" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/propelmeta_tech?igsh=eGd0ZXFkb2syenBx"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Instagram"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] text-white shadow-md ring-1 ring-black/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      <Instagram className="h-5 w-5" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/company/propelmeta-tech/"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="LinkedIn"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-md ring-1 ring-[#0A66C2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://x.com/propelmeta_tech"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="X"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-md ring-1 ring-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      <span className="text-base font-semibold leading-none">
-                        X
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.threads.com/@propelmeta_tech"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Threads"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#111111] text-white shadow-md ring-1 ring-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      <AtSign className="h-5 w-5" />
-                    </a>
-                  </li>
-                </ul>
+                <p className="max-w-[220px] text-sm text-slate-600">
+                  Follow our social channels using the floating social icons on
+                  the right side.
+                </p>
               </div>
             </div>
 
@@ -647,6 +589,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
 
+      <SocialFloatingBar />
       <WhatsAppFloatingButton />
     </div>
   );
