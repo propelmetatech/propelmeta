@@ -41,7 +41,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
             {isOpen && (
               <p
                 id={contentId}
-                className="mt-3 text-slate-600 leading-relaxed"
+                className="mt-3 text-slate-600"
               >
                 {faq.answer}
               </p>

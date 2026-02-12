@@ -25,6 +25,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { WhatsAppFloatingButton } from '@/components/WhatsAppFloatingButton';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -273,64 +274,86 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <div className="relative grid gap-4 lg:grid-cols-[minmax(0,1.6fr)_minmax(380px,1fr)] lg:items-start">
                     <div>
                       <div className="px-1 pb-3.5">
-                        <p className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-600">
+                        <p className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 font-semibold uppercase tracking-[0.14em] text-indigo-600">
                           <Sparkles className="h-3 w-3" />
                           Explore Services
                         </p>
-                        <h3 className="text-base font-semibold text-slate-900">
+                        <h3 className="font-semibold text-slate-900">
                           Choose a service
                         </h3>
-                        <p className="mt-1.5 text-xs text-slate-600">
+                        <p className="mt-1.5 text-slate-600">
                           Hover a card to preview the service and jump directly
                           to related sub-services.
                         </p>
                       </div>
-                      <div className="grid gap-3 px-1 sm:grid-cols-2">
+                      <div className="grid items-start gap-3 px-1 sm:grid-cols-2">
                         {services.map((service, index) => (
-                          <Link
+                          <div
                             key={service.name}
-                            href={service.href}
-                            onClick={() => setServicesOpen(false)}
                             onMouseEnter={() => setActiveServiceIndex(index)}
-                            onFocus={() => setActiveServiceIndex(index)}
-                            className={`group relative overflow-hidden rounded-xl border bg-white p-3.5 transition-all duration-150 ease-out ${
+                            onFocusCapture={() => setActiveServiceIndex(index)}
+                            className={`group/service relative self-start overflow-hidden rounded-xl border bg-white p-3.5 transition-all duration-150 ease-out ${
                               activeServiceIndex === index
                                 ? 'border-primary/45 bg-primary/[0.04] ring-1 ring-primary/20 shadow-[0_12px_30px_-18px_rgba(59,130,246,0.8)] -translate-y-0.5'
                                 : 'border-slate-200 hover:border-primary/35 hover:bg-slate-50 hover:shadow-[0_12px_30px_-22px_rgba(59,130,246,0.75)] hover:-translate-y-0.5'
                             }`}
                           >
-                            <div className="flex items-start gap-3">
-                              <div
-                                className={`mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-white shadow-sm bg-gradient-to-br ${service.iconBg}`}
-                              >
-                                {service.icon}
-                              </div>
-                              <div className="min-w-0">
-                                <div className="text-sm font-semibold leading-tight text-slate-900">
-                                  {service.name}
+                            <Link
+                              href={service.href}
+                              onClick={() => setServicesOpen(false)}
+                              className="block"
+                            >
+                              <div className="flex items-start gap-3">
+                                <div
+                                  className={`mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-white shadow-sm bg-gradient-to-br ${service.iconBg}`}
+                                >
+                                  {service.icon}
                                 </div>
-                                <div className="mt-1 text-xs leading-relaxed text-slate-600">
-                                  {service.description}
+                                <div className="min-w-0">
+                                  <div className="text-sm font-semibold leading-tight text-slate-900">
+                                    {service.name}
+                                  </div>
+                                  <div className="mt-1 text-xs leading-relaxed text-slate-600">
+                                    {service.description}
+                                  </div>
                                 </div>
                               </div>
+                              <div className="mt-2.5 flex items-center justify-end">
+                                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                                  Explore
+                                  <ArrowRight className="h-4 w-4 transition-transform duration-150 ease-out group-hover/service:translate-x-0.5" />
+                                </span>
+                              </div>
+                            </Link>
+
+                            <div className="pointer-events-none mt-0.5 grid max-h-0 gap-1.5 overflow-hidden opacity-0 transition-all duration-200 ease-out group-hover/service:pointer-events-auto group-hover/service:mt-3 group-hover/service:max-h-56 group-hover/service:opacity-100 group-focus-within/service:pointer-events-auto group-focus-within/service:mt-3 group-focus-within/service:max-h-56 group-focus-within/service:opacity-100">
+                              {service.subServices.map((subService) => (
+                                <Link
+                                  key={subService.title}
+                                  href={subService.href}
+                                  onClick={(event) =>
+                                    handleSubServiceClick(event, subService.href)
+                                  }
+                                  className="group/subservice flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-[12px] font-medium text-slate-700 shadow-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/[0.04] hover:shadow-[0_10px_26px_-18px_rgba(59,130,246,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                                >
+                                  <span className="truncate">
+                                    {subService.title}
+                                  </span>
+                                  <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-primary/70 transition-transform duration-150 ease-out group-hover/subservice:translate-x-0.5" />
+                                </Link>
+                              ))}
                             </div>
-                            <div className="mt-2.5 flex items-center justify-end">
-                              <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                                Explore
-                                <ArrowRight className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
-                              </span>
-                            </div>
-                          </Link>
+                          </div>
                         ))}
                       </div>
                     </div>
 
                     <div className="rounded-[18px] bg-gradient-to-br from-indigo-50 via-white to-cyan-50 p-3 ring-1 ring-slate-200 shadow-[0_18px_45px_-25px_rgba(15,23,42,0.35)]">
-                      <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100">
+                      <div className="flex h-44 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100 md:h-48">
                         <img
                           src={services[activeServiceIndex].image}
                           alt={services[activeServiceIndex].imageAlt}
-                          className="h-44 w-full object-cover transition-transform duration-300 ease-out md:h-48"
+                          className="h-full w-full object-contain object-center transition-transform duration-300 ease-out"
                           loading="lazy"
                         />
                       </div>
@@ -339,7 +362,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                           <div className="text-base font-semibold leading-tight text-slate-900">
                             {services[activeServiceIndex].name}
                           </div>
-                          <p className="mt-1 text-xs text-slate-600">
+                          <p className="mt-1 text-slate-600">
                             {services[activeServiceIndex].description}
                           </p>
                         </div>
@@ -352,33 +375,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                           <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                       </div>
-                      <div className="mt-3">
-                        <p className="px-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                          Sub-services (click to open)
-                        </p>
-                        <div className="mt-2 grid gap-2">
-                          {services[activeServiceIndex].subServices.map(
-                            (subService) => (
-                              <Link
-                                key={subService.title}
-                                href={subService.href}
-                                onClick={(event) =>
-                                  handleSubServiceClick(event, subService.href)
-                                }
-                                className="group flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-700 shadow-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/[0.04] hover:shadow-[0_10px_26px_-18px_rgba(59,130,246,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                              >
-                                <span className="inline-flex items-center gap-2.5">
-                                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                                    <span className="h-2 w-2 rounded-full bg-primary" />
-                                  </span>
-                                  <span>{subService.title}</span>
-                                </span>
-                                <ArrowRight className="h-4 w-4 text-primary/70 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
-                              </Link>
-                            ),
-                          )}
-                        </div>
-                      </div>
+                      <p className="mt-3 px-1 font-semibold uppercase tracking-[0.14em] text-slate-500">
+                        Hover a service card on the left to view sub-services
+                      </p>
                     </div>
                   </div>
                 </DropdownMenuContent>
@@ -431,7 +430,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
                     {/* Services Section */}
                     <div>
-                      <h3 className="text-lg font-medium text-slate-900 mb-4">
+                      <h3 className="font-medium text-slate-900 mb-4">
                         Services
                       </h3>
                       <div className="space-y-3 ml-4">
@@ -498,7 +497,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   />
                 </div>
 
-                <p className="mt-6 max-w-md text-sm leading-relaxed text-slate-600">
+                <p className="mt-6 max-w-md text-slate-600">
                   Empowering businesses with AI-driven websites, marketing
                   automation, and branded apps. Grow faster with focused
                   strategy, creative execution, and measurable outcomes.
@@ -514,7 +513,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </div>
 
               <div className="p-1 lg:pl-4">
-                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">
+                <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Services
                 </h4>
                 <ul className="space-y-3">
@@ -532,7 +531,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </div>
 
               <div className="p-1 lg:pl-4">
-                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">
+                <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Company
                 </h4>
                 <ul className="space-y-3">
@@ -564,7 +563,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </div>
 
               <div className="p-1 lg:pl-4">
-                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-slate-900">
+                <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Connect
                 </h4>
                 <ul className="flex flex-wrap gap-3">
@@ -630,6 +629,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
+
+      <WhatsAppFloatingButton />
     </div>
   );
 }

@@ -35,7 +35,7 @@ export function AutoScrollCarousel({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="relative h-full w-full min-h-[300px] lg:min-h-[520px]">
+    <div className="relative h-[240px] w-full sm:h-[300px] lg:h-[460px] xl:h-[500px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -51,7 +51,7 @@ export function AutoScrollCarousel({
               <img
                 src={currentItem.image}
                 alt={currentItem.title}
-                className="h-full w-full object-contain p-4 sm:p-6 lg:p-8 xl:p-10"
+                className="h-full w-full object-contain p-2 sm:p-3 lg:p-4 xl:p-5"
               />
 
               {/* Gradient overlay for better text readability */}
@@ -64,10 +64,10 @@ export function AutoScrollCarousel({
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="absolute left-3 top-3 z-20 max-w-[84%] rounded-xl border border-white/80 bg-white/92 p-3 shadow-lg backdrop-blur-md lg:left-4 lg:top-4 lg:max-w-[70%] lg:rounded-2xl lg:p-3.5 xl:p-4"
               >
-                <h3 className="mb-1.5 text-sm font-bold text-slate-900 lg:text-base xl:text-lg">
+                <h3 className="carousel-overlay-title mb-1.5 font-bold text-slate-900">
                   {currentItem.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-slate-600 lg:text-sm xl:text-base">
+                <p className="text-slate-600">
                   {currentItem.description}
                 </p>
               </motion.div>
@@ -86,10 +86,10 @@ export function AutoScrollCarousel({
                     <div className="h-3 w-3 rounded-full bg-white/30 lg:h-3.5 lg:w-3.5" />
                   </div>
                   <div>
-                    <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-500 lg:text-[11px]">
+                    <p className="mb-0.5 font-semibold uppercase tracking-wide text-slate-500">
                       {currentItem.stats.label}
                     </p>
-                    <p className="text-sm font-bold text-slate-900 lg:text-base">
+                    <p className="font-bold text-slate-900">
                       {currentItem.stats.value}
                     </p>
                   </div>

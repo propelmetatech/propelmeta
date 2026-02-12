@@ -74,7 +74,7 @@ export default function BlogPost() {
     return (
       <Layout>
         <div className="container mx-auto px-4 py-24 text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">
+          <h1 className="font-bold text-slate-900 mb-4">
             Post not found
           </h1>
           <Link href="/blog" className="text-primary hover:underline">
@@ -102,10 +102,10 @@ export default function BlogPost() {
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Blog
                 </Link>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight">
+                <h1 className="font-bold font-display text-slate-900">
                   {post.title}
                 </h1>
-                <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl">
+                <p className="mt-4 text-slate-600 max-w-xl">
                   {post.excerpt}
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4 text-slate-500 text-sm">
