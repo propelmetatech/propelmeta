@@ -6,6 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { CheckCircle, Globe, Search } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import {
+  ServiceImagePanel,
+  ServiceInfoCard,
+  ServiceStepsCard,
+} from '@/components/ServiceSectionBlocks';
 import websiteServiceImage from '@/assests/Website Design & Development Services.png';
 import seoServiceImage from '@/assests/SEO & Website Optimization Services.png';
 import websiteProcessImage from '@/assests/Website Design & Development Services_1.png';
@@ -173,56 +178,42 @@ export default function WebAppDevelopment() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Website Design & Development Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Your website is often the first impression of your brand. We
-                build professional websites that look clean, load fast, and
-                function smoothly across all devices.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Website Design & Development Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Your website is often the first impression of your brand. We
+              build professional websites that look clean, load fast, and
+              function smoothly across all devices.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    What's Included in Our Website Service
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {websiteIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    What You Get
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {websiteBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="What's Included in Our Website Service"
+                items={websiteIncludes}
+              />
+              <ServiceImagePanel
+                src={websiteServiceImage}
+                alt="Website design and development"
+                overlayClassName="from-indigo-500/10 to-blue-500/10"
+              />
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={websiteServiceImage}
-                  alt="Website design and development"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-blue-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={websiteProcessImage}
+                alt="Website design result preview"
+                overlayClassName="from-blue-500/10 to-indigo-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="What You Get"
+                items={websiteBenefits}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -233,58 +224,42 @@ export default function WebAppDevelopment() {
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="lg:order-2 space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                SEO & Website Optimization Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Improve visibility, rankings, and local reach so customers can
-                find your business faster.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              SEO & Website Optimization Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Improve visibility, rankings, and local reach so customers can
+              find your business faster.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Search className="h-6 w-6 text-indigo-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Our SEO & Optimization Services Include
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {seoIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    Benefits of SEO Optimization
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {seoBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="Our SEO & Optimization Services Include"
+                items={seoIncludes}
+                icon={<Search className="h-6 w-6 text-indigo-600" />}
+              />
+              <ServiceImagePanel
+                src={seoServiceImage}
+                alt="SEO and website optimization"
+                overlayClassName="from-blue-500/10 to-indigo-500/10"
+              />
             </div>
 
-            <div className="relative lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={seoServiceImage}
-                  alt="SEO and website optimization"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={websiteServiceImage}
+                alt="Search optimized website preview"
+                overlayClassName="from-indigo-500/10 to-blue-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Benefits of SEO Optimization"
+                items={seoBenefits}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -295,64 +270,40 @@ export default function WebAppDevelopment() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div>
-              <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  How Our Website & SEO Service Works
-                </h3>
-                <ol className="space-y-4 text-slate-600">
-                  {processSteps.map((step, index) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white text-sm font-semibold">
-                        {index + 1}
-                      </span>
-                      <span className="leading-relaxed">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-                <p className="text-slate-600 mt-6">
-                  Everything is handled by our team - from design to optimization.
-                </p>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Who This Service Is Ideal For
-                </h3>
-                <ul className="space-y-3 text-slate-600">
-                  {audiences.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Why Choose PropelMeta Tech?
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
-                  {reasons.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              How Our Website & SEO Service Works
+            </h2>
+            <p className="mt-4 text-slate-600">
+              A clear, step-by-step process with full delivery support from
+              planning to launch and performance optimization.
+            </p>
+          </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={websiteProcessImage}
-                  alt="Website and SEO process"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-blue-500/10"></div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <ServiceStepsCard
+              title="How Our Website & SEO Service Works"
+              steps={processSteps}
+              footerText="Everything is handled by our team - from design to optimization."
+              stepBadgeClassName="bg-indigo-600"
+            />
+            <ServiceImagePanel
+              src={websiteProcessImage}
+              alt="Website and SEO process"
+              overlayClassName="from-indigo-500/10 to-blue-500/10"
+            />
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+            <ServiceInfoCard
+              title="Who This Service Is Ideal For"
+              items={audiences}
+            />
+            <ServiceInfoCard
+              title="Why Choose PropelMeta Tech?"
+              items={reasons}
+              twoColumnItems
+            />
           </div>
         </div>
       </section>

@@ -6,6 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { CheckCircle, Headphones, Shield } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import {
+  ServiceImagePanel,
+  ServiceInfoCard,
+  ServiceStepsCard,
+} from '@/components/ServiceSectionBlocks';
 import onlineSupportServiceImage from '@/assests/Online Support & Client Support Services.png';
 import clientSupportServiceImage from '@/assests/Client Support.png';
 import supportProcessImage from '@/assests/Online Support & Client Support Services_1.png';
@@ -169,55 +174,41 @@ export default function OnlineSupport() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Online Support Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Dedicated assistance for your digital platforms so operations run
-                smoothly.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Online Support Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Dedicated assistance for your digital platforms so operations run
+              smoothly.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    What Our Online Support Includes
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {onlineSupportIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    Benefits of Our Online Support
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {onlineSupportBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="What Our Online Support Includes"
+                items={onlineSupportIncludes}
+              />
+              <ServiceImagePanel
+                src={onlineSupportServiceImage}
+                alt="Online support services"
+                overlayClassName="from-slate-500/10 to-blue-500/10"
+              />
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={onlineSupportServiceImage}
-                  alt="Online support services"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-500/10 to-blue-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={supportProcessImage}
+                alt="Online support outcomes"
+                overlayClassName="from-blue-500/10 to-slate-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Benefits of Our Online Support"
+                items={onlineSupportBenefits}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -228,61 +219,43 @@ export default function OnlineSupport() {
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="lg:order-2 space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Client Support Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Professional communication and priority assistance that builds
-                trust.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Client Support Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Professional communication and priority assistance that builds
+              trust.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Headphones className="h-6 w-6 text-slate-700" />
-                    <h3 className="font-semibold text-slate-900">
-                      Our Client Support Includes
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {clientSupportIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Shield className="h-6 w-6 text-slate-700" />
-                    <h3 className="font-semibold text-slate-900">
-                      Why Client Support Matters
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {clientSupportBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="Our Client Support Includes"
+                items={clientSupportIncludes}
+                icon={<Headphones className="h-6 w-6 text-slate-700" />}
+              />
+              <ServiceImagePanel
+                src={clientSupportServiceImage}
+                alt="Client support services"
+                overlayClassName="from-slate-500/10 to-indigo-500/10"
+              />
             </div>
 
-            <div className="relative lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={clientSupportServiceImage}
-                  alt="Client support services"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-500/10 to-indigo-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={onlineSupportServiceImage}
+                alt="Client support benefits"
+                overlayClassName="from-indigo-500/10 to-slate-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Why Client Support Matters"
+                items={clientSupportBenefits}
+                icon={<Shield className="h-6 w-6 text-slate-700" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -293,65 +266,40 @@ export default function OnlineSupport() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div>
-              <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  How Our Support Services Work
-                </h3>
-                <ol className="space-y-4 text-slate-600">
-                  {processSteps.map((step, index) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-800 text-white text-sm font-semibold">
-                        {index + 1}
-                      </span>
-                      <span className="leading-relaxed">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-                <p className="text-slate-600 mt-6">
-                  All support services are handled by our trained team - no
-                  outsourcing.
-                </p>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Who This Service Is Ideal For
-                </h3>
-                <ul className="space-y-3 text-slate-600">
-                  {audiences.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Why Choose PropelMeta Tech for Support Services?
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
-                  {reasons.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              How Our Support Services Work
+            </h2>
+            <p className="mt-4 text-slate-600">
+              A practical support flow to keep your operations smooth, your
+              response times fast, and your service quality consistent.
+            </p>
+          </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={supportProcessImage}
-                  alt="Support service process"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-500/10 to-blue-500/10"></div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <ServiceStepsCard
+              title="How Our Support Services Work"
+              steps={processSteps}
+              footerText="All support services are handled by our trained team - no outsourcing."
+              stepBadgeClassName="bg-slate-800"
+            />
+            <ServiceImagePanel
+              src={supportProcessImage}
+              alt="Support service process"
+              overlayClassName="from-slate-500/10 to-blue-500/10"
+            />
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+            <ServiceInfoCard
+              title="Who This Service Is Ideal For"
+              items={audiences}
+            />
+            <ServiceInfoCard
+              title="Why Choose PropelMeta Tech for Support Services?"
+              items={reasons}
+              twoColumnItems
+            />
           </div>
         </div>
       </section>

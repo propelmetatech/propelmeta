@@ -283,7 +283,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 pt-0 pb-2 md:pt-1 md:pb-4 lg:h-[calc(100dvh-5rem)] lg:py-0">
+      <section className="relative mt-2 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 pt-2 pb-3 md:mt-0 md:pt-1 md:pb-4 lg:h-[calc(100dvh-5rem)] lg:py-0">
         {/* Modern Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
@@ -382,7 +382,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="lg:col-span-7 xl:col-span-7 relative min-h-[220px] sm:min-h-[260px] lg:h-full flex items-center justify-center"
+                className="lg:col-span-7 xl:col-span-7 relative min-h-[320px] sm:min-h-[380px] lg:h-full flex items-center justify-center"
               >
               <div className="w-full max-w-4xl">
                 <AutoScrollCarousel
@@ -398,7 +398,7 @@ export default function Home() {
       {/* Social Proof */}
 
       {/* Features Grid - Ultra Modern Design */}
-      <section className="py-24 lg:py-32 xl:py-40 relative overflow-hidden">
+      <section className="py-16 lg:py-20 xl:py-24 relative overflow-hidden">
         {/* Advanced Background with Multiple Layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30"></div>
 
@@ -425,7 +425,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Enhanced Header Section */}
-          <div className="text-center max-w-4xl mx-auto mb-24">
+          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -590,7 +590,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <section
-        className="pt-4 lg:pt-8 xl:pt-12 pb-24 lg:pb-32 xl:pb-40 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30
+        className="pt-2 lg:pt-4 xl:pt-6 pb-16 lg:pb-20 xl:pb-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30
 "
       >
         {/* Background Elements */}
@@ -601,7 +601,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -700,7 +700,7 @@ export default function Home() {
       </section>
 
       {/* Modern Stats Section */}
-      <section className="py-24 lg:py-32 xl:py-40 relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20">
+      <section className="py-16 lg:py-20 xl:py-24 relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20">
         {/* Light Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -724,7 +724,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-20 lg:mb-24">
+          <div className="text-center mb-14 lg:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -878,7 +878,7 @@ export default function Home() {
           </div>
 
           {/* Bottom Accent */}
-          <div className="mt-20 lg:mt-24 text-center">
+          <div className="mt-12 lg:mt-14 text-center">
             <div className="inline-flex items-center space-x-3 text-slate-500">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
               <span className="text-sm font-medium">
@@ -891,7 +891,7 @@ export default function Home() {
       </section>
 
       {/* Modern Testimonials Section */}
-      <section className="py-24 lg:py-32 xl:py-40 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <section className="py-16 lg:py-20 xl:py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         {/* Light Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -915,7 +915,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1023,7 +1023,7 @@ export default function Home() {
           </div>
 
           {/* Bottom Accent */}
-          <div className="mt-20 lg:mt-24 text-center">
+          <div className="mt-12 lg:mt-14 text-center">
             <div className="inline-flex items-center space-x-3 text-slate-500">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
               <span className="text-sm font-medium">
@@ -1036,10 +1036,10 @@ export default function Home() {
       </section>
 
       {/* Trust & Security Section */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1125,10 +1125,10 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <section className="py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1233,7 +1233,7 @@ export default function Home() {
       </section>
 
       {/* Waitlist Section */}
-      <section className="py-20 lg:py-24 xl:py-28 bg-gradient-to-b from-white via-slate-50/30 to-white">
+      <section className="py-14 lg:py-16 xl:py-20 bg-gradient-to-b from-white via-slate-50/30 to-white">
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           <div className="rounded-3xl border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-6 sm:p-10 md:p-20 text-center shadow-2xl shadow-blue-700/40">
             <div className="max-w-2xl mx-auto">
