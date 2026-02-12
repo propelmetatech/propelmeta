@@ -13,6 +13,11 @@ import {
   Shield,
 } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import {
+  ServiceImagePanel,
+  ServiceInfoCard,
+  ServiceStepsCard,
+} from '@/components/ServiceSectionBlocks';
 import socialMediaServiceImage from '@/assests/Social Media Management.png';
 import contentCreationServiceImage from '@/assests/Content Creation.png';
 import brandManagementServiceImage from '@/assests/Brand Management Services.png';
@@ -189,62 +194,43 @@ export default function SocialMediaManagement() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Social Media Management Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Posting, poster design, and reels management to maintain a
-                consistent and engaging presence on Instagram and Facebook.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Social Media Management Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Posting, poster design, and reels management to maintain a
+              consistent and engaging presence on Instagram and Facebook.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Megaphone className="h-6 w-6 text-blue-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      What Is Included
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {socialIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <LineChart className="h-6 w-6 text-blue-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      What You Get
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {socialResults.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="What Is Included"
+                items={socialIncludes}
+                icon={<Megaphone className="h-6 w-6 text-blue-600" />}
+              />
+              <ServiceImagePanel
+                src={socialMediaServiceImage}
+                alt="Social media management service"
+                overlayClassName="from-blue-500/10 to-purple-500/10"
+              />
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={socialMediaServiceImage}
-                  alt="Social media management service"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={socialProcessImage}
+                alt="Social media growth outcome"
+                overlayClassName="from-purple-500/10 to-blue-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="What You Get"
+                items={socialResults}
+                icon={<LineChart className="h-6 w-6 text-blue-600" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -255,62 +241,43 @@ export default function SocialMediaManagement() {
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="lg:order-2 space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Content Creation Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Custom posters, graphics, and reels that match your brand and
-                attract attention on social platforms.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Content Creation Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Custom posters, graphics, and reels that match your brand and
+              attract attention on social platforms.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <PenTool className="h-6 w-6 text-purple-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Our Content Creation Services Include
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {contentIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Palette className="h-6 w-6 text-purple-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Benefits of Our Content Creation
-                    </h3>
-                  </div>
-                  <ul className="space-y-3 text-slate-600">
-                    {contentBenefits.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard
+                title="Our Content Creation Services Include"
+                items={contentIncludes}
+                icon={<PenTool className="h-6 w-6 text-purple-600" />}
+              />
+              <ServiceImagePanel
+                src={contentCreationServiceImage}
+                alt="Content creation service"
+                overlayClassName="from-purple-500/10 to-pink-500/10"
+              />
             </div>
 
-            <div className="relative lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={contentCreationServiceImage}
-                  alt="Content creation service"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={socialMediaServiceImage}
+                alt="Creative social content output"
+                overlayClassName="from-pink-500/10 to-purple-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Benefits of Our Content Creation"
+                items={contentBenefits}
+                icon={<Palette className="h-6 w-6 text-purple-600" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -321,53 +288,38 @@ export default function SocialMediaManagement() {
         className="py-20 bg-white scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-bold font-display text-slate-900 mb-4">
-                Brand Management Services
-              </h2>
-              <p className="text-slate-600 max-w-3xl">
-                Consistent brand execution across every digital touchpoint.
-              </p>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              Brand Management Services
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Consistent brand execution across every digital touchpoint.
+            </p>
+          </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-6">
-                <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="font-semibold text-slate-900 mb-6">
-                    What We Manage
-                  </h3>
-                  <ul className="space-y-3 text-slate-600">
-                    {brandManagement.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Shield className="h-6 w-6 text-slate-600" />
-                    <h3 className="font-semibold text-slate-900">
-                      Why Brand Management Matters
-                    </h3>
-                  </div>
-                  <p className="text-slate-600">
-                    Consistency builds trust. We ensure your brand maintains the
-                    same look, feel, and message across all digital channels.
-                  </p>
-                </div>
-              </div>
+          <div className="space-y-8 lg:space-y-10">
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceInfoCard title="What We Manage" items={brandManagement} />
+              <ServiceImagePanel
+                src={brandManagementServiceImage}
+                alt="Brand management service"
+                overlayClassName="from-slate-500/10 to-blue-500/10"
+              />
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={brandManagementServiceImage}
-                  alt="Brand management service"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-500/10 to-blue-500/10"></div>
-              </div>
+            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+              <ServiceImagePanel
+                src={socialProcessImage}
+                alt="Brand consistency outcomes"
+                overlayClassName="from-blue-500/10 to-slate-500/10"
+                className="lg:order-1"
+              />
+              <ServiceInfoCard
+                title="Why Brand Management Matters"
+                description="Consistency builds trust. We ensure your brand maintains the same look, feel, and message across all digital channels."
+                icon={<Shield className="h-6 w-6 text-slate-600" />}
+                className="lg:order-2"
+              />
             </div>
           </div>
         </div>
@@ -378,66 +330,37 @@ export default function SocialMediaManagement() {
         className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div className="lg:order-2">
-              <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Who This Service Is For
-                </h3>
-                <ul className="space-y-3 text-slate-600">
-                  {audiences.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  How Our Service Works
-                </h3>
-                <ol className="space-y-4 text-slate-600">
-                  {processSteps.map((step, index) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white text-sm font-semibold">
-                        {index + 1}
-                      </span>
-                      <span className="leading-relaxed">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-                <p className="text-slate-600 mt-6">
-                  All work is handled by our team - no manual effort required
-                  from you.
-                </p>
-              </div>
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="font-bold font-display text-slate-900">
+              How Our Service Works
+            </h2>
+            <p className="mt-4 text-slate-600">
+              Clear execution flow with complete management from planning to
+              reporting, so your team can focus on business growth.
+            </p>
+          </div>
 
-              <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Why Choose PropelMeta Tech?
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
-                  {reasons.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <ServiceStepsCard
+              title="How Our Service Works"
+              steps={processSteps}
+              footerText="All work is handled by our team - no manual effort required from you."
+              stepBadgeClassName="bg-blue-600"
+            />
+            <ServiceImagePanel
+              src={socialProcessImage}
+              alt="Social media service process"
+              overlayClassName="from-blue-500/10 to-indigo-500/10"
+            />
+          </div>
 
-            <div className="relative lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={socialProcessImage}
-                  alt="Social media service process"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10"></div>
-              </div>
-            </div>
+          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+            <ServiceInfoCard title="Who This Service Is For" items={audiences} />
+            <ServiceInfoCard
+              title="Why Choose PropelMeta Tech?"
+              items={reasons}
+              twoColumnItems
+            />
           </div>
         </div>
       </section>

@@ -11,6 +11,7 @@ import {
   Facebook,
   Instagram,
   Linkedin,
+  AtSign,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
@@ -222,8 +223,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           isScrolled ? 'bg-white' : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
-          <div className="flex items-center justify-between h-20">
+        <div className="mx-auto px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
+          <div className="flex h-16 items-center justify-between sm:h-20">
             {/* Logo */}
             <Link
               href="/"
@@ -232,7 +233,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <img
                 src={logo}
                 alt="PropelMeta"
-                className="w-[200px] h-auto object-contain"
+                className="h-auto w-[148px] object-contain sm:w-[182px] md:w-[200px]"
                 loading="lazy"
               />
             </Link>
@@ -332,7 +333,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                   key={subService.title}
                                   href={subService.href}
                                   onClick={(event) =>
-                                    handleSubServiceClick(event, subService.href)
+                                    handleSubServiceClick(
+                                      event,
+                                      subService.href,
+                                    )
                                   }
                                   className="group/subservice flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-[12px] font-medium text-slate-700 shadow-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/[0.04] hover:shadow-[0_10px_26px_-18px_rgba(59,130,246,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                                 >
@@ -410,17 +414,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div className="md:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="h-9 w-9">
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent>
-                  <div className="flex flex-col space-y-6 mt-8">
+                <SheetContent className="w-[88vw] max-w-[360px] overflow-y-auto px-5">
+                  <div className="mt-6 flex flex-col space-y-5">
                     {navLinks.slice(0, 2).map((link) => (
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="text-lg font-medium text-slate-900 hover:text-primary"
+                        className="text-base font-medium text-slate-900 hover:text-primary"
                       >
                         {link.name}
                       </Link>
@@ -430,10 +434,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
                     {/* Services Section */}
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-4">
+                      <h3 className="mb-3 font-medium text-slate-900">
                         Services
                       </h3>
-                      <div className="space-y-3 ml-4">
+                      <div className="ml-2 space-y-3">
                         {services.map((service) => (
                           <Link
                             key={service.name}
@@ -458,14 +462,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="text-lg font-medium text-slate-900 hover:text-primary"
+                        className="text-base font-medium text-slate-900 hover:text-primary"
                       >
                         {link.name}
                       </Link>
                     ))}
                     <div className="h-px bg-border my-4" />
 
-                    <Link href="/demo">
+                    <Link href="/book-calendar">
                       <Button className="w-full">Book a Demo</Button>
                     </Link>
                   </div>
@@ -476,23 +480,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="flex-grow overflow-x-hidden pt-20">{children}</main>
+      <main className="flex-grow overflow-x-hidden pt-16 sm:pt-20">{children}</main>
 
-      <footer className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 text-slate-900 py-16 lg:py-20">
+      <footer className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-10 text-slate-900 sm:py-12 lg:py-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-16 right-[-8%] h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
           <div className="absolute bottom-0 left-[-10%] h-64 w-64 rounded-full bg-cyan-300/15 blur-3xl" />
         </div>
 
         <div className="relative mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
-          <div className="rounded-3xl bg-white p-8 sm:p-10 lg:p-12 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/80">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 lg:p-12 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/80">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
               <div className="lg:col-span-2">
                 <div className="inline-flex items-center gap-4 rounded-2xl px-4 py-3">
                   <img
                     src={logo}
                     alt="PropelMeta Tech"
-                    className="w-[200px] h-auto object-contain"
+                    className="h-auto w-[150px] object-contain sm:w-[185px] md:w-[200px]"
                     loading="lazy"
                   />
                 </div>
@@ -512,7 +516,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
 
-              <div className="p-1 lg:pl-4">
+              <div className="p-1 md:pt-2 lg:pl-4">
                 <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Services
                 </h4>
@@ -530,7 +534,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </ul>
               </div>
 
-              <div className="p-1 lg:pl-4">
+              <div className="p-1 md:pt-2 lg:pl-4">
                 <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Company
                 </h4>
@@ -562,22 +566,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </ul>
               </div>
 
-              <div className="p-1 lg:pl-4">
+              <div className="p-1 md:pt-2 lg:pl-4">
                 <h4 className="mb-4 font-semibold uppercase tracking-[0.14em] text-slate-900">
                   Connect
                 </h4>
-                <ul className="flex flex-wrap gap-3">
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/company/propelmeta-tech/"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="LinkedIn"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-md ring-1 ring-[#0A66C2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  </li>
+                <ul className="grid w-fit grid-cols-2 gap-1">
                   <li>
                     <a
                       href="https://www.facebook.com/share/1HJAAhoL3y/"
@@ -602,22 +595,46 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </li>
                   <li>
                     <a
-                      href="https://www.threads.com/@propelmeta_tech"
+                      href="https://www.linkedin.com/company/propelmeta-tech/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="LinkedIn"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-md ring-1 ring-[#0A66C2]/40 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://x.com/propelmeta_tech"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="X"
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-md ring-1 ring-white/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-md ring-1 ring-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
-                      <span className="text-base font-semibold leading-none">X</span>
+                      <span className="text-base font-semibold leading-none">
+                        X
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.threads.com/@propelmeta_tech"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Threads"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#111111] text-white shadow-md ring-1 ring-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                    >
+                      <AtSign className="h-5 w-5" />
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-600 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-slate-200 pt-5 text-center text-sm text-slate-600 sm:mt-10 sm:flex-row sm:items-center sm:gap-4 sm:text-left">
               <p>&copy; {currentYear} PropelMeta Tech. All rights reserved.</p>
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-4 sm:gap-6">
                 <Link
                   href="/terms-and-conditions"
                   className="transition-colors hover:text-slate-900"

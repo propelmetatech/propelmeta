@@ -46,11 +46,23 @@
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Roboto', sans-serif !important;
+  }
+
+  * {
+    min-width: 0;
+  }
+
+  img,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
   }
 
   h1,
@@ -103,6 +115,53 @@
     font-family: 'Roboto', sans-serif;
     font-size: 13.33px;
     line-height: 1.45;
+  }
+
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 39.81px !important;
+    }
+
+    h2 {
+      font-size: 33.18px !important;
+    }
+
+    h3 {
+      font-size: 27.65px !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 33.18px !important;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: 27.65px !important;
+      line-height: 1.18;
+    }
+
+    h3 {
+      font-size: 23.04px !important;
+      line-height: 1.22;
+    }
+
+    h4 {
+      font-size: 19.2px !important;
+      line-height: 1.25;
+    }
+
+    h5 {
+      font-size: 18px !important;
+      line-height: 1.3;
+    }
+
+    h6 {
+      font-size: 16px !important;
+      line-height: 1.35;
+    }
+
   }
 }
 
@@ -303,6 +362,44 @@
     100% {
       transform: scale(1.8);
       opacity: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .carousel-overlay-title {
+      font-size: 18px !important;
+      line-height: 1.25 !important;
+    }
+
+    .py-24 {
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+
+    .py-20 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .py-16 {
+      padding-top: 2.75rem !important;
+      padding-bottom: 2.75rem !important;
+    }
+
+    .pt-24 {
+      padding-top: 4rem !important;
+    }
+
+    .pb-20 {
+      padding-bottom: 3rem !important;
+    }
+
+    .pt-20 {
+      padding-top: 3rem !important;
+    }
+
+    .pb-16 {
+      padding-bottom: 2.75rem !important;
     }
   }
 
