@@ -102,19 +102,19 @@ export default function WebAppDevelopment() {
                 <Globe className="h-4 w-4 mr-2" />
                 Website Design, Development & SEO Optimization
               </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4">
+              <p className="font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4">
                 High-Performance Websites Built to Rank and Convert
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Website Design, Development & SEO Optimization Services
               </h1>
-              <p className="text-xl text-slate-600 mb-6 leading-relaxed">
+              <p className="text-slate-600 mb-6">
                 At PropelMeta Tech, we provide complete website design,
                 development, and SEO optimization services to help businesses
                 establish a strong online presence and attract more customers
                 through search engines.
               </p>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 We design modern, mobile-friendly websites and optimize them for
                 visibility, speed, and performance - ensuring your website
                 works as a powerful business tool.
@@ -175,10 +175,10 @@ export default function WebAppDevelopment() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 Website Design & Development Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Your website is often the first impression of your brand. We
                 build professional websites that look clean, load fast, and
                 function smoothly across all devices.
@@ -186,7 +186,7 @@ export default function WebAppDevelopment() {
 
               <div className="mt-8 grid grid-cols-1 gap-6">
                 <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     What's Included in Our Website Service
                   </h3>
                   <ul className="space-y-3 text-slate-600">
@@ -199,7 +199,7 @@ export default function WebAppDevelopment() {
                   </ul>
                 </div>
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     What You Get
                   </h3>
                   <ul className="space-y-3 text-slate-600">
@@ -235,10 +235,10 @@ export default function WebAppDevelopment() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="lg:order-2 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-4">
+              <h2 className="font-bold font-display text-slate-900 mb-4">
                 SEO & Website Optimization Services
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl">
+              <p className="text-slate-600 max-w-3xl">
                 Improve visibility, rankings, and local reach so customers can
                 find your business faster.
               </p>
@@ -247,7 +247,7 @@ export default function WebAppDevelopment() {
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <Search className="h-6 w-6 text-indigo-600" />
-                    <h3 className="text-2xl font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900">
                       Our SEO & Optimization Services Include
                     </h3>
                   </div>
@@ -261,7 +261,7 @@ export default function WebAppDevelopment() {
                   </ul>
                 </div>
                 <div className="rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="font-semibold text-slate-900 mb-6">
                     Benefits of SEO Optimization
                   </h3>
                   <ul className="space-y-3 text-slate-600">
@@ -298,7 +298,7 @@ export default function WebAppDevelopment() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div>
               <div className="rounded-3xl border border-slate-200/70 bg-white/80 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   How Our Website & SEO Service Works
                 </h3>
                 <ol className="space-y-4 text-slate-600">
@@ -316,7 +316,7 @@ export default function WebAppDevelopment() {
                 </p>
               </div>
               <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   Who This Service Is Ideal For
                 </h3>
                 <ul className="space-y-3 text-slate-600">
@@ -329,7 +329,7 @@ export default function WebAppDevelopment() {
                 </ul>
               </div>
               <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                <h3 className="font-semibold text-slate-900 mb-6">
                   Why Choose PropelMeta Tech?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
@@ -360,7 +360,7 @@ export default function WebAppDevelopment() {
       <section id="faqs" className="py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 scroll-mt-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+            <h2 className="font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
           </div>

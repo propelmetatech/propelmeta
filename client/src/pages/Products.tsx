@@ -47,10 +47,10 @@ export default function Products() {
     <Layout>
       <div className="bg-slate-50 py-14 sm:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900 mb-6">
+          <h1 className="font-bold font-display text-slate-900 mb-6">
             Our <span className="text-primary">Products</span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             A comprehensive suite of tools built to help your business grow online, offline, and everywhere in between.
           </p>
         </div>
@@ -70,10 +70,10 @@ export default function Products() {
                   {product.icon}
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold font-display text-slate-900 mb-2">{product.title}</h2>
-                  <p className="text-lg sm:text-xl text-primary font-medium">{product.subtitle}</p>
+                  <h2 className="font-bold font-display text-slate-900 mb-2">{product.title}</h2>
+                  <p className="text-primary font-medium">{product.subtitle}</p>
                 </div>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                <p className="text-slate-600">
                   {product.description}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -113,7 +113,7 @@ export default function Products() {
       
       <div className="bg-slate-900 py-14 sm:py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold font-display text-white mb-8">
+          <h2 className="font-bold font-display text-white mb-8">
             Not sure what you need?
           </h2>
           <Link href="/contact">

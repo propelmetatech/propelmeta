@@ -82,10 +82,10 @@ export function EarlyAccessSection({ source }: EarlyAccessSectionProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="rounded-3xl border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-6 sm:p-10 md:p-16 text-center shadow-2xl shadow-blue-700/40">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-4">
+            <h2 className="font-bold font-display text-white mb-4">
               Get Early Access to PropelMeta
             </h2>
-            <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+            <p className="text-slate-300 mb-10">
               Join our waitlist today and be among the first to experience a
               smarter, faster, and more efficient way to grow your business.
             </p>

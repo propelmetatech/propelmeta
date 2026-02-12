@@ -58,15 +58,15 @@ export default function About() {
               <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
                 About Us
               </span>
-              <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900 leading-tight">
+              <h1 className="mt-5 font-bold font-display text-slate-900">
                 Who We Are
               </h1>
-              <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+              <p className="mt-5 text-slate-600">
                 <strong>PropelMeta Tech</strong> is a digital marketing and
                 technology agency built to help businesses grow smarter, faster,
                 and stronger in today&apos;s digital-first world.
               </p>
-              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+              <p className="mt-4 text-slate-600">
                 We specialize in helping{' '}
                 <strong>restaurants and service-based businesses</strong>{' '}
                 increase visibility, engagement, and revenue through powerful
@@ -86,7 +86,7 @@ export default function About() {
                     <Eye className="h-4 w-4 text-blue-600" />
                     Digital Growth Partner
                   </div>
-                  <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+                  <p className="mt-2 text-slate-500">
                     Strategy, execution, automation, and reporting built for
                     modern business growth.
                   </p>
@@ -104,10 +104,10 @@ export default function About() {
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white">
                 <Target className="h-5 w-5" />
               </div>
-              <h2 className="mt-5 text-2xl sm:text-3xl font-bold font-display text-slate-900">
+              <h2 className="mt-5 font-bold font-display text-slate-900">
                 Our Mission
               </h2>
-              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+              <p className="mt-4 text-slate-600">
                 To empower brands with{' '}
                 <strong>
                   creative, data-driven, and automated digital solutions
@@ -120,10 +120,10 @@ export default function About() {
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-600 text-white">
                 <Eye className="h-5 w-5" />
               </div>
-              <h2 className="mt-5 text-2xl sm:text-3xl font-bold font-display text-slate-900">
+              <h2 className="mt-5 font-bold font-display text-slate-900">
                 Our Vision
               </h2>
-              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+              <p className="mt-4 text-slate-600">
                 To become a trusted global digital partner for businesses
                 seeking sustainable online success.
               </p>
@@ -135,7 +135,7 @@ export default function About() {
       <section className="bg-gradient-to-br from-slate-50 via-white to-slate-100/50 py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">
+            <h2 className="font-bold font-display text-slate-900">
               What Makes Us Different
             </h2>
           </div>
@@ -149,10 +149,10 @@ export default function About() {
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
                   {item.icon}
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                <h3 className="mt-4 font-semibold text-slate-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                <p className="mt-2 text-slate-600">
                   {item.description}
                 </p>
               </div>
@@ -166,10 +166,10 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
             <div className="order-2 lg:order-1">
               <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-7 sm:p-10 text-white shadow-2xl">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">
+                <p className="font-semibold uppercase tracking-[0.18em] text-blue-200">
                   Our Promise
                 </p>
-                <p className="mt-4 text-xl sm:text-2xl font-semibold leading-relaxed">
+                <p className="mt-4 font-semibold">
                   We treat your brand like our own - with care, creativity, and
                   accountability.
                 </p>

@@ -55,10 +55,10 @@ export default function Pricing() {
             <div className="inline-flex items-center rounded-full border border-blue-400/40 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-100 backdrop-blur mb-6">
               Transparent plans, built for scale
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 leading-tight">
+            <h1 className="font-bold font-display mb-6">
               Pricing that grows with your business
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-200 max-w-2xl mx-auto">
               Choose the plan that fits today and scale when you are ready. No
               hidden fees, no long-term contracts.
             </p>
@@ -89,7 +89,7 @@ export default function Pricing() {
               publishable-key={stripePublishableKey}
             />
           ) : (
-            <p className="text-center text-sm text-slate-500">
+            <p className="text-center text-slate-500">
               Set VITE_STRIPE_PUBLISHABLE_KEY to display pricing.
             </p>
           )}
@@ -99,7 +99,7 @@ export default function Pricing() {
       <section className="bg-white pb-24">
         <div className="container mx-auto px-4">
           <div className="rounded-3xl bg-slate-50 p-6 shadow-lg md:p-10">
-            <h3 className="text-2xl md:text-3xl font-bold font-display text-slate-900 text-center mb-8">
+            <h3 className="font-bold font-display text-slate-900 text-center mb-8">
               Extra Addon Features
             </h3>
             {stripePublishableKey ? (
@@ -108,7 +108,7 @@ export default function Pricing() {
                 publishable-key={stripePublishableKey}
               />
             ) : (
-              <p className="text-center text-sm text-slate-500">
+              <p className="text-center text-slate-500">
                 Set VITE_STRIPE_PUBLISHABLE_KEY to display pricing.
               </p>
             )}
@@ -125,7 +125,7 @@ export default function Pricing() {
 
       <div className="bg-slate-50 py-16 sm:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold font-display text-slate-900 text-center mb-12">
+          <h2 className="font-bold font-display text-slate-900 text-center mb-12">
             Frequently Asked Questions
           </h2>
           <FaqAccordion items={faqs} />

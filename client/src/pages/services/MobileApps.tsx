@@ -157,14 +157,14 @@ export default function MobileApps() {
                 Branded Mobile Apps
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Stay in Your Customers'{' '}
                 <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Pockets
                 </span>
               </h1>
 
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 Launch your own iOS and Android mobile app to build deeper
                 customer relationships, increase loyalty, and drive more repeat
                 business than ever before.
@@ -230,12 +230,12 @@ export default function MobileApps() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Apps for Every Business
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               Pre-designed app templates optimized for different industries and
               business types.
             </p>
@@ -253,10 +253,10 @@ export default function MobileApps() {
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {type.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">
+                <h3 className="font-bold mb-4 text-slate-900">
                   {type.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed text-lg mb-6">
+                <p className="text-slate-600 mb-6">
                   {type.description}
                 </p>
                 <div className="grid grid-cols-2 gap-3">
@@ -280,12 +280,12 @@ export default function MobileApps() {
       <section className="py-24 bg-gradient-to-br from-slate-50 to-pink-50/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Powerful App Features
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               Everything you need to create an engaging mobile experience that
               keeps customers coming back.
             </p>
@@ -303,10 +303,10 @@ export default function MobileApps() {
                 <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">
+                <h3 className="font-bold mb-3 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600">
                   {feature.description}
                 </p>
               </motion.div>
@@ -324,7 +324,7 @@ export default function MobileApps() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
+              <h2 className="font-bold font-display mb-8">
                 <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Why Mobile Apps Win
                 </span>
@@ -369,7 +369,7 @@ export default function MobileApps() {
       <section className="py-24 bg-gradient-to-br from-pink-50 to-purple-50/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 App Success Stories
               </span>
@@ -399,7 +399,7 @@ export default function MobileApps() {
                     <span>{testimonial.appDownloads} downloads</span>
                   </div>
                 </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-6">
+                <p className="text-slate-700 mb-6">
                   "{testimonial.content}"
                 </p>
                 <div>

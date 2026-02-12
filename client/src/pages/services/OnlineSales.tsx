@@ -180,14 +180,14 @@ export default function OnlineSales() {
                 Online Sales System
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-slate-900 leading-tight mb-6">
+              <h1 className="font-bold font-display text-slate-900 mb-6">
                 Take Back Your{' '}
                 <span className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-600 bg-clip-text text-transparent">
                   Margins
                 </span>
               </h1>
 
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8">
                 A complete ordering and delivery system that you own. Say
                 goodbye to high commission fees from third-party marketplaces
                 and keep 100% of your profits.
@@ -253,12 +253,12 @@ export default function OnlineSales() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Stop Paying High Commissions
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               See how much you could save by switching from third-party
               marketplaces to your own sales system.
             </p>
@@ -272,7 +272,7 @@ export default function OnlineSales() {
                 transition={{ duration: 0.6 }}
                 className="p-8 rounded-2xl bg-red-50 border border-red-200"
               >
-                <h3 className="text-2xl font-bold text-red-800 mb-6">
+                <h3 className="font-bold text-red-800 mb-6">
                   Third-party Marketplaces
                 </h3>
                 <div className="space-y-4">
@@ -294,7 +294,7 @@ export default function OnlineSales() {
                   </div>
                 </div>
                 <div className="mt-6 p-4 bg-red-100 rounded-lg">
-                  <p className="text-sm text-red-800">
+                  <p className="text-red-800">
                     <strong>Example:</strong> $10,000 monthly sales =
                     $1,500-3,000 in fees
                   </p>
@@ -312,7 +312,7 @@ export default function OnlineSales() {
                     RECOMMENDED
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-green-800 mb-6">
+                <h3 className="font-bold text-green-800 mb-6">
                   PropelMeta System
                 </h3>
                 <div className="space-y-4">
@@ -336,7 +336,7 @@ export default function OnlineSales() {
                   </div>
                 </div>
                 <div className="mt-6 p-4 bg-green-100 rounded-lg">
-                  <p className="text-sm text-green-800">
+                  <p className="text-green-800">
                     <strong>Example:</strong> $10,000 monthly sales = $99 total
                     cost
                   </p>
@@ -363,12 +363,12 @@ export default function OnlineSales() {
       <section className="py-24 bg-gradient-to-br from-slate-50 to-orange-50/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Sell Everywhere
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               One unified system that manages sales across all channels -
               online, mobile, in-store, and social.
             </p>
@@ -386,10 +386,10 @@ export default function OnlineSales() {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {channel.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">
+                <h3 className="font-bold mb-4 text-slate-900">
                   {channel.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed text-lg mb-6">
+                <p className="text-slate-600 mb-6">
                   {channel.description}
                 </p>
                 <div className="grid grid-cols-2 gap-3">
@@ -413,12 +413,12 @@ export default function OnlineSales() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Complete Sales Solution
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-slate-600 max-w-3xl mx-auto">
               Everything you need to run a successful online business, all in
               one integrated platform.
             </p>
@@ -436,10 +436,10 @@ export default function OnlineSales() {
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">
+                <h3 className="font-bold mb-3 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600">
                   {feature.description}
                 </p>
               </motion.div>
@@ -457,7 +457,7 @@ export default function OnlineSales() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-8">
+              <h2 className="font-bold font-display mb-8">
                 <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   Why Own Your Sales System?
                 </span>
@@ -502,7 +502,7 @@ export default function OnlineSales() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display mb-6">
+            <h2 className="font-bold font-display mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                 Real Results
               </span>
@@ -532,7 +532,7 @@ export default function OnlineSales() {
                     <span>{testimonial.monthlySales}/month</span>
                   </div>
                 </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-6">
+                <p className="text-slate-700 mb-6">
                   "{testimonial.content}"
                 </p>
                 <div>
