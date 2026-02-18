@@ -379,11 +379,11 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="lg:col-span-7 xl:col-span-7 relative min-h-[320px] sm:min-h-[380px] lg:h-full flex items-center justify-center"
-              >
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-7 xl:col-span-7 relative min-h-[320px] sm:min-h-[380px] lg:h-full flex items-center justify-center"
+            >
               <div className="w-full max-w-4xl">
                 <AutoScrollCarousel
                   items={carouselItems}
@@ -398,7 +398,7 @@ export default function Home() {
       {/* Social Proof */}
 
       {/* Features Grid - Ultra Modern Design */}
-      <section className="py-16 lg:py-20 xl:py-24 relative overflow-hidden">
+      <section className="py-15 relative overflow-hidden">
         {/* Advanced Background with Multiple Layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30"></div>
 
@@ -425,7 +425,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Enhanced Header Section */}
-          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -589,10 +589,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section
-        className="pt-2 lg:pt-4 xl:pt-6 pb-16 lg:pb-20 xl:pb-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30
-"
-      >
+      <section className="py-15 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
@@ -601,7 +598,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -689,9 +686,7 @@ export default function Home() {
                   <h3 className="font-bold mb-4 text-slate-900">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600">
-                    {step.description}
-                  </p>
+                  <p className="text-slate-600">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -700,7 +695,7 @@ export default function Home() {
       </section>
 
       {/* Modern Stats Section */}
-      <section className="py-16 lg:py-20 xl:py-24 relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20">
+      <section className="py-15 relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20">
         {/* Light Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -891,7 +886,7 @@ export default function Home() {
       </section>
 
       {/* Modern Testimonials Section */}
-      <section className="py-16 lg:py-20 xl:py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <section className="py-15 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         {/* Light Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -915,7 +910,7 @@ export default function Home() {
 
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px] relative z-10">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1036,10 +1031,10 @@ export default function Home() {
       </section>
 
       {/* Trust & Security Section */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-15 bg-white">
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1115,9 +1110,7 @@ export default function Home() {
                 <h3 className="font-bold mb-3 text-slate-900">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600">
-                  {feature.description}
-                </p>
+                <p className="text-slate-600">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -1125,10 +1118,10 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <section className="py-15 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1220,9 +1213,7 @@ export default function Home() {
                       transition={{ duration: 0.3 }}
                       className="px-4 pb-5 sm:px-8 sm:pb-6"
                     >
-                      <p className="text-slate-600">
-                        {faq.answer}
-                      </p>
+                      <p className="text-slate-600">{faq.answer}</p>
                     </motion.div>
                   )}
                 </div>
@@ -1233,7 +1224,7 @@ export default function Home() {
       </section>
 
       {/* Waitlist Section */}
-      <section className="py-14 lg:py-16 xl:py-20 bg-gradient-to-b from-white via-slate-50/30 to-white">
+      <section className="py-15 bg-gradient-to-b from-white via-slate-50/30 to-white">
         <div className="mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1800px]">
           <div className="rounded-3xl border border-blue-500/50 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 p-6 sm:p-10 md:p-20 text-center shadow-2xl shadow-blue-700/40">
             <div className="max-w-2xl mx-auto">
