@@ -1,7 +1,7 @@
-import { Layout } from "@/components/Layout";
-import { usePosts } from "@/hooks/use-posts";
-import { Link } from "wouter";
-import { format } from "date-fns";
+import { Layout } from '@/components/Layout';
+import { usePosts } from '@/hooks/use-posts';
+import { Link } from 'wouter';
+import { format } from 'date-fns';
 
 export default function Blog() {
   const { data: posts, isLoading, error } = usePosts();
@@ -70,15 +70,21 @@ export default function Blog() {
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <div className="text-sm font-semibold text-primary">
-                    {format(new Date(post.createdAt || new Date()), "MMM d, yyyy")}
+                    {format(
+                      new Date(post.createdAt || new Date()),
+                      'MMM d, yyyy',
+                    )}
                   </div>
-                  <h2 className="mt-3 font-bold font-display text-slate-900">
+                  <h2 className="mt-3 font-bold font-display text-slate-900 text-xl">
                     {post.title}
                   </h2>
                   <p className="mt-3 flex-1 text-slate-600 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <Link href={`/blog/${post.slug}`} className="mt-6 inline-flex">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mt-6 inline-flex"
+                  >
                     <span className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-md shadow-primary/30 transition-transform group-hover:-translate-y-0.5">
                       Read More
                     </span>

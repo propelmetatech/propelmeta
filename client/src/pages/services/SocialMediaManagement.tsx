@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
-import { ServiceHeroBanner } from '@/components/ServiceHeroBanner';
 import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -22,6 +21,7 @@ import socialMediaServiceImage from '@/assests/Social Media Management.png';
 import contentCreationServiceImage from '@/assests/Content Creation.png';
 import brandManagementServiceImage from '@/assests/Brand Management Services.png';
 import socialProcessImage from '@/assests/Social Media Management_1.png';
+import heroBannerImage from '@/assests/bannerImage1_socialmedia.png';
 
 export default function SocialMediaManagement() {
   const socialIncludes = [
@@ -104,97 +104,102 @@ export default function SocialMediaManagement() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-24 pb-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/40">
-              <ServiceHeroBanner />
-        <div className="absolute inset-0 overflow-hidden">
+      <section className="relative overflow-hidden pt-16 pb-8 min-h-[450px] flex items-center">
+        {/* Background Banner Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroBannerImage}
+            alt="Social Media Management Banner"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-purple-900/60 to-blue-900/70"></div>
+        </div>
+
+        {/* Decorative blur effects */}
+        <div className="absolute inset-0 overflow-hidden z-[1]">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center rounded-full border border-blue-200/60 bg-white/80 px-4 py-2 text-sm font-medium text-blue-600 mb-6 shadow-sm shadow-blue-200/40">
-                <Megaphone className="h-4 w-4 mr-2" />
-                Social Media and Brand Management
-              </div>
-              <p className="font-semibold uppercase tracking-[0.2em] text-blue-600 mb-4">
-                Professional Social Media Posting, Design & Brand Execution
-              </p>
-              <h1 className="font-bold font-display text-slate-900 mb-6">
-                Social Media Management, Content Creation, and Brand Management
-                Services
-              </h1>
-              <p className="text-slate-600 mb-6">
-                At PropelMeta Tech, we offer comprehensive social media
-                management, content creation, and brand management services
-                tailored to keep your business active, visible, and professional
-                across digital platforms.
-              </p>
-              <p className="text-slate-600 mb-8">
-                We handle posting, poster designing, reels, and brand
-                consistency, so you can focus on running your business while we
-                manage your online presence.
-              </p>
+        {/* Content - Centered */}
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-3"
+          >
+            <div className="inline-flex items-center rounded-full border border-blue-300/60 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-medium text-white mb-2 shadow-lg">
+              <Megaphone className="h-3.5 w-3.5 mr-1.5" />
+              Social Media and Brand Management
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/pricing">
-                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl">
-                    Start Free Trial
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
+            <p className="font-semibold uppercase tracking-[0.15em] text-blue-300 mb-2 text-xs sm:text-sm">
+              Professional Social Media Posting, Design & Brand Execution
+            </p>
+
+            <h1 className="font-bold font-display text-white mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight">
+              Social Media Management, Content Creation, and Brand Management
+              Services
+            </h1>
+
+            <p className="text-slate-100 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+              At PropelMeta Tech, we offer comprehensive social media
+              management, content creation, and brand management services
+              tailored to keep your business active, visible, and professional
+              across digital platforms.
+            </p>
+
+            <p className="text-slate-200 text-xs sm:text-sm max-w-3xl mx-auto">
+              We handle posting, poster designing, reels, and brand consistency,
+              so you can focus on running your business while we manage your
+              online presence.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+              <Link href="/pricing">
+                <Button
+                  size="lg"
+                  className="text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-5 rounded-xl bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-500/30"
+                >
+                  Start Free Trial
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-5 rounded-xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl"
+                >
+                  Contact PropelMeta Tech
+                </Button>
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-3 justify-center text-xs sm:text-sm text-white pt-3">
+              {['Fully managed', 'Custom designs', 'Transparent reporting'].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
                   >
-                    Contact PropelMeta Tech
-                  </Button>
-                </Link>
-              </div>
-
-              <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-                {['Fully managed', 'Custom designs', 'Transparent reporting'].map(
-                  (item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      <span>{item}</span>
-                    </div>
-                  )
-                )}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70 ring-1 ring-white/60">
-                <img
-                  src={socialMediaServiceImage}
-                  alt="Social media management"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10"></div>
-              </div>
-            </motion.div>
-          </div>
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="font-medium">{item}</span>
+                  </div>
+                ),
+              )}
+            </div>
+          </motion.div>
         </div>
       </section>
 
       <section
         id="social-media-management-services"
-        className="py-20 bg-white scroll-mt-28"
+        className="py-12 bg-white scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
               Social Media Management Services
             </h2>
@@ -204,8 +209,8 @@ export default function SocialMediaManagement() {
             </p>
           </div>
 
-          <div className="space-y-8 lg:space-y-10">
-            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="space-y-6 lg:space-y-8">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceInfoCard
                 title="What Is Included"
                 items={socialIncludes}
@@ -218,7 +223,7 @@ export default function SocialMediaManagement() {
               />
             </div>
 
-            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
                 src={socialProcessImage}
                 alt="Social media growth outcome"
@@ -238,10 +243,10 @@ export default function SocialMediaManagement() {
 
       <section
         id="content-creation-services"
-        className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 scroll-mt-28"
+        className="py-12 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
               Content Creation Services
             </h2>
@@ -251,8 +256,8 @@ export default function SocialMediaManagement() {
             </p>
           </div>
 
-          <div className="space-y-8 lg:space-y-10">
-            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="space-y-6 lg:space-y-8">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceInfoCard
                 title="Our Content Creation Services Include"
                 items={contentIncludes}
@@ -265,7 +270,7 @@ export default function SocialMediaManagement() {
               />
             </div>
 
-            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
                 src={socialMediaServiceImage}
                 alt="Creative social content output"
@@ -285,10 +290,10 @@ export default function SocialMediaManagement() {
 
       <section
         id="brand-management-services"
-        className="py-20 bg-white scroll-mt-28"
+        className="py-12 bg-white scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
               Brand Management Services
             </h2>
@@ -297,8 +302,8 @@ export default function SocialMediaManagement() {
             </p>
           </div>
 
-          <div className="space-y-8 lg:space-y-10">
-            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="space-y-6 lg:space-y-8">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceInfoCard title="What We Manage" items={brandManagement} />
               <ServiceImagePanel
                 src={brandManagementServiceImage}
@@ -307,7 +312,7 @@ export default function SocialMediaManagement() {
               />
             </div>
 
-            <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+            <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
                 src={socialProcessImage}
                 alt="Brand consistency outcomes"
@@ -327,10 +332,10 @@ export default function SocialMediaManagement() {
 
       <section
         id="how-our-service-works"
-        className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
+        className="py-12 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
               How Our Service Works
             </h2>
@@ -340,7 +345,7 @@ export default function SocialMediaManagement() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
             <ServiceStepsCard
               title="How Our Service Works"
               steps={processSteps}
@@ -354,8 +359,11 @@ export default function SocialMediaManagement() {
             />
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-            <ServiceInfoCard title="Who This Service Is For" items={audiences} />
+          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
+            <ServiceInfoCard
+              title="Who This Service Is For"
+              items={audiences}
+            />
             <ServiceInfoCard
               title="Why Choose PropelMeta Tech?"
               items={reasons}
@@ -365,9 +373,9 @@ export default function SocialMediaManagement() {
         </div>
       </section>
 
-      <section id="faqs" className="py-20 bg-white scroll-mt-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="text-center mb-12">
+      <section id="faqs" className="py-12 bg-white scroll-mt-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
             <h2 className="font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
@@ -380,9 +388,3 @@ export default function SocialMediaManagement() {
     </Layout>
   );
 }
-
-
-
-
-
-
