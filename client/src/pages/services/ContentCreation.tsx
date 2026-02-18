@@ -64,15 +64,15 @@ export default function ContentCreation() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-20 pb-16 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
-              <ServiceHeroBanner />
+      <section className="relative overflow-hidden pt-16 pb-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
+        <ServiceHeroBanner />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -95,7 +95,10 @@ export default function ContentCreation() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/pricing">
-                  <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl">
+                  <Button
+                    size="lg"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
+                  >
                     Start Free Trial
                   </Button>
                 </Link>
@@ -111,14 +114,16 @@ export default function ContentCreation() {
               </div>
 
               <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-                {['Custom posters', 'Reels editing', 'Brand-matched visuals'].map(
-                  (item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      <span>{item}</span>
-                    </div>
-                  )
-                )}
+                {[
+                  'Custom posters',
+                  'Reels editing',
+                  'Brand-matched visuals',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
@@ -142,7 +147,7 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="font-bold font-display text-slate-900 mb-4">
@@ -197,8 +202,8 @@ export default function ContentCreation() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+      <section className="py-12 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="lg:order-2">
               <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
@@ -259,8 +264,8 @@ export default function ContentCreation() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="text-center mb-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
             <h2 className="font-bold font-display text-slate-900">
               Frequently Asked Questions
             </h2>
@@ -273,9 +278,3 @@ export default function ContentCreation() {
     </Layout>
   );
 }
-
-
-
-
-
-

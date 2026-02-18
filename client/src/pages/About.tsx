@@ -149,12 +149,10 @@ export default function About() {
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
                   {item.icon}
                 </div>
-                <h3 className="mt-4 font-semibold text-slate-900">
+                <h3 className="mt-4 text-base font-semibold text-slate-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-slate-600">
-                  {item.description}
-                </p>
+                <p className="mt-2 text-slate-600">{item.description}</p>
               </div>
             ))}
           </div>

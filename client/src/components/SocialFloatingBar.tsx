@@ -2,17 +2,24 @@ import { AtSign, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const socialLinks = [
   {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/propelmeta_tech?igsh=eGd0ZXFkb2syenBx',
+    icon: <Instagram className="h-3.5 w-3.5 text-white" />,
+    className: 'bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5]',
+  },
+  {
     label: 'Facebook',
     href: 'https://www.facebook.com/share/1HJAAhoL3y/',
     icon: <Facebook className="h-3.5 w-3.5 text-white" />,
     className: 'bg-[#1877F2]',
   },
   {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/propelmeta_tech?igsh=eGd0ZXFkb2syenBx',
-    icon: <Instagram className="h-3.5 w-3.5 text-white" />,
-    className: 'bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5]',
+    label: 'Threads',
+    href: 'https://www.threads.com/@propelmeta_tech',
+    icon: <AtSign className="h-3.5 w-3.5 text-white" />,
+    className: 'bg-[#111111]',
   },
+
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/propelmeta-tech/',
@@ -20,18 +27,8 @@ const socialLinks = [
     className: 'bg-[#0A66C2]',
   },
   {
-    label: 'X',
-    href: 'https://x.com/propelmeta_tech',
-    icon: (
-      <span className="text-[13px] font-semibold leading-none text-white">
-        X
-      </span>
-    ),
-    className: 'bg-black',
-  },
-  {
     label: 'TikTok',
-    href: 'https://www.tiktok.com/@propelmeta_tech',
+    href: 'https://www.tiktok.com/@propelmetatech?is_from_webapp=1&sender_device=pc',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -44,10 +41,14 @@ const socialLinks = [
     className: 'bg-[#010101]',
   },
   {
-    label: 'Threads',
-    href: 'https://www.threads.com/@propelmeta_tech',
-    icon: <AtSign className="h-3.5 w-3.5 text-white" />,
-    className: 'bg-[#111111]',
+    label: 'X',
+    href: 'https://x.com/PropelMetaTech',
+    icon: (
+      <span className="text-[13px] font-semibold leading-none text-white">
+        X
+      </span>
+    ),
+    className: 'bg-black',
   },
 ];
 

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'wouter';
 import { Layout } from '@/components/Layout';
 import { FaqAccordion } from '@/components/FaqAccordion';
 
@@ -113,11 +114,12 @@ export default function Pricing() {
               </p>
             )}
             <div className="mt-8 flex justify-center">
-              <a href="/policies">
-                <button className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500">
-                  Refund & Cancellation Policies
-                </button>
-              </a>
+              <Link
+                href="/policies"
+                className="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
+              >
+                Refund &amp; Cancellation Policies
+              </Link>
             </div>
           </div>
         </div>
