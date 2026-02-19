@@ -20,7 +20,7 @@ export function ServiceInfoCard({
 }: ServiceInfoCardProps) {
   return (
     <div
-      className={`rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${className}`}
+      className={`w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${className}`}
     >
       <div className="mb-6 flex items-center gap-3">
         {icon ? <span className="text-indigo-600">{icon}</span> : null}
@@ -62,7 +62,7 @@ export function ServiceStepsCard({
 }: ServiceStepsCardProps) {
   return (
     <div
-      className={`rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${className}`}
+      className={`w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${className}`}
     >
       <h5 className="mb-6 font-semibold text-slate-900">{title}</h5>
       <ol className="space-y-4 text-slate-600">
@@ -98,7 +98,7 @@ export function ServiceImagePanel({
   imageClassName = 'w-full h-auto',
 }: ServiceImagePanelProps) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative w-full max-w-[650px] mx-auto ${className}`}>
       <div className="relative overflow-hidden rounded-3xl border border-slate-200/70 ring-1 ring-white/60 shadow-2xl shadow-slate-200/50">
         <img src={src} alt={alt} className={imageClassName} />
         <div

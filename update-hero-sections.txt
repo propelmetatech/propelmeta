@@ -1,0 +1,17 @@
+Key changes for all service hero sections:
+
+1. Background image: absolute inset-0 (FULL WIDTH)
+2. Content card: LEFT side (first column in 2-column grid)
+3. Empty div: RIGHT side (second column)
+4. Content card has white bg with backdrop blur
+
+Pattern:
+- Background: absolute inset-0, z-0
+- Content: LEFT column, z-10, white card overlay
+- Empty: RIGHT column
+
+Files to update:
+- SocialMediaManagement.tsx
+- WebsiteBuilder.tsx  
+- AutomationAI.tsx
+- WebAppDevelopment.tsx

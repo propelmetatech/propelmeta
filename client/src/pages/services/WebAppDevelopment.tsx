@@ -3,177 +3,185 @@ import { Layout } from '@/components/Layout';
 import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
-import { CheckCircle, Globe, Search } from 'lucide-react';
+import {
+  CheckCircle,
+  Code2,
+  Gauge,
+  Search,
+  Shield,
+  Sparkles,
+} from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import {
   ServiceImagePanel,
   ServiceInfoCard,
   ServiceStepsCard,
 } from '@/components/ServiceSectionBlocks';
-import websiteServiceImage from '@/assests/Website Design & Development Services.png';
+import websiteDesignServiceImage from '@/assests/Website Design & Development Services.png';
+import websiteDesignResultsImage from '@/assests/Website Design & Development Services_1.png';
 import seoServiceImage from '@/assests/SEO & Website Optimization Services.png';
-import websiteProcessImage from '@/assests/Website Design & Development Services_1.png';
-import heroBannerImage from '@/assests/bannerimage2_websitedevelopment.png';
+import seoResultsImage from '@/assests/SEO & Website Optimization Services_1.png';
+import heroBannerImage from '@/assests/bannerImageWeb Site.png';
 
 export default function WebAppDevelopment() {
-  const websiteIncludes = [
-    '1-3 page basic websites (optional)',
-    '4-7 page modern, responsive websites',
-    'Mobile-friendly and cross-browser design',
-    'SEO-ready website structure',
-    'Contact forms and lead capture setup',
-    'Hosting and domain setup assistance',
-    'Ongoing website maintenance and updates',
+  const websiteDesignIncludes = [
+    'Custom website design aligned to your brand',
+    'Responsive development for mobile, tablet, and desktop',
+    'Fast-loading pages with performance optimization',
+    'Conversion-focused pages with lead capture sections',
+    'CMS-ready structure for easy updates',
+    'Technical setup with analytics integration',
   ];
 
-  const websiteBenefits = [
-    'Professional and modern design',
-    'Fast loading performance',
-    'Easy navigation and user-friendly layout',
-    'A website ready for search engine visibility',
+  const websiteDesignBenefits = [
+    'Professional first impression for your brand',
+    'Higher inquiry and conversion rates',
+    'Faster website performance across devices',
+    'Scalable foundation for future growth',
   ];
 
   const seoIncludes = [
-    'On-page SEO setup',
-    'Keyword placement and content optimization',
-    'Website structure optimization for search engines',
-    'Google Business Profile optimization',
-    'Local SEO support for service-based businesses and restaurants',
+    'On-page SEO for titles, meta tags, and headings',
+    'Keyword research based on your target market',
+    'Technical SEO cleanup for crawlability and indexing',
+    'Content optimization for local and service intent',
+    'Core Web Vitals and page speed improvements',
+    'Monthly SEO performance reporting',
   ];
 
   const seoBenefits = [
-    'Improved search engine rankings',
-    'Increased website traffic',
-    'More local inquiries and leads',
-    'Long-term online visibility',
+    'Improved visibility on Google search',
+    'More qualified traffic from organic search',
+    'Better rankings for service-related keywords',
+    'Long-term, compounding lead generation',
   ];
 
   const processSteps = [
-    'Website review and requirement gathering',
-    'Design and development implementation',
-    'SEO setup and website optimization',
-    'Testing, launch, and performance monitoring',
+    'Business goals and competitor analysis',
+    'Website design and development execution',
+    'SEO setup and optimization deployment',
+    'Performance tracking and continuous improvement',
   ];
 
   const audiences = [
-    'Restaurants and cafes',
-    'Local businesses',
-    'Service-based companies',
-    'Startups and growing brands',
+    'Local businesses and service providers',
+    'Restaurants, cafes, and hospitality brands',
+    'E-commerce and product-based businesses',
+    'Startups needing a strong digital foundation',
   ];
 
   const reasons = [
-    'Complete website and SEO service under one roof',
-    'Clean, modern design approach',
-    'SEO-friendly development',
-    'Transparent reporting',
-    'Reliable post-launch support',
+    'Design and SEO delivered by one team',
+    'Custom strategy based on your business goals',
+    'Transparent reporting and communication',
+    'Scalable implementation for long-term growth',
+    'Reliable support after launch',
   ];
 
   const faqs = [
     {
-      question: 'Is SEO included with the website?',
-      answer: 'Yes, basic on-page SEO and website optimization are included.',
-    },
-    {
-      question: 'Will the website be mobile-friendly?',
-      answer: 'Absolutely. All websites are fully responsive across devices.',
-    },
-    {
-      question: 'Do you provide ongoing SEO support?',
+      question: 'Do you build websites from scratch?',
       answer:
-        'Yes, monthly SEO and optimization services are available as add-ons.',
+        'Yes. Every website is custom-built to match your brand, business goals, and content requirements.',
+    },
+    {
+      question: 'Can you optimize my existing website for SEO?',
+      answer:
+        'Yes. We can audit and optimize existing websites, including structure, speed, and on-page SEO improvements.',
+    },
+    {
+      question: 'How long does it take to see SEO results?',
+      answer:
+        'Initial improvements can appear in a few weeks, while stronger ranking growth usually takes a few months depending on competition.',
     },
   ];
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-16 pb-8 min-h-[450px] flex items-center">
-        {/* Background Banner Image */}
+      <section className="relative overflow-hidden pt-16 pb-12 min-h-[600px] bg-gradient-to-br from-blue-50 via-white to-indigo-50/30">
         <div className="absolute inset-0 z-0">
           <img
             src={heroBannerImage}
-            alt="Website Design & Development Banner"
-            className="w-full h-full object-cover"
+            alt="Website Design, Development and SEO Banner"
+            className="w-full h-full object-cover rounded-r-[3rem]"
           />
-          {/* Dark Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/60 to-indigo-900/70"></div>
         </div>
 
-        {/* Decorative blur effects */}
-        <div className="absolute inset-0 overflow-hidden z-[1]">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Content - Centered */}
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-3"
-          >
-            <div className="inline-flex items-center rounded-full border border-indigo-300/60 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-medium text-white mb-2 shadow-lg">
-              <Globe className="h-3.5 w-3.5 mr-1.5" />
-              Website Design, Development & SEO Optimization
-            </div>
+        <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[500px]">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="py-8 rounded-2xl pl-[30px] pr-0 lg:-ml-10 lg:mr-6"
+            >
+              <div className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-2 text-sm font-medium text-white mb-6">
+                <Code2 className="h-4 w-4 mr-2" />
+                Website Design, Development and SEO
+              </div>
 
-            <p className="font-semibold uppercase tracking-[0.15em] text-indigo-300 mb-2 text-xs sm:text-sm">
-              High-Performance Websites Built to Rank and Convert
-            </p>
+              <p className="font-semibold uppercase tracking-[0.15em] text-white/90 mb-3 text-xs sm:text-sm">
+                High-Performance Websites Built to Rank and Convert
+              </p>
 
-            <h1 className="font-bold font-display text-white mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight">
-              Website Design, Development & SEO Optimization Services
-            </h1>
+              <h1 className="font-bold font-display text-white mb-4 text-2xl sm:text-3xl lg:text-4xl leading-tight">
+                Website Design, Development and{' '}
+                <span className="text-white">
+                  SEO Services
+                </span>
+              </h1>
 
-            <p className="text-slate-100 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-              At PropelMeta Tech, we provide complete website design,
-              development, and SEO optimization services to help businesses
-              establish a strong online presence and attract more customers
-              through search engines.
-            </p>
+              <p className="text-white/90 mb-4 text-sm sm:text-base leading-relaxed">
+                We design and develop conversion-focused websites, then optimize
+                them for SEO so your business gets found, trusted, and chosen.
+              </p>
 
-            <p className="text-slate-200 text-xs sm:text-sm max-w-3xl mx-auto">
-              We design modern, mobile-friendly websites and optimize them for
-              visibility, speed, and performance - ensuring your website works
-              as a powerful business tool.
-            </p>
+              <p className="text-white/80 text-xs sm:text-sm mb-6">
+                From strategy and design to technical setup and ranking
+                improvements, our team manages the full website and SEO
+                execution for you.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <Link href="/pricing">
-                <Button
-                  size="lg"
-                  className="text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-5 rounded-xl bg-indigo-600 hover:bg-indigo-700 shadow-xl shadow-indigo-500/30"
-                >
-                  Start Free Trial
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-5 rounded-xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl"
-                >
-                  Contact PropelMeta Tech
-                </Button>
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap gap-3 justify-center text-xs sm:text-sm text-white pt-3">
-              {['Modern design', 'SEO-ready build', 'Mobile friendly'].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <Link href="/pricing">
+                  <Button
+                    size="lg"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   >
-                    <CheckCircle className="h-4 w-4 text-green-400" />
-                    <span className="font-medium">{item}</span>
+                    Start Free Trial
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/60 text-white hover:bg-white/10"
+                  >
+                    Contact PropelMeta Tech
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/85">
+                {[
+                  'Custom development',
+                  'SEO-ready architecture',
+                  'Performance optimized',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                    <span>{item}</span>
                   </div>
-                ),
-              )}
-            </div>
-          </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <div className="hidden lg:block"></div>
+          </div>
         </div>
       </section>
 
@@ -184,38 +192,39 @@ export default function WebAppDevelopment() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
-              Website Design & Development Services
+              Website Design and Development
             </h2>
             <p className="mt-4 text-slate-600">
-              Your website is often the first impression of your brand. We build
-              professional websites that look clean, load fast, and function
-              smoothly across all devices.
+              Modern, responsive websites built to present your brand
+              professionally and drive real business outcomes.
             </p>
           </div>
 
           <div className="space-y-6 lg:space-y-8">
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceInfoCard
-                title="What's Included in Our Website Service"
-                items={websiteIncludes}
+                title="What Is Included"
+                items={websiteDesignIncludes}
+                icon={<Code2 className="h-6 w-6 text-blue-600" />}
               />
               <ServiceImagePanel
-                src={websiteServiceImage}
-                alt="Website design and development"
-                overlayClassName="from-indigo-500/10 to-blue-500/10"
+                src={websiteDesignServiceImage}
+                alt="Website design and development service"
+                overlayClassName="from-blue-500/10 to-indigo-500/10"
               />
             </div>
 
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
-                src={websiteProcessImage}
-                alt="Website design result preview"
-                overlayClassName="from-blue-500/10 to-indigo-500/10"
+                src={websiteDesignResultsImage}
+                alt="Website development results"
+                overlayClassName="from-indigo-500/10 to-blue-500/10"
                 className="lg:order-1"
               />
               <ServiceInfoCard
-                title="What You Get"
-                items={websiteBenefits}
+                title="Benefits of Our Website Development"
+                items={websiteDesignBenefits}
+                icon={<Gauge className="h-6 w-6 text-blue-600" />}
                 className="lg:order-2"
               />
             </div>
@@ -230,38 +239,39 @@ export default function WebAppDevelopment() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
-              SEO & Website Optimization Services
+              SEO and Website Optimization
             </h2>
             <p className="mt-4 text-slate-600">
-              Improve visibility, rankings, and local reach so customers can
-              find your business faster.
+              Search-focused optimization that improves rankings, speed, and
+              visibility for high-intent traffic.
             </p>
           </div>
 
           <div className="space-y-6 lg:space-y-8">
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceInfoCard
-                title="Our SEO & Optimization Services Include"
+                title="Our SEO Services Include"
                 items={seoIncludes}
                 icon={<Search className="h-6 w-6 text-indigo-600" />}
               />
               <ServiceImagePanel
                 src={seoServiceImage}
-                alt="SEO and website optimization"
-                overlayClassName="from-blue-500/10 to-indigo-500/10"
+                alt="SEO and optimization service"
+                overlayClassName="from-indigo-500/10 to-blue-500/10"
               />
             </div>
 
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
-                src={websiteServiceImage}
-                alt="Search optimized website preview"
-                overlayClassName="from-indigo-500/10 to-blue-500/10"
+                src={seoResultsImage}
+                alt="SEO growth outcomes"
+                overlayClassName="from-blue-500/10 to-indigo-500/10"
                 className="lg:order-1"
               />
               <ServiceInfoCard
-                title="Benefits of SEO Optimization"
+                title="What You Get From SEO Optimization"
                 items={seoBenefits}
+                icon={<Sparkles className="h-6 w-6 text-indigo-600" />}
                 className="lg:order-2"
               />
             </div>
@@ -276,25 +286,25 @@ export default function WebAppDevelopment() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="font-bold font-display text-slate-900">
-              How Our Website & SEO Service Works
+              How Our Website and SEO Service Works
             </h2>
             <p className="mt-4 text-slate-600">
-              A clear, step-by-step process with full delivery support from
-              planning to launch and performance optimization.
+              A practical process from strategy to delivery, with ongoing
+              optimization for measurable growth.
             </p>
           </div>
 
           <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
             <ServiceStepsCard
-              title="How Our Website & SEO Service Works"
+              title="How Our Website and SEO Service Works"
               steps={processSteps}
-              footerText="Everything is handled by our team - from design to optimization."
-              stepBadgeClassName="bg-indigo-600"
+              footerText="We manage implementation and optimization end-to-end so your team can focus on operations."
+              stepBadgeClassName="bg-blue-600"
             />
             <ServiceImagePanel
-              src={websiteProcessImage}
+              src={websiteDesignResultsImage}
               alt="Website and SEO process"
-              overlayClassName="from-indigo-500/10 to-blue-500/10"
+              overlayClassName="from-blue-500/10 to-indigo-500/10"
             />
           </div>
 
@@ -306,6 +316,7 @@ export default function WebAppDevelopment() {
             <ServiceInfoCard
               title="Why Choose PropelMeta Tech?"
               items={reasons}
+              icon={<Shield className="h-6 w-6 text-blue-600" />}
               twoColumnItems
             />
           </div>
@@ -314,7 +325,7 @@ export default function WebAppDevelopment() {
 
       <section
         id="faqs"
-        className="py-12 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 scroll-mt-28"
+        className="py-12 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scroll-mt-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">

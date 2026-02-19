@@ -16,6 +16,7 @@ import {
   ArrowRight,
   Star,
 } from 'lucide-react';
+import heroBannerImage from '@/assests/bannerImageWeb Site.png';
 
 export default function WebsiteBuilder() {
   const features = [
@@ -87,44 +88,53 @@ export default function WebsiteBuilder() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-16 pb-8 bg-gradient-to-br from-blue-50 via-white to-purple-50/30">
-        {/* Hero Section */}
-        <ServiceHeroBanner />
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+      <section className="relative overflow-hidden pt-16 pb-12 min-h-[600px] bg-gradient-to-br from-blue-50 via-white to-purple-50/30">
+        {/* Background Image on Left Side */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroBannerImage}
+            alt="Website Design & Development Services"
+            className="w-full h-full object-cover rounded-r-[3rem]"
+          />
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+        {/* Decorative blur effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[500px]">
+            {/* Left Side - Content (overlays the background) */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="lg:col-span-5 py-8 rounded-2xl pl-[30px] pr-0 lg:-ml-10 lg:mr-6"
             >
-              <div className="inline-flex items-center rounded-full border border-blue-200/50 bg-gradient-to-r from-blue-50 to-purple-50 backdrop-blur-sm px-4 py-2 text-sm font-medium text-blue-600 mb-8">
+              <div className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-2 text-sm font-medium text-white mb-6">
                 <Globe className="h-4 w-4 mr-2" />
-                AI Website Builder
+                Website Design & Development
               </div>
 
-              <h1 className="font-bold font-display text-slate-900 mb-6">
+              <h1 className="font-bold font-display text-white mb-4 text-2xl sm:text-3xl lg:text-4xl leading-tight">
                 Build Your Dream Website in{' '}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <span className="text-white">
                   Minutes
                 </span>
               </h1>
 
-              <p className="text-slate-600 mb-8">
+              <p className="text-white/90 mb-4 text-sm sm:text-base leading-relaxed">
                 Create stunning, high-converting websites with our AI-powered
                 builder. No coding required - just tell us about your business
                 and watch the magic happen.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Link href="/demo">
                   <Button
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   >
                     <Zap className="h-5 w-5 mr-2" />
                     Start Building Now
@@ -134,14 +144,14 @@ export default function WebsiteBuilder() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/60 text-white hover:bg-white/10"
                   >
                     View Examples
                   </Button>
                 </Link>
               </div>
 
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-slate-600">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/85">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                   <span>No setup fees</span>
@@ -157,21 +167,8 @@ export default function WebsiteBuilder() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
-                  alt="Website Builder Interface"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10"></div>
-              </div>
-            </motion.div>
+            {/* Empty right side for background image */}
+            <div className="hidden lg:block lg:col-span-7"></div>
           </div>
         </div>
       </section>
@@ -251,7 +248,7 @@ export default function WebsiteBuilder() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50">
+              <div className="relative w-full max-w-[650px] mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
                   alt="Website Analytics Dashboard"

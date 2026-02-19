@@ -168,7 +168,7 @@ export default function OnlineSales() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-red-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -197,7 +197,7 @@ export default function OnlineSales() {
                 <Link href="/demo">
                   <Button
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-orange-500/25 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   >
                     <DollarSign className="h-5 w-5 mr-2" />
                     Start Selling
@@ -236,7 +236,7 @@ export default function OnlineSales() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
+              <div className="relative w-full max-w-[650px] mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-200/70">
                 <img
                   src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?w=800&h=600&fit=crop&crop=center"
                   alt="E-commerce Dashboard"
@@ -482,7 +482,7 @@ export default function OnlineSales() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50">
+              <div className="relative w-full max-w-[650px] mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
                   alt="Sales Dashboard"
