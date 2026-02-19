@@ -13,7 +13,7 @@ import {
 import onlineSupportServiceImage from '@/assests/Online Support & Client Support Services.png';
 import clientSupportServiceImage from '@/assests/Client Support.png';
 import supportProcessImage from '@/assests/Online Support & Client Support Services_1.png';
-import heroBannerImage from '@/assests/bannerImage3_onlinesupport.png';
+import heroBannerImage from '@/assests/bannerImageOnline Support.png';
 
 export default function OnlineSupport() {
   const onlineSupportIncludes = [
@@ -85,94 +85,96 @@ export default function OnlineSupport() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-16 pb-8 min-h-[450px] flex items-center">
-        {/* Background Banner Image */}
+      <section className="relative overflow-hidden pt-16 pb-12 min-h-[600px]">
+        {/* Full Width Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroBannerImage}
             alt="Online Support & Client Support Banner"
             className="w-full h-full object-cover"
           />
-          {/* Dark Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/60 to-blue-900/70"></div>
         </div>
 
         {/* Decorative blur effects */}
-        <div className="absolute inset-0 overflow-hidden z-[1]">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-slate-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-slate-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Content - Centered */}
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-3"
-          >
-            <div className="inline-flex items-center rounded-full border border-blue-300/60 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-medium text-white mb-2 shadow-lg">
-              <Headphones className="h-3.5 w-3.5 mr-1.5" />
-              Online and Client Support
-            </div>
+        <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[500px]">
+            {/* Left Side - Content Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-full py-8 rounded-2xl pl-[30px] pr-0 lg:-ml-6"
+            >
+              <div className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-2 text-sm font-medium text-white mb-6">
+                <Headphones className="h-4 w-4 mr-2" />
+                Online and Client Support
+              </div>
 
-            <p className="font-semibold uppercase tracking-[0.15em] text-blue-300 mb-2 text-xs sm:text-sm">
-              Reliable Online & Client Support for Smooth Business Operations
-            </p>
+              <p className="font-semibold uppercase tracking-[0.15em] text-white/90 mb-3 text-xs sm:text-sm">
+                Reliable Online & Client Support for Smooth Business Operations
+              </p>
 
-            <h1 className="font-bold font-display text-white mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight">
-              Online Support & Client Support Services
-            </h1>
+              <h1 className="font-bold font-display text-white mb-4 text-2xl sm:text-3xl lg:text-4xl leading-tight">
+                Online Support & Client Support{' '}
+                <span className="text-white">
+                  Services
+                </span>
+              </h1>
 
-            <p className="text-slate-100 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-              At PropelMeta Tech, we provide professional online support and
-              client support services to help businesses manage day-to-day
-              digital operations efficiently and without delays.
-            </p>
+              <p className="text-white/90 mb-4 text-sm sm:text-base leading-relaxed">
+                At PropelMeta Tech, we provide professional online support and
+                client support services to help businesses manage day-to-day
+                digital operations efficiently and without delays.
+              </p>
 
-            <p className="text-slate-200 text-xs sm:text-sm max-w-3xl mx-auto">
-              From account handling and online platform support to customer
-              communication and priority assistance, our team ensures your
-              business receives consistent, reliable support whenever it is
-              needed.
-            </p>
+              <p className="text-white/80 text-xs sm:text-sm mb-6">
+                From account handling and online platform support to customer
+                communication and priority assistance, our team ensures your
+                business receives consistent, reliable support whenever it is
+                needed.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <Link href="/pricing">
-                <Button
-                  size="lg"
-                  className="text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-5 rounded-xl bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-500/30"
-                >
-                  Start Free Trial
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-5 rounded-xl border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl"
-                >
-                  Contact PropelMeta Tech
-                </Button>
-              </Link>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <Link href="/pricing">
+                  <Button
+                    size="lg"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                  >
+                    Start Free Trial
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/60 text-white hover:bg-white/10"
+                  >
+                    Contact PropelMeta Tech
+                  </Button>
+                </Link>
+              </div>
 
-            <div className="flex flex-wrap gap-3 justify-center text-xs sm:text-sm text-white pt-3">
-              {[
-                'Dedicated support',
-                'Fast response',
-                'Reliable operations',
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
-                >
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span className="font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/85">
+                {[
+                  'Dedicated support',
+                  'Fast response',
+                  'Reliable operations',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Empty right side for background image */}
+            <div className="hidden lg:block"></div>
+          </div>
         </div>
       </section>
 
