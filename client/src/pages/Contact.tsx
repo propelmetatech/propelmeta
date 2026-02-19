@@ -15,8 +15,10 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, MapPin, Phone, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Phone, CheckCircle, Headphones } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import contactHeroBannerImage from '@/assests/bannerImageOnline Support.png';
+import { Link } from 'wouter';
 
 export default function Contact() {
   const { toast } = useToast();
@@ -85,7 +87,7 @@ export default function Contact() {
 
       const toastInstance = toast({
         title: 'Message sent',
-        description: 'We’ll be in touch within 1 business day.',
+        description: "We'll be in touch within 1 business day.",
       });
       if (successTimeoutRef.current) {
         clearTimeout(successTimeoutRef.current);
@@ -110,49 +112,90 @@ export default function Contact() {
   return (
     <Layout>
       <div className="contact-page">
-        <section className="contact-hero relative overflow-hidden bg-slate-950 text-white">
-          <div className="absolute inset-0">
-            <div className="absolute -top-20 right-[-10%] h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
-            <div className="absolute bottom-0 left-[-5%] h-48 w-48 rounded-full bg-cyan-400/20 blur-3xl" />
+        <section className="contact-hero relative overflow-hidden pt-16 pb-12 min-h-[600px]">
+          <div className="absolute inset-0 z-0" aria-hidden="true">
+            <img
+              src={contactHeroBannerImage}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div className="contact-hero-inner relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 py-16 sm:py-20 lg:py-24">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                Contact Sales
-              </span>
-              <h1 className="mt-5 font-bold font-display">
-                Tell us about your growth goals.
-              </h1>
-              <p className="mt-4 text-white/70">
-                We help teams launch high-performing sites and automation that
-                convert. Share a few details and we’ll propose the right plan.
-              </p>
-              <div className="contact-pills mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <div className="contact-pill rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <Clock className="h-5 w-5 text-white/80" />
-                  <p className="mt-3 font-semibold">Fast response</p>
-                  <p className="text-white/60">Within 1 business day</p>
+
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-slate-400/20 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[500px]">
+              <div className="w-full py-8 rounded-2xl pl-[30px] pr-0 lg:-ml-6">
+                <div className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-2 text-sm font-medium text-white mb-6">
+                  <Headphones className="h-4 w-4 mr-2" />
+                  Online and Client Support
                 </div>
-                <div className="contact-pill rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <ShieldCheck className="h-5 w-5 text-white/80" />
-                  <p className="mt-3 font-semibold">Secure by design</p>
-                  <p className="text-white/60">
-                    Your info stays private
-                  </p>
+
+                <p className="font-semibold uppercase tracking-[0.15em] text-white/90 mb-3 text-xs sm:text-sm">
+                  Reliable Online & Client Support for Smooth Business
+                  Operations
+                </p>
+
+                <h1 className="font-bold font-display text-white mb-4 text-2xl sm:text-3xl lg:text-4xl leading-tight">
+                  Online Support & Client Support{' '}
+                  <span className="text-white">Services</span>
+                </h1>
+
+                <p className="text-white/90 mb-4 text-sm sm:text-base leading-relaxed">
+                  At PropelMeta Tech, we provide professional online support and
+                  client support services to help businesses manage day-to-day
+                  digital operations efficiently and without delays.
+                </p>
+
+                <p className="text-white/80 text-xs sm:text-sm mb-6">
+                  From account handling and online platform support to customer
+                  communication and priority assistance, our team ensures your
+                  business receives consistent, reliable support whenever it is
+                  needed.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <Link href="/pricing">
+                    <Button
+                      size="lg"
+                      className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                    >
+                      Start Free Trial
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/60 text-white hover:bg-white/10"
+                    >
+                      Contact PropelMeta Tech
+                    </Button>
+                  </Link>
                 </div>
-                <div className="contact-pill rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <Mail className="h-5 w-5 text-white/80" />
-                  <p className="mt-3 font-semibold">
-                    Direct to experts
-                  </p>
-                  <p className="text-white/60">Sales + solution team</p>
+
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/85">
+                  {[
+                    'Dedicated support',
+                    'Fast response',
+                    'Reliable operations',
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              <div className="hidden lg:block"></div>
             </div>
           </div>
         </section>
 
-        <section className="contact-body relative -mt-8 sm:-mt-12 pb-16 sm:pb-24">
+        <section className="contact-body relative pb-16 sm:pb-24">
           <div className="contact-body-inner mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
             <div className="contact-grid grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="space-y-8 lg:col-span-2">
@@ -358,3 +401,4 @@ export default function Contact() {
     </Layout>
   );
 }
+
