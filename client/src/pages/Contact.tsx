@@ -195,7 +195,7 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="contact-body relative pb-16 sm:pb-24">
+        <section className="contact-body relative py-16 sm:py-24">
           <div className="contact-body-inner mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
             <div className="contact-grid grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="space-y-8 lg:col-span-2">
