@@ -31,7 +31,7 @@ export function WhatsAppFloatingButton() {
             </span>
           </span>
 
-          <span className="relative z-[1] hidden pr-1 text-[18px] font-semibold leading-none sm:inline">
+          <span className="relative z-[1] inline pr-1 text-[13px] font-semibold leading-none sm:text-[18px]">
             Chat with Propy
           </span>
         </a>
