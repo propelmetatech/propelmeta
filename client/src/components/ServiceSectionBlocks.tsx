@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Shield, Sparkles, Target, Users } from 'lucide-react';
 
 type ServiceInfoCardProps = {
   title: string;
@@ -10,6 +10,38 @@ type ServiceInfoCardProps = {
   twoColumnItems?: boolean;
 };
 
+function getDefaultTitleIcon(title: string, type: 'info' | 'steps') {
+  const normalizedTitle = title.toLowerCase();
+
+  if (normalizedTitle.includes('why choose')) {
+    return <Shield className="h-6 w-6" />;
+  }
+
+  if (
+    normalizedTitle.includes('who this service') ||
+    normalizedTitle.startsWith('who ')
+  ) {
+    return <Users className="h-6 w-6" />;
+  }
+
+  if (normalizedTitle.includes('how ') && normalizedTitle.includes('work')) {
+    return <Target className="h-6 w-6" />;
+  }
+
+  if (
+    normalizedTitle.includes('benefit') ||
+    normalizedTitle.includes('what you get')
+  ) {
+    return <Sparkles className="h-6 w-6" />;
+  }
+
+  if (type === 'steps') {
+    return <Target className="h-6 w-6" />;
+  }
+
+  return <Sparkles className="h-6 w-6" />;
+}
+
 export function ServiceInfoCard({
   title,
   items,
@@ -18,12 +50,16 @@ export function ServiceInfoCard({
   className = '',
   twoColumnItems = false,
 }: ServiceInfoCardProps) {
+  const resolvedIcon = icon ?? getDefaultTitleIcon(title, 'info');
+
   return (
     <div
       className={`w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${className}`}
     >
       <div className="mb-6 flex items-center gap-3">
-        {icon ? <span className="text-indigo-600">{icon}</span> : null}
+        {resolvedIcon ? (
+          <span className="text-indigo-600">{resolvedIcon}</span>
+        ) : null}
         <h5 className="font-semibold text-slate-900">{title}</h5>
       </div>
 
@@ -51,6 +87,7 @@ type ServiceStepsCardProps = {
   footerText?: string;
   stepBadgeClassName?: string;
   className?: string;
+  icon?: ReactNode;
 };
 
 export function ServiceStepsCard({
@@ -59,12 +96,20 @@ export function ServiceStepsCard({
   footerText,
   stepBadgeClassName = 'bg-indigo-600',
   className = '',
+  icon,
 }: ServiceStepsCardProps) {
+  const resolvedIcon = icon ?? getDefaultTitleIcon(title, 'steps');
+
   return (
     <div
       className={`w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white/90 backdrop-blur p-8 shadow-lg shadow-slate-200/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${className}`}
     >
-      <h5 className="mb-6 font-semibold text-slate-900">{title}</h5>
+      <div className="mb-6 flex items-center gap-3">
+        {resolvedIcon ? (
+          <span className="text-indigo-600">{resolvedIcon}</span>
+        ) : null}
+        <h5 className="font-semibold text-slate-900">{title}</h5>
+      </div>
       <ol className="space-y-4 text-slate-600">
         {steps.map((step, index) => (
           <li key={step} className="flex gap-4">
