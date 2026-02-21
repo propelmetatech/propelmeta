@@ -171,20 +171,20 @@ export default function MobileApps() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/demo">
+                <Link href="/demo" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                    className="w-full sm:w-auto sm:min-w-[220px] justify-center text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   >
                     <Download className="h-5 w-5 mr-2" />
                     Launch Your App
                   </Button>
                 </Link>
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
+                    className="w-full sm:w-auto sm:min-w-[220px] justify-center text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl"
                   >
                     View App Examples
                   </Button>
@@ -410,3 +410,4 @@ export default function MobileApps() {
     </Layout>
   );
 }
+

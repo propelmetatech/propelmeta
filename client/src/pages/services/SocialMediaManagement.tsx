@@ -104,29 +104,30 @@ export default function SocialMediaManagement() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-16 pb-12 min-h-[600px] bg-gradient-to-br from-purple-50 via-white to-blue-50/30">
+      <section className="relative overflow-hidden pt-16 pb-10 min-h-[640px] bg-gradient-to-br from-purple-50 via-white to-blue-50/30 sm:pb-12 lg:min-h-[600px]">
         {/* Background Image on Left Side */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroBannerImage}
             alt="Social Media Management Banner"
-            className="w-full h-full object-cover rounded-r-[3rem]"
+            className="h-full w-full object-cover object-[72%_center] sm:object-center lg:object-cover rounded-none lg:rounded-r-[3rem]"
           />
         </div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-slate-950/75 via-slate-900/62 to-slate-950/78 sm:from-slate-900/58 sm:via-slate-900/45 sm:to-slate-900/58 lg:hidden" />
 
         {/* Decorative blur effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 pr-12 sm:px-6 sm:pr-6 lg:px-8 lg:pr-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[500px]">
             {/* Left Side - Content (overlays the background) */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="py-8 rounded-2xl pl-[30px] pr-0 lg:-ml-6"
+              className="w-full max-w-[640px] rounded-2xl bg-slate-900/30 px-4 py-7 backdrop-blur-[2px] sm:px-6 sm:py-8 lg:max-w-none lg:bg-transparent lg:px-0 lg:py-8 lg:pl-[30px] lg:pr-0 lg:-ml-6 lg:backdrop-blur-0"
             >
               <div className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-2 text-sm font-medium text-white mb-6">
                 <Megaphone className="h-4 w-4 mr-2" />
@@ -158,19 +159,19 @@ export default function SocialMediaManagement() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Link href="/pricing">
+                <Link href="/pricing" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                    className="w-full sm:w-auto sm:min-w-[220px] justify-center text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   >
                     Start Free Trial
                   </Button>
                 </Link>
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/60 text-white hover:bg-white/10"
+                    className="w-full sm:w-auto sm:min-w-[220px] justify-center text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-white/60 text-white hover:bg-white/10"
                   >
                     Contact PropelMeta Tech
                   </Button>
@@ -391,3 +392,4 @@ export default function SocialMediaManagement() {
     </Layout>
   );
 }
+
