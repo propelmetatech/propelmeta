@@ -4,7 +4,7 @@ import { ServiceHeroBanner } from '@/components/ServiceHeroBanner';
 import { EarlyAccessSection } from '@/components/EarlyAccessSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
-import { CheckCircle, PenTool, Palette } from 'lucide-react';
+import { CheckCircle, PenTool, Palette, Shield, Target, Users } from 'lucide-react';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import contentServiceImage from '@/assests/Content Creation.png';
 import contentProcessImage from '@/assests/Content Creation_1.png';
@@ -207,9 +207,12 @@ export default function ContentCreation() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="lg:order-2">
               <div className="w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Who This Service Is For
-                </h3>
+                <div className="mb-6 flex items-center gap-3">
+                  <Users className="h-6 w-6 text-purple-600" />
+                  <h3 className="font-semibold text-slate-900">
+                    Who This Service Is For
+                  </h3>
+                </div>
                 <ul className="space-y-3 text-slate-600">
                   {audiences.map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -220,9 +223,12 @@ export default function ContentCreation() {
                 </ul>
               </div>
               <div className="mt-6 w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  How Our Service Works
-                </h3>
+                <div className="mb-6 flex items-center gap-3">
+                  <Target className="h-6 w-6 text-purple-600" />
+                  <h3 className="font-semibold text-slate-900">
+                    How Our Service Works
+                  </h3>
+                </div>
                 <ol className="space-y-4 text-slate-600">
                   {processSteps.map((step, index) => (
                     <li key={step} className="flex gap-4">
@@ -235,9 +241,12 @@ export default function ContentCreation() {
                 </ol>
               </div>
               <div className="mt-6 w-full max-w-[600px] mx-auto rounded-3xl border border-slate-200/70 bg-white p-8 shadow-lg shadow-slate-200/40">
-                <h3 className="font-semibold text-slate-900 mb-6">
-                  Why Choose PropelMeta Tech?
-                </h3>
+                <div className="mb-6 flex items-center gap-3">
+                  <Shield className="h-6 w-6 text-purple-600" />
+                  <h3 className="font-semibold text-slate-900">
+                    Why Choose PropelMeta Tech?
+                  </h3>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
                   {reasons.map((item) => (
                     <div key={item} className="flex items-start gap-3">
