@@ -384,7 +384,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-7 xl:col-span-7 relative min-h-[320px] sm:min-h-[380px] lg:h-full flex items-center justify-center"
             >
-              <div className="w-full max-w-4xl">
+              <div className="w-full max-w-4xl pr-9 sm:pr-10 md:pr-0">
                 <AutoScrollCarousel
                   items={carouselItems}
                   autoScrollInterval={5000}
