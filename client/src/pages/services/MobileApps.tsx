@@ -137,7 +137,7 @@ export default function MobileApps() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-16 pb-8 bg-gradient-to-br from-pink-50 via-white to-purple-50/30">
+      <section className="relative overflow-hidden pt-16 pb-10 min-h-[640px] bg-gradient-to-br from-pink-50 via-white to-purple-50/30 sm:pb-12 lg:min-h-[600px]">
         {/* Hero Section */}
         <ServiceHeroBanner />
         <div className="absolute inset-0 overflow-hidden">

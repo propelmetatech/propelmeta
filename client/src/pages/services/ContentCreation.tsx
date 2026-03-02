@@ -64,7 +64,7 @@ export default function ContentCreation() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden pt-16 pb-8 bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
+      <section className="relative overflow-hidden pt-16 pb-10 min-h-[640px] bg-gradient-to-br from-slate-50 via-white to-purple-50/30 sm:pb-12 lg:min-h-[600px]">
         <ServiceHeroBanner />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
