@@ -18,9 +18,12 @@ import {
   ServiceInfoCard,
   ServiceStepsCard,
 } from '@/components/ServiceSectionBlocks';
-import paidAdsServiceImage from '@/assests/Paid Advertising.png';
-import marketingAutomationServiceImage from '@/assests/Paid Advertising, Marketing Automation & AI Automation.png';
-import aiAutomationServiceImage from '@/assests/AI Automation.png';
+import paidPrimaryImage from '@/assests/paidsImage1.png';
+import paidAdsOverviewImage from '@/assests/paidImage2.png';
+import paidAdsBenefitsImage from '@/assests/paidImage3.png';
+import paidAutomationImage from '@/assests/paidImage4.png';
+import paidInsightsImage from '@/assests/paidImage5.jpg';
+import aiAutomationLegacyImage from '@/assests/AI Automation.png';
 import adsAutomationProcessImage from '@/assests/Paid Advertising, Marketing Automation & AI Automation_1.png';
 import heroBannerImage from '@/assests/baneerImagePaid Ads.png';
 
@@ -115,24 +118,24 @@ export default function AutomationAI() {
           <img
             src={heroBannerImage}
             alt="Paid Advertising & Marketing Automation Banner"
-            className="h-full w-full object-cover object-[72%_center] sm:object-center lg:object-cover rounded-none lg:rounded-r-[3rem]"
+            className="h-full w-full object-cover object-[72%_center] sm:object-center rounded-none lg:rounded-r-[3rem]"
           />
         </div>
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-slate-950/75 via-slate-900/62 to-slate-950/78 sm:from-slate-900/58 sm:via-slate-900/45 sm:to-slate-900/58 lg:hidden" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-slate-950/35 via-slate-900/20 to-slate-950/35 backdrop-blur-[1.5px] lg:bg-transparent lg:backdrop-blur-0" />
 
         {/* Decorative blur effects */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1] hidden lg:block">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="mx-auto lg:ml-[35px] max-w-7xl px-4 pr-12 sm:px-6 sm:pr-6 lg:px-8 lg:pr-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[500px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center lg:min-h-[500px]">
             {/* Left Side - Content (overlays the background) */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="w-full max-w-[640px] rounded-2xl bg-slate-900/30 px-4 py-7 backdrop-blur-[2px] sm:px-6 sm:py-8 lg:max-w-none lg:bg-transparent lg:px-0 lg:py-8 lg:pl-[30px] lg:pr-0 lg:-ml-6 lg:backdrop-blur-0"
+              className="w-full max-w-[640px] rounded-2xl bg-slate-900/25 px-4 py-7 backdrop-blur-[4px] sm:px-6 sm:py-8 lg:max-w-none lg:bg-transparent lg:px-0 lg:py-8 lg:pl-[30px] lg:pr-0 lg:-ml-6 lg:backdrop-blur-0"
             >
               <div className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-4 py-2 text-sm font-medium text-white mb-6">
                 <Target className="h-4 w-4 mr-2" />
@@ -226,7 +229,7 @@ export default function AutomationAI() {
                 items={adIncludes}
               />
               <ServiceImagePanel
-                src={paidAdsServiceImage}
+                src={paidPrimaryImage}
                 alt="Paid advertising service"
                 overlayClassName="from-amber-500/10 to-orange-500/10"
               />
@@ -234,7 +237,7 @@ export default function AutomationAI() {
 
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
-                src={marketingAutomationServiceImage}
+                src={paidAdsOverviewImage}
                 alt="Paid ads growth results"
                 overlayClassName="from-orange-500/10 to-amber-500/10"
                 className="lg:order-1"
@@ -273,7 +276,7 @@ export default function AutomationAI() {
                 icon={<Mail className="h-6 w-6 text-amber-600" />}
               />
               <ServiceImagePanel
-                src={marketingAutomationServiceImage}
+                src={paidAdsBenefitsImage}
                 alt="Marketing automation service"
                 overlayClassName="from-amber-500/10 to-orange-500/10"
               />
@@ -281,7 +284,7 @@ export default function AutomationAI() {
 
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
-                src={paidAdsServiceImage}
+                src={paidAutomationImage}
                 alt="Automated campaign impact"
                 overlayClassName="from-orange-500/10 to-amber-500/10"
                 className="lg:order-1"
@@ -320,7 +323,7 @@ export default function AutomationAI() {
                 icon={<Bot className="h-6 w-6 text-amber-600" />}
               />
               <ServiceImagePanel
-                src={aiAutomationServiceImage}
+                src={paidInsightsImage}
                 alt="AI automation service"
                 overlayClassName="from-amber-500/10 to-orange-500/10"
               />
@@ -328,7 +331,7 @@ export default function AutomationAI() {
 
             <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
               <ServiceImagePanel
-                src={adsAutomationProcessImage}
+                src={aiAutomationLegacyImage}
                 alt="AI automation benefits"
                 overlayClassName="from-orange-500/10 to-amber-500/10"
                 className="lg:order-1"
