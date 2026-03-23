@@ -17,7 +17,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { Mail, MapPin, Phone, CheckCircle, Headphones } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import contactHeroBannerImage from '@/assests/bannerImageOnline Support.png';
+import contactHeroBannerImage from '@/assests/Banner_image_contact.png';
 import { Link } from 'wouter';
 
 export default function Contact() {
@@ -235,9 +235,7 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-panel rounded-3xl bg-primary p-6 sm:p-8 text-white shadow-xl">
-                  <h3 className="font-bold font-display">
-                    Get in touch
-                  </h3>
+                  <h3 className="font-bold font-display">Get in touch</h3>
                   <div className="mt-6 space-y-6 text-sm">
                     <div className="flex items-start gap-4">
                       <Mail className="w-5 h-5 mt-0.5 opacity-80" />
@@ -401,4 +399,3 @@ export default function Contact() {
     </Layout>
   );
 }
-
