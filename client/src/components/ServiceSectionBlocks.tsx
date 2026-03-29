@@ -143,13 +143,14 @@ export function ServiceImagePanel({
   imageClassName = 'w-full h-auto',
 }: ServiceImagePanelProps) {
   const hasImage = Boolean(src && src.trim().length > 0);
+  const imageSrc = src || undefined;
 
   return (
     <div className={`relative w-full max-w-[650px] mx-auto ${className}`}>
       <div className="relative overflow-hidden rounded-3xl border border-slate-200/70 ring-1 ring-white/60 shadow-2xl shadow-slate-200/50">
         {hasImage ? (
           <>
-            <img src={src} alt={alt} className={imageClassName} />
+            <img src={imageSrc} alt={alt} className={imageClassName} />
             <div
               className={`absolute inset-0 bg-gradient-to-tr ${overlayClassName}`}
             />
