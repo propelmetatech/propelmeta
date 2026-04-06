@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-import { BadgeCheck, Box, CheckCircle2, Loader2 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { BadgeCheck, CheckCircle2 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
 
 type BillingCycle = 'monthly' | 'yearly';
 type Tier = 'standard' | 'premium' | 'elite';
@@ -18,13 +16,10 @@ type Plan = {
   features: string[];
 };
 
-const API_BASE_URL =
-  (import.meta.env.VITE_PAYGLOCAL_API_BASE_URL as string | undefined) ||
-  'http://localhost:3001';
 const CURRENCY_SYMBOL =
   (import.meta.env.VITE_PAYGLOCAL_CURRENCY_SYMBOL as string | undefined) || '$';
-const TXN_STORAGE_KEY = 'payglocal_merchant_txn_id';
-const PLAN_STORAGE_KEY = 'payglocal_selected_plan';
+const PAYGLOCAL_SCRIPT_SRC = 'https://oneclick.payglocal.in/simple.js';
+const PAYGLOCAL_BUTTON_ID = 'pb_A2FGBbdJyN7I';
 
 const plans: Plan[] = [
   {
@@ -90,10 +85,6 @@ const plans: Plan[] = [
   },
 ];
 
-function buildApiUrl(path: string) {
-  return `${API_BASE_URL.replace(/\/$/, '')}${path}`;
-}
-
 function planCardClasses(plan: Plan) {
   if (plan.featured) {
     return 'border-white/25 bg-white/14 ring-1 ring-white/20 shadow-[0_36px_90px_-48px_rgba(15,23,42,0.85)]';
@@ -102,78 +93,85 @@ function planCardClasses(plan: Plan) {
   return 'border-white/15 bg-white/[0.07] shadow-[0_30px_80px_-46px_rgba(15,23,42,0.75)]';
 }
 
-export default function PayGlocalPayment() {
-  const { toast } = useToast();
-  const [billingCycle, setBillingCycle] = useState<BillingCycle>('monthly');
-  const [loadingTier, setLoadingTier] = useState<Tier | null>(null);
+function PayGlocalHostedButton() {
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
-    const savedPlan = sessionStorage.getItem(PLAN_STORAGE_KEY);
-    if (!savedPlan) {
+    const form = formRef.current;
+    if (!form) {
       return;
     }
 
-    try {
-      const parsed = JSON.parse(savedPlan) as {
-        billingCycle?: BillingCycle;
-      };
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = PAYGLOCAL_SCRIPT_SRC;
+    script.setAttribute('data-pb-id', PAYGLOCAL_BUTTON_ID);
+    form.replaceChildren(script);
 
-      if (
-        parsed.billingCycle === 'monthly' ||
-        parsed.billingCycle === 'yearly'
-      ) {
-        setBillingCycle(parsed.billingCycle);
-      }
-    } catch {
-      sessionStorage.removeItem(PLAN_STORAGE_KEY);
-    }
-  }, []);
-
-  async function handleSubscribe(tier: Tier) {
-    setLoadingTier(tier);
-
-    try {
-      sessionStorage.setItem(
-        PLAN_STORAGE_KEY,
-        JSON.stringify({ tier, billingCycle }),
+    const syncButton = () => {
+      const control = form.querySelector<HTMLElement>(
+        'button, a, input[type="submit"], input[type="button"]',
       );
 
-      const response = await fetch(buildApiUrl('/api/subscriptions/initiate'), {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          tier,
-          billingCycle,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data?.ok) {
-        throw new Error(data?.message || 'Unable to start PayGlocal payment.');
+      if (!control) {
+        return false;
       }
 
-      if (!data.redirectUrl || !data.merchantTxnId) {
-        throw new Error('PayGlocal did not return a redirect URL.');
+      if (control instanceof HTMLInputElement) {
+        control.value = 'Subscribe';
+      } else {
+        control.textContent = 'Subscribe';
       }
 
-      sessionStorage.setItem(TXN_STORAGE_KEY, data.merchantTxnId);
-      window.location.assign(data.redirectUrl);
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : 'Something went wrong.';
+      control.style.width = '100%';
+      control.style.minHeight = '56px';
+      control.style.display = 'inline-flex';
+      control.style.alignItems = 'center';
+      control.style.justifyContent = 'center';
+      control.style.borderRadius = '9999px';
+      control.style.background = '#ffffff';
+      control.style.color = '#0f172a';
+      control.style.border = 'none';
+      control.style.padding = '0 24px';
+      control.style.fontSize = '1.125rem';
+      control.style.fontWeight = '600';
+      control.style.lineHeight = '1.2';
+      control.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.22)';
+      control.style.cursor = 'pointer';
 
-      toast({
-        title: 'Unable to continue',
-        description: message,
-        variant: 'destructive',
-      });
-    } finally {
-      setLoadingTier(null);
-    }
-  }
+      return true;
+    };
+
+    const intervalId = window.setInterval(() => {
+      if (syncButton()) {
+        window.clearInterval(intervalId);
+      }
+    }, 300);
+
+    const observer = new MutationObserver(() => {
+      syncButton();
+    });
+
+    observer.observe(form, { childList: true, subtree: true });
+
+    return () => {
+      window.clearInterval(intervalId);
+      observer.disconnect();
+      form.replaceChildren();
+    };
+  }, []);
+
+  return (
+    <form
+      ref={formRef}
+      className="mt-8 min-h-[56px] w-full"
+      aria-label="PayGlocal checkout"
+    />
+  );
+}
+
+export default function PayGlocalPayment() {
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>('monthly');
 
   return (
     <Layout>
@@ -243,7 +241,6 @@ export default function PayGlocalPayment() {
 
             <div className="mt-10 grid gap-6 xl:grid-cols-3">
               {plans.map((plan) => {
-                const isLoading = loadingTier === plan.tier;
                 const displayPrice =
                   billingCycle === 'monthly'
                     ? plan.monthlyPrice
@@ -267,11 +264,6 @@ export default function PayGlocalPayment() {
                           Most popular
                         </span>
                       ) : null}
-
-                      {/* <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/45 px-3 py-1 text-xs font-semibold text-blue-50">
-                        <Box className="h-3.5 w-3.5" />
-                        Sandbox
-                      </span> */}
                     </div>
 
                     <div className="mt-6">
@@ -298,21 +290,7 @@ export default function PayGlocalPayment() {
                       </p>
                     </div>
 
-                    <Button
-                      type="button"
-                      onClick={() => handleSubscribe(plan.tier)}
-                      disabled={Boolean(loadingTier)}
-                      className="mt-8 h-14 w-full rounded-full bg-white text-lg font-semibold text-slate-900 shadow-lg shadow-slate-950/20 transition hover:bg-blue-50"
-                    >
-                      {isLoading ? (
-                        <span className="inline-flex items-center gap-2">
-                          <Loader2 className="h-5 w-5 animate-spin" />
-                          Redirecting
-                        </span>
-                      ) : (
-                        'Subscribe'
-                      )}
-                    </Button>
+                    <PayGlocalHostedButton />
 
                     <div className="mt-8">
                       <p className="text-xl font-semibold text-white sm:text-[1.3rem]">
