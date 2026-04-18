@@ -39,8 +39,9 @@ export default function PaymentFailure() {
             Payment was not completed
           </h1>
           <p className="mt-4 max-w-2xl text-base text-rose-50/85 sm:text-lg">
-            Your backend received a non-success payment result and redirected the
-            user here. The checkout can be retried after you review the details below.
+            Your backend received a non-success payment result and redirected
+            the user here. The checkout can be retried after you review the
+            details below.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
