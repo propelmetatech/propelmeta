@@ -10,6 +10,7 @@ const Home = lazy(() => import('@/pages/Home'));
 const Products = lazy(() => import('@/pages/Products'));
 const Pricing = lazy(() => import('@/pages/Pricing'));
 const PayGlocalPayment = lazy(() => import('@/pages/PayGlocalPayment'));
+const PaymentSuccess = lazy(() => import('@/pages/PaymentSuccess'));
 const PaymentFailure = lazy(() => import('@/pages/PaymentFailure'));
 const About = lazy(() => import('@/pages/About'));
 const Blog = lazy(() => import('@/pages/Blog'));
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/payglocal-payment" component={PayGlocalPayment} />
+      <Route path="/payment-success" component={PaymentSuccess} />
       <Route path="/payment-failure" component={PaymentFailure} />
       <Route path="/about" component={About} />
       <Route path="/about-us" component={About} />
