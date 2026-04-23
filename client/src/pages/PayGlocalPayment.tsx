@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BadgeCheck, CheckCircle2, Loader2 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -25,6 +25,8 @@ const CURRENCY_SYMBOL =
   (import.meta.env.VITE_PAYGLOCAL_CURRENCY_SYMBOL as string | undefined) || '$';
 const TXN_STORAGE_KEY = 'payglocal_merchant_txn_id';
 const PLAN_STORAGE_KEY = 'payglocal_selected_plan';
+const ONE_CLICK_SCRIPT_SRC = 'https://oneclick.payglocal.in/simple.js';
+const ONE_CLICK_BUTTON_ID = 'pb_A2FGBbdJyN7I';
 
 const plans: Plan[] = [
   {
@@ -100,6 +102,38 @@ function planCardClasses(plan: Plan) {
   }
 
   return 'border-white/15 bg-white/[0.07] shadow-[0_30px_80px_-46px_rgba(15,23,42,0.75)]';
+}
+
+function PayGlocalOneClickButton() {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const form = formRef.current;
+
+    if (!form) {
+      return;
+    }
+
+    form.textContent = '';
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = ONE_CLICK_SCRIPT_SRC;
+    script.dataset.pbId = ONE_CLICK_BUTTON_ID;
+    form.appendChild(script);
+
+    return () => {
+      form.textContent = '';
+    };
+  }, []);
+
+  return (
+    <form
+      ref={formRef}
+      aria-label="PayGlocal OneClick checkout"
+      className="flex min-h-[64px] w-full items-center justify-center"
+    />
+  );
 }
 
 export default function PayGlocalPayment() {
@@ -334,6 +368,10 @@ export default function PayGlocalPayment() {
                 );
               })}
             </div>
+          </div>
+
+          <div className="mx-auto mt-8 flex w-full max-w-[420px] justify-center sm:mt-10 lg:mt-12">
+            <PayGlocalOneClickButton />
           </div>
         </div>
       </section>
