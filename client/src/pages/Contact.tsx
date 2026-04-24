@@ -256,7 +256,8 @@ export default function Contact() {
                       <div>
                         <p className="font-semibold">Office</p>
                         <p className="text-blue-100">
-                          220 N Gould St Sheridan,
+                          30 N Gould St Ste R
+Sheridan,
                           <br />
                           WY, 82801, USA
                         </p>
