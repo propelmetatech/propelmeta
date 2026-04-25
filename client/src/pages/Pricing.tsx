@@ -93,7 +93,7 @@ export default function Pricing() {
         <div className="rounded-3xl bg-white p-6 shadow-xl md:p-10">
           {stripePublishableKey ? (
             <stripe-pricing-table
-              pricing-table-id="prctbl_1SsKCADZeN1YHWHr7yPTVNq5"
+              pricing-table-id="prctbl_1TQ1IYDY2Rd5s8kgQdT0DsMP"
               publishable-key={stripePublishableKey}
             />
           ) : (
@@ -112,7 +112,7 @@ export default function Pricing() {
             </h3>
             {stripePublishableKey ? (
               <stripe-pricing-table
-                pricing-table-id="prctbl_1SsPyiDZeN1YHWHryHnTzGIc"
+                pricing-table-id="prctbl_1TQ1L0DY2Rd5s8kgxlSgB31w"
                 publishable-key={stripePublishableKey}
               />
             ) : (
