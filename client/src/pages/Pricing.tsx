@@ -4,9 +4,7 @@ import { Layout } from '@/components/Layout';
 import { FaqAccordion } from '@/components/FaqAccordion';
 
 export default function Pricing() {
-  const stripePublishableKey =
-    import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ??
-    'pk_test_51SofdnDZeN1YHWHryTmXX3SASdS4IJglBR1GNcBa7olvu59kvqiP3LpvwT7TIb3J5TgNJeuc5oWcbhhPWeDOvCgw00rq4wkTpp';
+  const stripePublishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
 
   const faqs = [
     {
