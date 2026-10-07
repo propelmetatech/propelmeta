@@ -77,14 +77,14 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="mt-10 flex justify-center">
+            {/* <div className="mt-10 flex justify-center">
               <Link
                 href="/payglocal-payment"
                 className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
               >
                 Open PayGlocal Checkout
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
